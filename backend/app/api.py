@@ -40,11 +40,21 @@ class search_info(BaseModel):
 
 @app.post("/data_wrangling/web_scrape")
 async def web_scrape(info: search_info):
-    pass
+    pre_pipe, search_pipe = web_parse_pipeline("https://haystack.deepset.ai/reference/file-converters", "./Files/Docs")
+    
+    
 @functools.lru_cache
 def web_parse_pipeline(url: str, output_dir: str):
     # document_store = InMemoryDocumentStore()
-    crawler = Crawler(urls=[url], output_dir=output_dir)
+    crawler = Crawler(urls=[url], 
+                      output_dir=output_dir,
+                      webdriver_options=["--headless",
+                                         "--disable-dev-shm-usage",
+                                         "--no-sandbox",
+                                         "--disable-extensions",
+                                         "--remote-debugging-port=9222"]
+#   apparently must include remote debugging port for it to work
+                      )
     preprocessor = PreProcessor(
         clean_empty_lines=True,
         clean_whitespace=True,
@@ -66,4 +76,4 @@ def pdf_scrape(pdf_dir:str):
     docs = convert_files_to_docs(dir_path=pdf_dir)
     return docs
 
-a,b = web_parse_pipeline("https://haystack.deepset.ai/reference/file-converters", "./Files/Docs")
+
