@@ -19,6 +19,8 @@ RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/so
 RUN apt-get update -y
 RUN apt-get install -y google-chrome-stable
 
+RUN apt-get install libsndfile1 -y
+
 # Setting up Chromedriver
 ARG CHROME_DRIVER_VERSION
 
@@ -59,8 +61,16 @@ RUN pip uninstall faiss-cpu -y
 
 RUN pip install 'fastapi[all]'
 
+RUN pip install "python-jose[cryptography]"
+
+RUN pip install "passlib[bcrypt]"
+
 COPY ./app /code/app
 
 RUN mkdir -p {/code/Files/PDF, /code/Files/web}
 
-CMD [ "uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "80"]
+ENV PYTHONPATH "PYTHONPATH:/code/app"
+
+EXPOSE 80
+
+CMD [ "uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
