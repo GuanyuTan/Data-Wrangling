@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { Box, Button, Divider, Drawer, imageListClasses, ListItemText, Typography, useMediaQuery } from '@mui/material';
-import { Logo } from './logo';
 import { NavItem } from './nav-item';
 import { MulItem } from './nav_item_mul';
+import Image from 'next/image';
 
 const menuItems =
   [
@@ -91,7 +91,7 @@ export const DashboardSidebar = (props) => {
             passHref
           >
             <a>
-              <img src='adiba.png' width={200} />
+              <Image src='/adiba.png' width={200} height={200/2} />
             </a>
           </Link>
         </Box>

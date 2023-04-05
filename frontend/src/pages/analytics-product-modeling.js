@@ -1,4 +1,4 @@
-import { Link, Paper, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Head from "next/head";
 import { DashboardLayout } from "../components/dashboard-layout"
@@ -106,42 +106,41 @@ const Page = () => {
                 }}
             >
                 <TableContainer component={Paper}>
-                    <TableHead>
-                        {label.map((item) => {
-                            return (
-                                <TableCell>
-                                    {item}
-                                </TableCell>
-                            )
-                        })}
-                    </TableHead>
-                    {data.map((item) => {
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                {label.map((item, index) => {
+                                    return (
+                                        <TableCell key={`label_${index}`}>
+                                            {item}
+                                        </TableCell>
+                                    )
+                                })}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data.map((item, id) => {
 
-                        const maxRows = Math.max(item.subtask.length, item.detail.length, item.template.length);
-                        console.log(maxRows)
-                        const detailSpan = Math.ceil(maxRows / item.detail.length);
-                        const detailIndex = 1;
+                                const maxRows = Math.max(item.subtask.length, item.detail.length, item.template.length);
+                                return (
 
-                        return (
-                            <>
-                                {
                                     (item.subtask.length == maxRows) ? (
                                         item.subtask.map((subtask, index) => (
-                                            <TableRow>
+                                            <TableRow key={`row_${index}`}>
                                                 {(index == 0) ? (
-                                                    <TableCell rowSpan={maxRows} sx={{verticalAlign:'top'}}>
+                                                    <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top' }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.task}
                                                         </Typography>
                                                     </TableCell>
                                                 ) : null}
-                                                <TableCell sx={{verticalAlign:'top'}}>
+                                                <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                     <Typography gutterBottom fontSize={14}>
                                                         {subtask}
                                                     </Typography>
                                                 </TableCell>
                                                 {(index < item.detail.length) ? (
-                                                    <TableCell hover sx={{verticalAlign:'top'}}>
+                                                    <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.detail[index]}
                                                         </Typography>
@@ -149,7 +148,7 @@ const Page = () => {
                                                 ) : (<TableCell>
                                                 </TableCell>)}
                                                 {(index < item.template.length) ? (
-                                                    <TableCell sx={{verticalAlign:'top'}}>
+                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                         <Link>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.template[index]}
@@ -162,29 +161,29 @@ const Page = () => {
                                         ))
                                     ) : (item.detail.length == maxRows) ? (
                                         item.detail.map((detail, index) => (
-                                            <TableRow>
+                                            <TableRow key={`row_${index}`}>
                                                 {(index == 0) ? (
-                                                    <TableCell rowSpan={maxRows}  sx={{verticalAlign:'top'}}>
+                                                    <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top' }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.task}
                                                         </Typography>
                                                     </TableCell>
                                                 ) : null}
                                                 {(index < item.subtask.length) ? (
-                                                    <TableCell  sx={{verticalAlign:'top'}}>
+                                                    <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.subtask[index]}
                                                         </Typography>
                                                     </TableCell>
                                                 ) : (<TableCell>
                                                 </TableCell>)}
-                                                <TableCell  sx={{verticalAlign:'top'}}>
-                                                    <Typography gutterBottom fontSize={14}>
+                                                <TableCell sx={{ verticalAlign: 'top' }}>
+                                                    <Typography key={`detail_${id}_${index}`} gutterBottom fontSize={14}>
                                                         {detail}
                                                     </Typography>
                                                 </TableCell>
                                                 {(index < item.template.length) ? (
-                                                    <TableCell  sx={{verticalAlign:'top'}}>
+                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                         <Link>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.template[index]}
@@ -199,16 +198,16 @@ const Page = () => {
                                     ) :
                                         (item.template.length == maxRows) ? (
                                             item.template.map((template, index) => (
-                                                <TableRow>
+                                                <TableRow key={`row_${index}`}>
                                                     {(index == 0) ? (
-                                                        <TableCell rowSpan={maxRows}  sx={{verticalAlign:'top'}}>
+                                                        <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top' }}>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.task}
                                                             </Typography>
                                                         </TableCell>
                                                     ) : null}
                                                     {(index < item.subtask.length) ? (
-                                                        <TableCell  sx={{verticalAlign:'top'}}>
+                                                        <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.subtask[index]}
                                                             </Typography>
@@ -216,14 +215,14 @@ const Page = () => {
                                                     ) : (<TableCell>
                                                     </TableCell>)}
                                                     {(index < item.detail.length) ? (
-                                                        <TableCell  sx={{verticalAlign:'top'}}>
+                                                        <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.detail[index]}
                                                             </Typography>
                                                         </TableCell>
                                                     ) : (<TableCell>
                                                     </TableCell>)}
-                                                    < TableCell  sx={{verticalAlign:'top'}} >
+                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' }} >
                                                         <Link>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {template}
@@ -232,59 +231,10 @@ const Page = () => {
                                                     </TableCell>
                                                 </TableRow>
                                             ))
-                                        ) : null}
-                                {/* <TableRow>
-                                    <TableCell rowSpan={maxRows}>
-                                        <Typography>
-                                            {item.task}
-                                        </Typography>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Typography>
-                                            {item.subtask[0]}
-                                        </Typography>
-                                    </TableCell>
-                                    <TableCell>
-                                        <Typography>
-                                            {item.detail[0]}
-                                        </Typography>
-                                    </TableCell>
-                                    <TableCell>
-                                        {item.template.map((template) => (
-                                            <Link>
-                                                <Typography>
-                                                    {template}
-                                                </Typography>
-                                            </Link>
-                                        )
-                                        )}
-                                    </TableCell>
-                                </TableRow>
-                                {item.subtask.slice(1).map((subtask, index) => {
-                                    console.log(item.detail[index + 1])
-
-                                    return (
-                                        <>
-                                            <TableRow>
-                                                <TableCell>
-                                                    {subtask}
-                                                </TableCell>
-                                                {(index < (item.detail.length)) ?
-                                                    (
-                                                        <TableCell>
-                                                            {item.detail[index + 1]}
-                                                        </TableCell>
-                                                    ) : null
-                                                }
-                                            </TableRow>
-
-                                        </>
-                                    )
-                                })} */}
-
-                            </>
-                        )
-                    })}
+                                        ) : null)
+                            })}
+                        </TableBody>
+                    </Table>
                 </TableContainer>
             </Box>
         </>

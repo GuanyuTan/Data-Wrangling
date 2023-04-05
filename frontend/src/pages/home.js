@@ -284,6 +284,7 @@ const Comp = (props) => {
             {
                 positions.map((item, index) => (
                     <Box
+                        key={`button_${index}`}
                         sx={{
                             position: 'absolute',
                             bottom: `${height / 2 - 80 / 2 + item.y * radius + item.offset.y}px`,
@@ -312,8 +313,6 @@ const Comp = (props) => {
 }
 Comp.propTypes = {
     children: PropTypes.node,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
     items: PropTypes.array.isRequired,
     buttonSize: PropTypes.number.isRequired,
     icon: PropTypes.node
@@ -336,7 +335,7 @@ const Page = () => {
                     alignItems: "center",
                     justifyContent: 'center',
                     paddingTop: '70px',
-                    margin:'auto',
+                    margin: 'auto',
                     height: '100%',
                     width: '100%'
                 }}
@@ -490,14 +489,13 @@ const Page = () => {
                     <Box
                         sx={{
                             height: 80,
-                            width: 120,
+                            width: 160,
                             marginLeft: '35px'
                         }}
                     >
                         <ButtonWithText height={80} width={160} iconSize={60} icon={<SupervisedUserCircleIcon sx={{ color: 'white' }}></SupervisedUserCircleIcon>} text="Data Product Enculturation" iconPosition="left" />
                     </Box>
                 </Box>
-
             </Box>
         </>
     )

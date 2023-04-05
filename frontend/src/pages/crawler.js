@@ -92,7 +92,7 @@ const Page = () => {
                 pathname: "/retrain",
                 query: {
                     document: JSON.stringify(result.documents),
-                    queryArray:[...queryArray]
+                    queryArray: [...queryArray]
                 }
             }
         )
@@ -340,7 +340,7 @@ const Page = () => {
                                             onClick={handleSubmit}
                                             disabled={queryArray.length < 1 || url.length < 1 || loading}
                                             type="submit"
-                                           
+
                                         >
                                             {loading ? "Searching" : "Submit"}
                                         </Button>
@@ -406,25 +406,20 @@ const Page = () => {
                                             </TextField>
                                         </Box>
                                         {queryArray.map((query) => (
-                                            <Box
-                                                component="div"
+                                            <Chip
+                                                key={query}
+                                                label={query}
+                                                variant="filled"
                                                 sx={{
-                                                    display: 'inline',
-                                                }} >
-                                                <Chip
-                                                    label={query}
-                                                    variant="filled"
-                                                    sx={{
-                                                        m: '2px',
-                                                        p: '2px',
-                                                    }}
-                                                    onDelete={() => {
-                                                        removeQuery(query)
-                                                    }}
-                                                >
+                                                    m: '2px',
+                                                    p: '2px',
+                                                }}
+                                                onDelete={() => {
+                                                    removeQuery(query)
+                                                }}
+                                            >
 
-                                                </Chip>
-                                            </Box>
+                                            </Chip>
 
                                         ))}
                                         <Box display="flex" paddingY='20px' >
@@ -455,7 +450,7 @@ const Page = () => {
                                                                 removeFile();
                                                             }}
                                                         >
-                                                            < RemoveIcon color='primary'/>
+                                                            < RemoveIcon color='primary' />
                                                         </IconButton>
                                                     </Box>
                                                 </Box>
