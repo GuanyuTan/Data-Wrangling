@@ -206,7 +206,7 @@ const Page = () => {
                             </Box>
                             <Box overflow="auto" height="600px">
                                 {queryAns.map((query, index) => (
-                                    <QueryComponent maxWidth="100%" queryAns={queryAns} setQueryAns={setQueryAns} id={index}>
+                                    <QueryComponent key={index} maxWidth="100%" queryAns={queryAns} setQueryAns={setQueryAns} id={index}>
 
                                     </QueryComponent>
                                 )
