@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import NextLink from 'next/link';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -14,17 +14,46 @@ import {
   Typography
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useState } from 'react';
+import { login, signup } from '../requests/userApi';
 
 const Register = () => {
+  // const [username, setUsername] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [firstName, setFirstName] = useState("")
+  // const [lastName, setLastName] = useState("")
+  // const [password, setPassword] = useState("")
+  // const [tnc, setTnC] = useState(false)
+
+  //   const handleBlurUsername = () => {
+  //     if (username.length < 1) {
+  //       setUrlErrorMessage("Enter username");
+  //     } else {
+  //       setUrlErrorMessage("");
+  //     }
+  //   }
+  //   const handleBlurEmail = () => {
+  //     if (url.length < 1) {
+  //         setUrlErrorMessage("Provide a website URL");
+  //     } else {
+  //         setUrlErrorMessage("");
+  //     }
+  // }
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      email: '',
-      firstName: '',
-      lastName: '',
-      password: '',
+      username: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      password: "",
       policy: false
     },
     validationSchema: Yup.object({
+      username: Yup
+        .string()
+        .max(255)
+        .required('Username is required'),
       email: Yup
         .string()
         .email('Must be a valid email')
@@ -50,18 +79,28 @@ const Register = () => {
           'This field must be checked'
         )
     }),
-    onSubmit: () => {
-      Router
-        .push('/')
-        .catch(console.error);
-    }
-  });
+    onSubmit: async (values) => {
+      const res = await signup(values);
+      if (res.status == 200) {
+        const res_2 = await login(values)
+        if (res_2.status == 200){
+          const json = res_2.json()
+          localStorage.setItem('token', json.access_token);
+          router.push("/dashboard");
+        }
+        else{
+          alert(res_2.status+": "+res_2.detail)
+        }
+      }else{
+        alert(`Failed to perform user signup. ${res_2.status}`)
+      }
+    }});
 
   return (
     <>
       <Head>
         <title>
-          Register | Material Kit
+          Register
         </title>
       </Head>
       <Box
@@ -82,11 +121,11 @@ const Register = () => {
               component="a"
               startIcon={<ArrowBackIcon fontSize="small" />}
             >
-              Dashboard
+              Home
             </Button>
           </NextLink>
           <form onSubmit={formik.handleSubmit}>
-            <Box sx={{ my: 3 }}>
+            <Box sx={{ my: 1 }}>
               <Typography
                 color="textPrimary"
                 variant="h4"
@@ -102,6 +141,20 @@ const Register = () => {
               </Typography>
             </Box>
             <TextField
+              error={Boolean(formik.touched.username && formik.errors.username)}
+              fullWidth
+              helperText={formik.touched.username && formik.errors.username}
+              label="Username"
+              margin="normal"
+              name="username"
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
+              value={formik.values.username}
+              variant="outlined"
+              required
+            />
+
+            <TextField
               error={Boolean(formik.touched.firstName && formik.errors.firstName)}
               fullWidth
               helperText={formik.touched.firstName && formik.errors.firstName}
@@ -112,6 +165,7 @@ const Register = () => {
               onChange={formik.handleChange}
               value={formik.values.firstName}
               variant="outlined"
+              required
             />
             <TextField
               error={Boolean(formik.touched.lastName && formik.errors.lastName)}
@@ -124,6 +178,7 @@ const Register = () => {
               onChange={formik.handleChange}
               value={formik.values.lastName}
               variant="outlined"
+              required
             />
             <TextField
               error={Boolean(formik.touched.email && formik.errors.email)}
@@ -137,6 +192,7 @@ const Register = () => {
               type="email"
               value={formik.values.email}
               variant="outlined"
+              required
             />
             <TextField
               error={Boolean(formik.touched.password && formik.errors.password)}
@@ -150,6 +206,7 @@ const Register = () => {
               type="password"
               value={formik.values.password}
               variant="outlined"
+              required
             />
             <Box
               sx={{
@@ -197,7 +254,7 @@ const Register = () => {
                 type="submit"
                 variant="contained"
               >
-                Sign Up Now
+                Sign Up
               </Button>
             </Box>
             <Typography

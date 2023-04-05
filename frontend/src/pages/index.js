@@ -1,116 +1,118 @@
 import Head from 'next/head';
-import { Box, Container, Grid } from '@mui/material';
-import { Budget } from '../components/dashboard/budget';
-import { LatestOrders } from '../components/dashboard/latest-orders';
-import { LatestProducts } from '../components/dashboard/latest-products';
-import { Sales } from '../components/dashboard/sales';
-import { TasksProgress } from '../components/dashboard/tasks-progress';
-import { TotalCustomers } from '../components/dashboard/total-customers';
-import { TotalProfit } from '../components/dashboard/total-profit';
-import { TrafficByDevice } from '../components/dashboard/traffic-by-device';
+import { styled } from '@mui/material/styles';
+import PropTypes from 'prop-types';
+import NextLink from 'next/link';
+import { Answer } from '../components/datawrangling/answers'
 import { DashboardLayout } from '../components/dashboard-layout';
+import {
+    Box,
+    Paper,
+    Container,
+    Tabs,
+    Tab,
+    AppBar,
+    Fab,
+    Tooltip,
+    Toolbar,
+    Chip,
+    Typography,
+    TextField,
+    InputAdornment,
+    IconButton,
+    Button,
+    Divider,
+    LinearProgress,
+    CircularProgress
+} from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import { maxHeight } from '@mui/system';
+import { TableA } from '../components/dashboard/threat_table';
 
-const Page = () => (
-  <>
-    <Head>
-      <title>
-        Dashboard | Material Kit
-      </title>
-    </Head>
-    <Box
-      component="main"
-      sx={{
-        flexGrow: 1,
-        py: 8
-      }}
-    >
-      <Container maxWidth={false}>
-        <Grid
-          container
-          spacing={3}
+
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            {...other}
         >
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <Budget />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalCustomers />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TasksProgress />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalProfit sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <Sales />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <TrafficByDevice sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <LatestProducts sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <LatestOrders />
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  </>
-);
+            {value === index && (
+                <Box component="div"
+                    display='flex'
+                    minHeight="400px"
+                    flexDirection="column"
+                    sx={{
+                        paddingTop: 3,
+                        overflow: "auto"
+                    }}
+                    maxHeight="600px">
+                    {children}
+                </Box>
+            )}
 
+        </div>
+    )
+}
+
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+}
+
+const Page = () => {
+
+
+
+    return (
+        <>
+            <Head>
+                <title>
+                    Data Wrangling
+                </title>
+            </Head>
+            <Box
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    paddingTop: '80px',
+                }}
+            >
+                <Paper elevation={6}
+                    sx={{
+                        m: '20px',
+                        p: '20px',
+                        maxWidth: '80%',
+                        minWidth: '80%',
+                        
+                    }}
+                >
+                    <Box>
+                        <Typography variant='h4' gutterBottom>
+                            Phase 0: Immersion Of Analytic Culture
+                        </Typography>
+                    </Box>
+                    <Box>
+                        <TableA>
+
+                        </TableA>
+                    </Box>
+                </Paper>
+            </Box>
+        </>
+    )
+
+}
 Page.getLayout = (page) => (
-  <DashboardLayout>
-    {page}
-  </DashboardLayout>
+    <DashboardLayout>
+        {page}
+    </DashboardLayout>
 );
 
 export default Page;

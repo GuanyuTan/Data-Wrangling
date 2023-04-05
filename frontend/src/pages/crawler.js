@@ -1,18 +1,14 @@
 import Head from 'next/head';
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
+import { Answer } from '../components/datawrangling/answers'
 import { DashboardLayout } from '../components/dashboard-layout';
 import {
     Box,
     Paper,
-    Container,
     Tabs,
     Tab,
-    AppBar,
     Fab,
     Tooltip,
-    Toolbar,
     Chip,
     Typography,
     TextField,
@@ -20,17 +16,17 @@ import {
     IconButton,
     Button,
     Divider,
-    LinearProgress,
-    CircularProgress
+    CircularProgress,
+    useTheme
 } from '@mui/material';
-import { useEffect, useState } from 'react';
-import Router from 'next/router';
-import { QuerySetup } from '../components/datawrangling/querysetup';
-import { PdfSetup } from '../components/datawrangling/pdfsetup';
+import { useRef, useState } from 'react';
+import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddIcon from '@mui/icons-material/Add';
-import AddBoxIcon from '@mui/icons-material/AddBox';
+import RemoveIcon from '@mui/icons-material/Remove';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
-import { maxWidth } from '@mui/system';
+import SwipeableViews from 'react-swipeable-views';
+import Router from 'next/router';
+
 
 
 function TabPanel(props) {
@@ -67,8 +63,13 @@ TabPanel.propTypes = {
 }
 
 const Page = () => {
+    const fileRef = useRef();
+    const queryRef = useRef();
+    const [loading, setLoading] = useState(false);
     const [currentquery, setQuery] = useState("");
+    const [document, setDocument] = useState("");
     const [queryArray, setQueryArray] = useState([]);
+    const [result, setResult] = useState()
     const [url, setUrl] = useState("");
     const [fileName, setFileName] = useState("No File is Picked");
     const [isFilePicked, setIsFilePicked] = useState(false);
@@ -78,14 +79,31 @@ const Page = () => {
     const [queryErrorMessage, setQueryErrorMessage] = useState("");
     const [urlErrorMessage, setUrlErrorMessage] = useState("");
     const [pdf, setPdf] = useState();
-    const [extracedText, setExtractedText] = useState([]);
-    const [orderedResults, setOrderedResults] = useState({})
 
-    // useEffect(()=>{
-    //     if (true){
+    const theme = useTheme();
 
-    //     }
-    // })
+
+    const sendProps = () => {
+        // console.log(result.document)
+        // console.log(queryArray)
+        // console.log(JSON.stringify(result.documents))
+        Router.push(
+            {
+                pathname: "/retrain",
+                query: {
+                    document: JSON.stringify(result.documents),
+                    queryArray:[...queryArray]
+                }
+            }
+        )
+    }
+
+    const removeFile = () => {
+        fileRef.current.value = null;
+        setPdf(null)
+        setFileName("No File is Picked")
+        setIsFilePicked(false)
+    }
     const handleBlurQuery = () => {
         if (queryArray < 1) {
             setQueryErrorMessage("Provide one or more queries.");
@@ -100,15 +118,17 @@ const Page = () => {
             setUrlErrorMessage("");
         }
     }
-    const handleFileInput = (event) => {
-        setPdf(event.target.files[0]);
-        setFileName(event.target.files[0].name);
-        setIsFilePicked(true);
+    const handleFileInput = () => {
+        const file = fileRef.current.files[0]
+        setPdf(file);
+        setFileName(file.name);
+        setIsFilePicked(Boolean(file));
     }
     const addQuery = () => {
-        if (!currentquery.trim() == "") {
-            setQueryArray([...new Set([currentquery, ...queryArray])]);
+        if (!queryRef.current.value.trim() == "") {
+            setQueryArray([...new Set([queryRef.current.value, ...queryArray])]);
             setQueryErrorMessage("");
+            queryRef.current.value = "";
         }
     }
     const removeQuery = (text) => {
@@ -129,50 +149,60 @@ const Page = () => {
         // change the tab to results tab
         event.preventDefault();
         try {
-            const body_ = JSON.stringify(
-                {
-                    "queries": [...queryArray],
-                    "url": url
-                }
-            )
-            setTabValue(2)
+            setLoading(true)
             setDisableResult(false)
             if (tabValue == 0) {
-                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data_wrangling/web_scrape`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Origin': `${process.env.NEXT_PUBLIC_API_URL}`
-                        },
-                        body: body_
-                    }
-                )
-            } else if (tabValue == 1) {
                 const body_ = JSON.stringify(
                     {
                         "queries": [...queryArray],
-                        "file": pdf
+                        "url": url
                     }
                 )
-                fetch(`${process.env.NEXT_PUBLIC_API_URL}/data_wrangling/pdf_scrape`,
+                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/web_scrape`,
                     {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Origin': `${process.env.NEXT_PUBLIC_API_URL}`
+                            'Origin': `${process.env.NEXT_PUBLIC_API_URL}/api/web_scrape`
                         },
                         body: body_
                     }
-                );
+                ).then((result) => (result.json()))
+                    .then((data) => {
+                        setResult(data);
+                        setDocument(data.documents);
+                        setLoading(false);
+                        setTabValue(2);
+                    })
+            } else if (tabValue == 1) {
+                const body_ = new FormData();
+                // for(var i=0; i<queryArray.length; i++){
+                //     body.append('queries[]', queryArray[i]);
+                // }
+                queryArray.forEach(item => {
+                    body_.append("queries", item)
+                })
+                body_.append("files", pdf);
+                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/pdf_scrape`, {
+                    // mode: 'no-cors',
+                    method: "POST",
+                    body: body_
+                }).then((result) => (result.json()))
+                    .then((data) => {
+                        setResult(data);
+                        setDocument(data.documents);
+                        setLoading(false);
+                        setTabValue(2);
 
+                    })
             }
-
-
-
         }
         catch (err) {
+            // TODO find a way to parse errors
+            setLoading(false)
+            setTabValue(2);
             console.log(err)
+
         }
     }
 
@@ -188,14 +218,16 @@ const Page = () => {
                 sx={{
                     display: 'flex',
                     justifyContent: 'space-around',
-                    paddingTop: '80px'
+                    paddingTop: '80px',
                 }}
             >
                 <Paper elevation={6}
                     sx={{
                         m: '20px',
                         p: '20px',
-                        minWidth: '1000px'
+                        maxWidth: '80%',
+                        minWidth: '80%'
+
                     }}
                 >
                     <Tabs
@@ -209,106 +241,21 @@ const Page = () => {
                         <Tab label="PDF Scraping" />
                         <Tab name="results" label="Results" disabled={disableResult} />
                     </Tabs>
-                    <form onSubmit={handleSubmit} target='results' method='POST' action={`${process.env.NEXT_PUBLIC_API_URL}/data_wrangling/web_scrape`}>
-                        <TabPanel value={tabValue} index={0}>
-                            <Box sx={{ my: 3 }}>
-                                <Typography
-                                    color={"textPrimary"}
-                                    variant="h4"
-                                >
-                                    Setup
-                                </Typography>
-                                <Typography
-                                    color={"textSecondary"}
-                                    variant="body2"
-                                    gutterBottom
-                                >
-                                    Provide Query/ies and Website URL to Scrape
-                                </Typography>
-                            </Box>
+                    <form>
+                        <SwipeableViews
+                            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                            index={tabValue}
+                            onChangeIndex={handleTabChange}
+                        >
+                            <TabPanel
+                                value={tabValue}
+                                index={0}
+                            >
+                                <Box
+                                    sx={{
+                                        my: 3,
 
-                            <Box display='flex' flexDirection='column'>
-                                <TextField
-                                    label="Query"
-                                    name="Query"
-                                    fullWidth
-                                    margin="normal"
-                                    error={queryErrorMessage.length > 1}
-                                    helperText={queryErrorMessage}
-                                    onBlur={handleBlurQuery}
-                                    onChange={event => { setQuery(event.target.value) }}
-                                    variant="outlined"
-                                    InputProps={{
-                                        endAdornment: (
-                                            <InputAdornment position='start'>
-                                                <IconButton
-                                                    onClick={() => {
-                                                        addQuery(currentquery)
-                                                    }}
-                                                    color="primary"
-                                                >
-                                                    <AddBoxIcon />
-                                                </IconButton>
-                                            </InputAdornment>
-                                        )
-                                    }}
-                                >
-                                </TextField>
-
-                                <Box>
-                                    {queryArray.map((query) => (
-                                        <Chip
-                                            label={query}
-                                            variant="filled"
-                                            sx={{
-                                                m: '2px',
-                                                p: '2px',
-                                            }}
-                                            onDelete={() => {
-                                                removeQuery(query)
-                                            }}
-                                        >
-
-                                        </Chip>
-
-                                    ))}
-                                </Box>
-                                <TextField
-                                    fullWidth
-                                    label="URL"
-                                    margin="normal"
-                                    name="URL"
-                                    value={url}
-                                    onChange={event => { setUrl(event.target.value.trim()) }}
-                                    onBlur={handleBlurURL}
-                                    variant="outlined"
-                                    error={urlErrorMessage.length > 0}
-                                    helperText={urlErrorMessage}
-                                    required
-                                />
-                                <Box>
-                                    <Button
-                                        fullWidth
-                                        color="primary"
-                                        variant="contained"
-                                        // onClick={handleSubmit}
-                                        disabled={queryArray.length < 1 || url.length < 1}
-                                        type="submit"
-                                        sx={{
-                                            ':hover': {
-                                                bgcolor: 'secondary.main', // theme.palette.primary.main
-                                            },
-                                        }}
-                                    >
-                                        Submit
-                                    </Button>
-                                </Box>
-
-                            </Box>
-                        </TabPanel>
-                        <TabPanel value={tabValue} index={1}>
-                            <Box display='flex' flexDirection='column'>
-                                <Box sx={{ my: 3, }}>
+                                    }}>
                                     <Typography
                                         color={"textPrimary"}
                                         variant="h4"
@@ -320,47 +267,45 @@ const Page = () => {
                                         variant="body2"
                                         gutterBottom
                                     >
-                                        Provide Query/ies and Upload a Pdf File to Scrape
+                                        Provide Query/ies and Website URL to Scrape
                                     </Typography>
                                 </Box>
-                                <Box>
+
+                                <Box display='flex' flexDirection='column' sx={{ position: "relative" }}>
+                                    <TextField
+                                        label="Query"
+                                        name="Query"
+                                        fullWidth
+                                        margin="normal"
+                                        inputRef={queryRef}
+                                        error={queryErrorMessage.length > 1}
+                                        required
+                                        helperText={queryErrorMessage}
+                                        onBlur={handleBlurQuery}
+                                        variant="outlined"
+                                        InputProps={{
+                                            endAdornment: (
+                                                <InputAdornment position='start'>
+                                                    <IconButton
+                                                        onClick={() => {
+                                                            addQuery(currentquery)
+                                                        }}
+                                                        color="primary"
+                                                    >
+                                                        <AddIcon />
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            )
+                                        }}
+                                    >
+                                    </TextField>
+
                                     <Box>
-                                        <TextField
-                                            label="Query"
-                                            name="Query"
-                                            fullWidth
-                                            margin="normal"
-                                            error={queryErrorMessage.length > 1}
-                                            helperText={queryErrorMessage}
-                                            onBlur={handleBlurQuery}
-                                            onChange={event => { setQuery(event.target.value) }}
-                                            variant="outlined"
-                                            InputProps={{
-                                                endAdornment: (
-                                                    <InputAdornment position='start'>
-                                                        <IconButton
-                                                            color='primary'
-                                                            onClick={() => {
-                                                                addQuery();
-                                                            }}
-                                                        >
-                                                            <AddBoxIcon />
-                                                        </IconButton>
-                                                    </InputAdornment>
-                                                )
-                                            }}
-                                        >
-                                        </TextField>
-                                    </Box>
-                                    {queryArray.map((query) => (
-                                        <Box
-                                            component="div"
-                                            sx={{
-                                                display: 'inline',
-                                            }} >
+                                        {queryArray.map((query) => (
                                             <Chip
                                                 label={query}
                                                 variant="filled"
+                                                key={query}
                                                 sx={{
                                                     m: '2px',
                                                     p: '2px',
@@ -371,71 +316,204 @@ const Page = () => {
                                             >
 
                                             </Chip>
-                                        </Box>
 
-                                    ))}
-                                    <Box display="flex" justifyContent='space-between' alignItems='center' paddingY='20px' paddingX='10px'>
-                                        <Box width='90%' display="flex" flexDirection="row" alignItems='center'>
-                                            <Box display="flex" width='20%' alignItems='center' margin='10px' flexWrap="wrap" justifyContent='space-between'>
-
-                                                <Typography variant='subtitle2' noWrap  >
-                                                    {fileName}
-                                                </Typography>
-                                            </Box>
-
-                                            <Box>
-                                                <Typography variant='subtitle2'>
-                                                    {(isFilePicked) ? (pdf.size / 1024).toFixed(2) : 0} MB
-                                                </Typography>
-                                            </Box>
-
-                                            {/* <Box width='80%' margin='10px'>
-                                                    <LinearProgress variant='determinate' value={progress} color={(progress >= 100) ? "success" : "secondary"}></LinearProgress>
-                                                </Box> */}
-                                        </Box>
-
-
-                                        <Tooltip title="Upload PDF">
-                                            <Fab component="label" variant='contained' color='primary'
+                                        ))}
+                                    </Box>
+                                    <TextField
+                                        fullWidth
+                                        label="URL"
+                                        margin="normal"
+                                        name="URL"
+                                        value={url}
+                                        onChange={event => { setUrl(event.target.value.trim()) }}
+                                        onBlur={handleBlurURL}
+                                        variant="outlined"
+                                        error={urlErrorMessage.length > 0}
+                                        helperText={urlErrorMessage}
+                                        required
+                                    />
+                                    <Box
+                                        sx={{ position: "relative" }}
+                                    >
+                                        <Button
+                                            fullWidth
+                                            onClick={handleSubmit}
+                                            disabled={queryArray.length < 1 || url.length < 1 || loading}
+                                            type="submit"
+                                           
+                                        >
+                                            {loading ? "Searching" : "Submit"}
+                                        </Button>
+                                        {loading && (
+                                            <CircularProgress
+                                                size={30}
                                                 sx={{
-                                                    ':hover': {
-                                                        bgcolor: 'secondary.main', // theme.palette.primary.main
-                                                    },
+                                                    position: 'absolute',
+                                                    left: "49%",
+                                                    top: "10%",
+                                                    zIndex: 1,
+                                                }}
+                                            />
+                                        )}
+                                    </Box>
+
+                                </Box>
+                            </TabPanel>
+                            <TabPanel value={tabValue} index={1}>
+                                <Box display='flex' flexDirection='column'>
+                                    <Box sx={{ my: 3, }}>
+                                        <Typography
+                                            color={"textPrimary"}
+                                            variant="h4"
+                                        >
+                                            Setup
+                                        </Typography>
+                                        <Typography
+                                            color={"textSecondary"}
+                                            variant="body2"
+                                            gutterBottom
+                                        >
+                                            Provide Query/ies and Upload a Pdf File to Scrape
+                                        </Typography>
+                                    </Box>
+                                    <Box>
+                                        <Box>
+                                            <TextField
+                                                label="Query"
+                                                name="Query"
+                                                fullWidth
+                                                inputRef={queryRef}
+                                                margin="normal"
+                                                error={queryErrorMessage.length > 1}
+                                                helperText={queryErrorMessage}
+                                                onBlur={handleBlurQuery}
+                                                variant="outlined"
+                                                InputProps={{
+                                                    endAdornment: (
+                                                        <InputAdornment position='start'>
+                                                            <IconButton
+                                                                color='primary'
+                                                                onClick={() => {
+                                                                    addQuery();
+                                                                }}
+                                                            >
+                                                                <AddIcon />
+                                                            </IconButton>
+                                                        </InputAdornment>
+                                                    )
                                                 }}
                                             >
-                                                <input required hidden accept='application/pdf' type="file" onChange={handleFileInput} />
-                                                <UploadFileIcon />
-                                            </Fab>
+                                            </TextField>
+                                        </Box>
+                                        {queryArray.map((query) => (
+                                            <Box
+                                                component="div"
+                                                sx={{
+                                                    display: 'inline',
+                                                }} >
+                                                <Chip
+                                                    label={query}
+                                                    variant="filled"
+                                                    sx={{
+                                                        m: '2px',
+                                                        p: '2px',
+                                                    }}
+                                                    onDelete={() => {
+                                                        removeQuery(query)
+                                                    }}
+                                                >
 
-                                        </Tooltip>
+                                                </Chip>
+                                            </Box>
+
+                                        ))}
+                                        <Box display="flex" paddingY='20px' >
+                                            <Paper
+
+                                                elevation={8}
+                                                sx={{
+                                                    flexGrow: 1,
+                                                    marginRight: "10px",
+                                                    width: '80%',
+                                                    padding: '10px'
+                                                }}
+                                            >
+                                                <Box display='flex'>
+                                                    <Box display='flex' margin='10px' width="50%" sx={{ flexGrow: 1, }}>
+                                                        <Typography variant='subtitle2' noWrap width="100%" >
+                                                            {fileName}
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box display='flex' margin='10px'>
+                                                        <Typography variant='subtitle2'>
+                                                            {(isFilePicked) ? (pdf.size / 1024).toFixed(2) : 0} MB
+                                                        </Typography>
+                                                    </Box>
+                                                    <Box>
+                                                        <IconButton
+                                                            onClick={() => {
+                                                                removeFile();
+                                                            }}
+                                                        >
+                                                            < RemoveIcon color='primary'/>
+                                                        </IconButton>
+                                                    </Box>
+                                                </Box>
+                                            </Paper>
+
+
+                                            <Tooltip title="Upload PDF">
+                                                <Fab component="label" variant='contained' color='primary'
+                                                    sx={{
+                                                        ':hover': {
+                                                            bgcolor: 'secondary.main', // theme.palette.primary.main
+                                                        },
+                                                    }}
+                                                >
+                                                    <input hidden accept='application/pdf' type="file" onChange={handleFileInput} ref={fileRef} />
+                                                    <UploadFileIcon />
+                                                </Fab>
+
+                                            </Tooltip>
+                                        </Box>
+                                    </Box>
+                                    <Box
+                                        sx={{ position: "relative" }}
+                                    >
+                                        <Button
+                                            fullWidth
+                                            onClick={handleSubmit}
+                                            disabled={queryArray.length < 1 || !isFilePicked || loading}
+                                            type="submit"
+                                        >
+                                            {loading ? "Searching" : "Submit"}
+                                        </Button>
+                                        {loading && (
+                                            <CircularProgress
+                                                size={30}
+                                                sx={{
+                                                    position: 'absolute',
+                                                    left: "49%",
+                                                    top: "10%",
+                                                    zIndex: 1,
+                                                }}
+                                            />
+                                        )}
                                     </Box>
                                 </Box>
-                                <Box>
-                                    <Button
-                                        fullWidth
-                                        color="primary"
-                                        variant="contained"
-                                        // onClick={handleSubmit}
-                                        disabled={queryArray.length < 1 || !isFilePicked}
-                                        type="submit"
-                                        sx={{
-                                            ':hover': {
-                                                bgcolor: 'secondary.main', // theme.palette.primary.main
-                                            },
-                                        }}
-                                    >
-                                        Submit
-                                    </Button>
+                            </TabPanel>
+                            <TabPanel value={tabValue} index={2}>
+                                <Box sx={{ my: 3 }}>
+                                    <Typography variant='h4' gutterBottom>
+                                        Results
+                                    </Typography>
+                                    <Divider />
+                                    <Box>
+                                        {(result != null) ? <Answer document={result.documents} sendProps={sendProps} answers={result.answers}></Answer> : null}
+                                    </Box>
                                 </Box>
-                            </Box>
-                        </TabPanel>
-                        <TabPanel value={tabValue} index={2}>
-                            <Box sx={{ my: 3 }}>
-                                <Typography variant='h5'>
-                                    Results
-                                </Typography>
-                            </Box>
-                        </TabPanel>
+                            </TabPanel>
+                        </SwipeableViews>
                     </form>
                 </Paper>
             </Box>

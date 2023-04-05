@@ -131,6 +131,21 @@ export const theme = createTheme({
       }
     }
   },
+  transitions: {
+    duration: {
+      shortest: 150,
+      shorter: 200,
+      short: 250,
+      // most basic recommended timing
+      standard: 300,
+      // this is to be used in complex animations
+      complex: 375,
+      // recommended when something is entering screen
+      enteringScreen: 225,
+      // recommended when something is leaving screen
+      leavingScreen: 195,
+    },
+  },
   palette: {
     neutral: {
       100: '#F3F4F6',
@@ -157,16 +172,14 @@ export const theme = createTheme({
     },
     divider: '#E6E8F0',
     primary: {
-      main: '#3A53A4',
-      light: '#6175B6',
-      dark: '#283A72',
-      contrastText: '#FFFFFF'
+      main: '#3f51b5',
+      light: '#c3cae3',
+      dark: '#17276c',
     },
     secondary: {
-      main: '#50C7F2',
-      light: '#73D2F4',
-      dark: '#388BA9',
-      contrastText: '#FFFFFF'
+      main: '#3a88a4',
+      light: '#b2e0f2',
+      dark: '#1b647b',
     },
     success: {
       main: '#14B8A6',

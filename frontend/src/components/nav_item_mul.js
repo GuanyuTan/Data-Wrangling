@@ -61,6 +61,7 @@ export const MulItem = (props) => {
                         <NavItem
                         title={child.title}
                         href={child.href}
+                        key={child.title}
                             sx={{
                                 pl: 4,
                                 pr: 2,

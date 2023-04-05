@@ -96,6 +96,12 @@ export const DashboardSidebar = (props) => {
           </Link>
         </Box>
         <Box sx={{ flexGrow: 1 }}>
+          <NavItem
+          key="Home"
+          href="/"
+          title="Home"
+
+          />
           {
             menuItems.map((item) => (
               <MulItem
@@ -110,7 +116,6 @@ export const DashboardSidebar = (props) => {
           {items.map((item) => (
             <NavItem
               key={item.title}
-              icon={item.icon}
               href={item.href}
               title={item.title}
             />
