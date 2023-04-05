@@ -99,8 +99,8 @@ export const TableA = (props) => (
                                     {cat.type}
                                 </TableCell>
                                 <TableCell>
-                                    {cat.threats.map((item) => (
-                                        <Box display="flex" alignItems='center' padding="10px" justifyContent="space-between">
+                                    {cat.threats.map((item, index) => (
+                                        <Box key={`some${index}`} display="flex" alignItems='center' padding="10px" justifyContent="space-between">
                                             <Typography>
                                                 {item.text}
                                             </Typography>
