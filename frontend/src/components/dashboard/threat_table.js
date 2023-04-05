@@ -116,8 +116,8 @@ export const TableA = (props) => (
                                     ))}
                                 </TableCell>
                                 <TableCell>
-                                    {cat.opportunities.map((item) => (
-                                        <Box display="flex" alignItems='center' padding="10px" justifyContent="space-between">
+                                    {cat.opportunities.map((item, index) => (
+                                        <Box key={`another${index}`} display="flex" alignItems='center' padding="10px" justifyContent="space-between">
                                             <Typography>
                                                 {item.text}
                                             </Typography>
