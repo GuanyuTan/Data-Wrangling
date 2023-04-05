@@ -50,7 +50,7 @@ export const DashboardNavbar = (props) => {
               passHref
             >
               <a>
-                <Image src='/adiba.png' width={85} height={85/2} />
+                <Image src='/adiba.png' width={85} height={85/2} alt='logo'/>
               </a>
             </Link>
           </Box>

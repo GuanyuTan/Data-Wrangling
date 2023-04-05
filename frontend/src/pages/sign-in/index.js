@@ -320,10 +320,12 @@ const Page = () => {
               >
                 Create secure, seamless user experiences with Zalter Passwordless Authentication.
               </Typography>
-              <img
+              <Image
                 alt=""
                 src="/static/images/sign-in-illustration.svg"
-              />
+                width={45}
+                height={45}
+                />
             </Box>
           </Grid>
         </Grid>

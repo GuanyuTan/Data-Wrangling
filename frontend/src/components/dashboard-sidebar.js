@@ -91,7 +91,7 @@ export const DashboardSidebar = (props) => {
             passHref
           >
             <a>
-              <Image src='/adiba.png' width={200} height={200/2} />
+              <Image src='/adiba.png' width={200} height={200/2} alt='logo' />
             </a>
           </Link>
         </Box>
@@ -107,7 +107,7 @@ export const DashboardSidebar = (props) => {
               <MulItem
                 key={item.title}
                 title={item.title}
-                children={item.sub}
+                list={item.sub}
               >
 
               </MulItem>

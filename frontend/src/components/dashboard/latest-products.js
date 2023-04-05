@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Image from 'next/image';
 
 const products = [
   {
@@ -62,13 +63,12 @@ export const LatestProducts = (props) => (
           key={product.id}
         >
           <ListItemAvatar>
-            <img
+            <Image
               alt={product.name}
               src={product.imageUrl}
-              style={{
-                height: 48,
-                width: 48
-              }}
+              height={48}
+              width={48}
+              
             />
           </ListItemAvatar>
           <ListItemText

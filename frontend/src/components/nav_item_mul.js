@@ -6,7 +6,7 @@ import { NavItem } from './nav-item';
 import { useRouter } from 'next/router';
 
 export const MulItem = (props) => {
-    const { title, children, ...others } = props;
+    const { title, list, ...others } = props;
     const [open, toggleOpen] = useState(false);
     const handleClick = () => {
         toggleOpen(!open);
@@ -57,7 +57,7 @@ export const MulItem = (props) => {
             >
 
                 {
-                    children.map((child) => (
+                    list.map((child) => (
                         <NavItem
                         title={child.title}
                         href={child.href}
@@ -82,6 +82,6 @@ export const MulItem = (props) => {
 
 MulItem.propTypes = {
     title: PropTypes.string,
-    children: PropTypes.array
+    list: PropTypes.array
 };
 
