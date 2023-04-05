@@ -8,6 +8,7 @@ import { auth, ENABLE_AUTH } from '../../lib/auth';
 import { Logo } from '../../components/logo';
 import { useAuthContext } from '../../contexts/auth-context';
 import Router from 'next/router';
+import Image from 'next/image';
 
 const Page = () => {
   const [tab, setTab] = useState('email');
