@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { Box, CircularProgress, Typography } from '@mui/material';
 import { Logo } from '../../components/logo';
 import { useAuthContext } from '../../contexts/auth-context';
-import { auth, ENABLE_AUTH } from '../../lib/auth';
+import { auth, ENABLE_AUTH } from '../../authlib/auth';
 
 const parseUrl = () => {
   // Get the token from the page URL hash (without #)

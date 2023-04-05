@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { auth, ENABLE_AUTH } from '../lib/auth';
+import { auth, ENABLE_AUTH } from '../authlib/auth';
 
 const HANDLERS = {
   INITIALIZE: 'INITIALIZE',
