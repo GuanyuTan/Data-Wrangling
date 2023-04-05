@@ -85,7 +85,7 @@ const Register = () => {
         const res_2 = await login(values)
         if (res_2.status == 200){
           const json = res_2.json()
-          localStorage.setItem('token', json.access_token);
+          typeof window!==undefined?localStorage.setItem('token', json.access_token): null;
           router.push("/dashboard");
         }
         else{
