@@ -18,27 +18,6 @@ import { useState } from 'react';
 import { login, signup } from '../requests/userApi';
 
 const Register = () => {
-  // const [username, setUsername] = useState("")
-  // const [email, setEmail] = useState("")
-  // const [firstName, setFirstName] = useState("")
-  // const [lastName, setLastName] = useState("")
-  // const [password, setPassword] = useState("")
-  // const [tnc, setTnC] = useState(false)
-
-  //   const handleBlurUsername = () => {
-  //     if (username.length < 1) {
-  //       setUrlErrorMessage("Enter username");
-  //     } else {
-  //       setUrlErrorMessage("");
-  //     }
-  //   }
-  //   const handleBlurEmail = () => {
-  //     if (url.length < 1) {
-  //         setUrlErrorMessage("Provide a website URL");
-  //     } else {
-  //         setUrlErrorMessage("");
-  //     }
-  // }
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -85,7 +64,7 @@ const Register = () => {
         const res_2 = await login(values)
         if (res_2.status == 200){
           const json = res_2.json()
-          (typeof window!=='undefined')?localStorage.setItem('token', json.access_token): null;
+          (typeof window !== 'undefined')?window.localStorage.setItem('token', json.access_token): null;
           router.push("/dashboard");
         }
         else{
