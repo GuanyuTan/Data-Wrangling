@@ -4,13 +4,13 @@ import Router from 'next/router';
 
 const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}/users`
 // const userSubject = new BehaviorSubject((typeof window === 'undefined') && JSON.parse(localStorage.getItem('user')));
-export const userService ={
-    user: userSubject.asObservable(),
-    get userValue () {return userSubject.value},
-    login,
-    logout,
-    getAll
-};
+// export const userService ={
+//     user: userSubject.asObservable(),
+//     get userValue () {return userSubject.value},
+//     login,
+//     logout,
+//     getAll
+// };
 
 export const signup = async (values) => {
     try {
@@ -41,7 +41,7 @@ export const signup = async (values) => {
 
 export const logout = async()=>{
     // (typeof window !== 'undefined')?localStorage.removeItem('user'):null;
-    userSubject.next(null);
+    // userSubject.next(null);
 }
 
 export const login =async(values) => {
