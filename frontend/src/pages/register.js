@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import NextLink from 'next/link';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -64,7 +64,9 @@ const Register = () => {
         const res_2 = await login(values)
         if (res_2.status == 200){
           const json = res_2.json()
-          (typeof window !== 'undefined')?window.localStorage.setItem('token', json.access_token): null;
+          // if(typeof window !=='undefined'){
+          //   window.localStorage.setItem('token', json.access_token)
+          // }
           router.push("/dashboard");
         }
         else{
