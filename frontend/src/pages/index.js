@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 import { Answer } from '../components/datawrangling/answers'

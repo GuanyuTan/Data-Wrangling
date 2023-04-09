@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 import { Answer } from '../components/datawrangling/answers'
@@ -333,11 +332,10 @@ const Page = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: "center",
-                    justifyContent: 'center',
                     paddingTop: '70px',
                     margin: 'auto',
+                    paddingX: '40px',
                     height: '100%',
-                    width: '100%'
                 }}
             >
                 <Box
@@ -367,7 +365,7 @@ const Page = () => {
                         sx={{
                             height: 80,
                             width: 140,
-                            marginLeft: '35px'
+                            marginLeft: '40px'
                         }}
                     >
                         <ButtonWithText

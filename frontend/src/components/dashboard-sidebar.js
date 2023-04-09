@@ -98,7 +98,7 @@ export const DashboardSidebar = (props) => {
         <Box sx={{ flexGrow: 1 }}>
           <NavItem
           key="Home"
-          href="/"
+          href="/home"
           title="Home"
 
           />

@@ -1,15 +1,17 @@
-import { Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+// import styled from "@emotion/styled";
+import { Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, styled } from "@mui/material";
 import { Box } from "@mui/system";
 import Head from "next/head";
 import { DashboardLayout } from "../components/dashboard-layout"
-import PerfectScrollbar from "react-perfect-scrollbar";
-
 const label = [
     'TASK',
     'SUB-TASK',
     'DETAIL DESCRIPTION',
     'TEMPLATE'
 ]
+
+
+
 const data = [
     {
         task: "SET UP STRATEGIC PLANNING TEAM",
@@ -105,13 +107,13 @@ const Page = () => {
                     paddingBottom: '40px'
                 }}
             >
-                <TableContainer component={Paper}>
-                    <Table>
+                <TableContainer component={Paper} >
+                    <Table >
                         <TableHead>
                             <TableRow>
                                 {label.map((item, index) => {
                                     return (
-                                        <TableCell key={`label_${index}`}>
+                                        <TableCell key={`label_${index}`} >
                                             {item}
                                         </TableCell>
                                     )
@@ -128,34 +130,34 @@ const Page = () => {
                                         item.subtask.map((subtask, index) => (
                                             <TableRow key={`row_${index}`}>
                                                 {(index == 0) ? (
-                                                    <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top' }}>
+                                                    <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top',   }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.task}
                                                         </Typography>
                                                     </TableCell>
                                                 ) : null}
-                                                <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top',    }}>
                                                     <Typography gutterBottom fontSize={14}>
                                                         {subtask}
                                                     </Typography>
                                                 </TableCell>
                                                 {(index < item.detail.length) ? (
-                                                    <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                    <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top',   }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.detail[index]}
                                                         </Typography>
                                                     </TableCell>
-                                                ) : (<TableCell>
+                                                ) : (<TableCell sx={{ verticalAlign: 'top',  }}>
                                                 </TableCell>)}
                                                 {(index < item.template.length) ? (
-                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' ,   }}>
                                                         <Link>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.template[index]}
                                                             </Typography>
                                                         </Link>
                                                     </TableCell>
-                                                ) : (<TableCell>
+                                                ) : (<TableCell sx={{ verticalAlign: 'top' ,   }} >
                                                 </TableCell>)}
                                             </TableRow>
                                         ))
@@ -163,34 +165,34 @@ const Page = () => {
                                         item.detail.map((detail, index) => (
                                             <TableRow key={`row_${index}`}>
                                                 {(index == 0) ? (
-                                                    <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top' }}>
+                                                    <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top',  }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.task}
                                                         </Typography>
                                                     </TableCell>
                                                 ) : null}
                                                 {(index < item.subtask.length) ? (
-                                                    <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                    <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top',  }}>
                                                         <Typography gutterBottom fontSize={14}>
                                                             {item.subtask[index]}
                                                         </Typography>
-                                                    </TableCell>
-                                                ) : (<TableCell>
+                                                    </TableCell >
+                                                ) : (<TableCell sx={{ verticalAlign: 'top',  }} >
                                                 </TableCell>)}
-                                                <TableCell sx={{ verticalAlign: 'top' }}>
+                                                <TableCell sx={{ verticalAlign: 'top',  }}>
                                                     <Typography key={`detail_${id}_${index}`} gutterBottom fontSize={14}>
                                                         {detail}
                                                     </Typography>
                                                 </TableCell>
                                                 {(index < item.template.length) ? (
-                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top',  }}>
                                                         <Link>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.template[index]}
                                                             </Typography>
                                                         </Link>
                                                     </TableCell>
-                                                ) : (<TableCell>
+                                                ) : (<TableCell sx={{ verticalAlign: 'top',  }} >
                                                 </TableCell>)}
                                             </TableRow>
                                         ))
@@ -200,29 +202,29 @@ const Page = () => {
                                             item.template.map((template, index) => (
                                                 <TableRow key={`row_${index}`}>
                                                     {(index == 0) ? (
-                                                        <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top' }}>
+                                                        <TableCell key={`task_${id}_${index}`} rowSpan={maxRows} sx={{ verticalAlign: 'top', }}>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.task}
                                                             </Typography>
                                                         </TableCell>
                                                     ) : null}
                                                     {(index < item.subtask.length) ? (
-                                                        <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                        <TableCell key={`subtask_${id}_${index}`} sx={{ verticalAlign: 'top',  }}>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.subtask[index]}
                                                             </Typography>
                                                         </TableCell>
-                                                    ) : (<TableCell>
+                                                    ) : (<TableCell sx={{ verticalAlign: 'top',  }}>
                                                     </TableCell>)}
                                                     {(index < item.detail.length) ? (
-                                                        <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top' }}>
+                                                        <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top',  }}>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {item.detail[index]}
                                                             </Typography>
                                                         </TableCell>
-                                                    ) : (<TableCell>
+                                                    ) : (<TableCell sx={{ verticalAlign: 'top',  }} >
                                                     </TableCell>)}
-                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top' }} >
+                                                    <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top',  }} >
                                                         <Link>
                                                             <Typography gutterBottom fontSize={14}>
                                                                 {template}

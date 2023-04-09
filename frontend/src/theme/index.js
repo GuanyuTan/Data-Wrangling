@@ -131,6 +131,7 @@ export const theme = createTheme({
       }
     }
   },
+
   transitions: {
     duration: {
       shortest: 150,
@@ -170,7 +171,7 @@ export const theme = createTheme({
       default: '#F9FAFC',
       paper: '#FFFFFF'
     },
-    divider: '#E6E8F0',
+    divider: '#000000',
     primary: {
       main: '#3f51b5',
       light: '#c3cae3',
