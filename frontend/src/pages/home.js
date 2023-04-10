@@ -1,26 +1,14 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
-import { Answer } from '../components/datawrangling/answers'
 import { DashboardLayout } from '../components/dashboard-layout';
 import {
     Box,
-    Icon,
-    Card,
-    CardContent,
     Divider,
     Paper,
-    SvgIcon,
     Typography,
     Link,
 } from '@mui/material';
-import { useEffect, useRef, useState } from 'react';
-import { QueryComponent } from '../components/datawrangling/query_component';
-import { color, height } from '@mui/system';
-import { id } from 'date-fns/locale';
-import { boolean } from 'yup';
-import { GrowButton, StyledButton } from '../components/datawrangling/button-enlarge';
-import { AdminPanelSettings } from '@mui/icons-material';
+import { StyledButton } from '../components/datawrangling/button-enlarge';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import TurnSlightRightIcon from '@mui/icons-material/TurnSlightRight';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
@@ -45,32 +33,32 @@ const items = [
     {
         title: "Data Analytics Product Modeling",
         icon: <AssessmentOutlinedIcon sx={{ color: 'white' }} />,
-        href: "/analytics-product-modeling"
+        href: "/data-analytics-product-modeling"
     },
     {
         title: "Data Analytics Product Development",
         icon: <Inventory2OutlinedIcon sx={{ color: 'white' }} />,
-        href: "/"
+        href: "/data-analytics-product-development"
     },
     {
         title: "Model and Analytics Product Evaluation",
         icon: <VerifiedOutlinedIcon sx={{ color: 'white' }} />,
-        href: "/"
+        href: "/model-and-analytics-product-evaluation"
     },
     {
         title: "Data Analytics Product Deployment",
         icon: <TerminalOutlinedIcon sx={{ color: 'white' }} />,
-        href: "/"
+        href: "/data-analytics-product-development"
     },
     {
         title: "Monitoring, Maintenance and Upgrades",
         icon: <GradingOutlinedIcon sx={{ color: 'white' }} />,
-        href: "/"
+        href: "/monitoring-maintenance-and-upgrades"
     },
     {
         title: "Data Preparation",
         icon: <FilterAltOutlinedIcon sx={{ color: 'white' }} />,
-        href: "/"
+        href: "/data-preparation"
     }
 ]
 
@@ -222,9 +210,7 @@ const Comp = (props) => {
     const radius = 85
     const width = 2 * (radius + 40 + 160)
     const height = 2 * (radius + 40 + 80)
-    const card_positions = []
     const number = items.length
-    const [variant, setVariant] = useState("circular")
     // positions will be in {x,y} format
     const positions = []
     const angle = 2 * Math.PI / number
@@ -374,6 +360,7 @@ const Page = () => {
                             iconSize={60}
                             icon={<HandshakeIcon sx={{ color: 'white' }} />}
                             text="Enterprise Big Data Analytics Preparation"
+                            href='/enterprise-big-data-analytics-preparation'
                             iconPosition="left" />
                     </Box>
                     <ArrowRightIcon fontSize='large' />
@@ -390,6 +377,7 @@ const Page = () => {
                             iconSize={60}
                             icon={<Diversity3Icon sx={{ color: 'white' }} />}
                             text="Business Understanding"
+                            href='/business-understanding'
                             iconPosition="left" />
                     </Box>
                     <ArrowRightIcon fontSize='large' />
@@ -414,6 +402,7 @@ const Page = () => {
                                 iconSize={60}
                                 icon={<AccountBalanceOutlinedIcon sx={{ color: 'white' }} />}
                                 text="Data Governance"
+                                href='/data-governance'
                                 iconPosition="top" />
                             <ArrowDropDownIcon fontSize='large' />
                         </Box>
@@ -432,6 +421,7 @@ const Page = () => {
                                     iconSize={60}
                                     icon={<LayersIcon sx={{ color: 'white' }} />}
                                     text="Data Management and Understanding"
+                                    href='/data-management-and-understanding'
                                     iconPosition="top" />
                             </Box>
                             <ArrowDropDownIcon fontSize='large' />
@@ -452,6 +442,7 @@ const Page = () => {
                                     iconSize={60}
                                     icon={<ConstructionIcon sx={{ color: 'white' }} />}
                                     text="Tools, Technology, and Infrastructure Procurement"
+                                    href='/tools-techbology-and-infrastructure-procurement'
                                     iconPosition="top" />
                             </Box>
                         </Box>
@@ -469,7 +460,9 @@ const Page = () => {
                             width={120}
                             iconSize={60}
                             icon={<Diversity3Icon sx={{ color: 'white' }}></Diversity3Icon>}
-                            text="Project Planning" iconPosition="left" />
+                            text="Project Planning"
+                            href='/project-planning'
+                            iconPosition="left" />
                     </Box>
                     <ArrowRightIcon fontSize='large' />
                     <Box
@@ -491,7 +484,14 @@ const Page = () => {
                             marginLeft: '35px'
                         }}
                     >
-                        <ButtonWithText height={80} width={160} iconSize={60} icon={<SupervisedUserCircleIcon sx={{ color: 'white' }}></SupervisedUserCircleIcon>} text="Data Product Enculturation" iconPosition="left" />
+                        <ButtonWithText
+                            height={80}
+                            width={160}
+                            iconSize={60}
+                            icon={<SupervisedUserCircleIcon sx={{ color: 'white' }}></SupervisedUserCircleIcon>}
+                            text="Data Product Enculturation"
+                            href='/data-product-enculturation'
+                            iconPosition="left" />
                     </Box>
                 </Box>
             </Box>
