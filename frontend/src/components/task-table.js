@@ -45,8 +45,8 @@ export const DataTable = (props) => {
                                         </TableCell>
                                         {(item.detail.length == 1 && index == 0) ? (
                                             <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
-                                                {item.detail[0].map((tem) => (
-                                                    <Typography gutterBottom fontSize={14}>
+                                                {item.detail[0].map((tem, i) => (
+                                                    <Typography key={`detail_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                         {tem}
                                                     </Typography>
                                                 ))}
@@ -54,8 +54,8 @@ export const DataTable = (props) => {
                                         ) :
                                             (index < item.detail.length && item.detail.length != 1) ? (
                                                 <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top', }}>
-                                                    {item.detail[index].map((tem) => (
-                                                        <Typography gutterBottom fontSize={14}>
+                                                    {item.detail[index].map((tem, i) => (
+                                                        <Typography key={`detail_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     ))}
@@ -66,9 +66,9 @@ export const DataTable = (props) => {
                                         }
                                         {(item.template.length == 1 && index == 0) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
-                                                {item.template[0].map((tem) => (
+                                                {item.template[0].map((tem, i) => (
                                                     <Link>
-                                                        <Typography gutterBottom fontSize={14}>
+                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -76,9 +76,9 @@ export const DataTable = (props) => {
                                             </TableCell>
                                         ) : (index < item.template.length && item.template.length != 1) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }}>
-                                                {item.template[index].map((tem) => (
+                                                {item.template[index].map((tem, i) => (
                                                     <Link>
-                                                        <Typography gutterBottom fontSize={14}>
+                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -116,17 +116,17 @@ export const DataTable = (props) => {
                                         ) : (<TableCell sx={{ verticalAlign: 'top', }} >
                                         </TableCell>)}
                                         <TableCell sx={{ verticalAlign: 'top', }}>
-                                            {item.detail[index].map((tem) => (
-                                                <Typography gutterBottom fontSize={14}>
+                                            {item.detail[index].map((tem, i) => (
+                                                <Typography key={`detail_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                     {tem}
                                                 </Typography>
                                             ))}
                                         </TableCell>
                                         {(item.template.length == 1 && index == 0) ? (
-                                            <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
-                                                {item.template[0].map((tem) => (
+                                            <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
+                                                {item.template[0].map((tem, i) => (
                                                     <Link>
-                                                        <Typography gutterBottom fontSize={14}>
+                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -134,9 +134,9 @@ export const DataTable = (props) => {
                                             </TableCell>
                                         ) : (index < item.template.length && item.template.length != 1) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }}>
-                                                {item.template[index].map((tem) => (
+                                                {item.template[index].map((tem,i) => (
                                                     <Link>
-                                                        <Typography gutterBottom fontSize={14}>
+                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -177,8 +177,8 @@ export const DataTable = (props) => {
                                             </TableCell>)}
                                             {(item.detail.length == 1 && index == 0) ? (
                                                 <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
-                                                    {item.detail[0].map((tem) => (
-                                                        <Typography gutterBottom fontSize={14}>
+                                                    {item.detail[0].map((tem, i) => (
+                                                        <Typography key={`detail_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     ))}
@@ -186,8 +186,8 @@ export const DataTable = (props) => {
                                             ) :
                                                 (index < item.detail.length && item.detail.length != 1) ? (
                                                     <TableCell key={`detail_${id}_${index}`} sx={{ verticalAlign: 'top', }}>
-                                                        {item.detail[index].map((tem) => (
-                                                            <Typography gutterBottom fontSize={14}>
+                                                        {item.detail[index].map((tem, i) => (
+                                                            <Typography key={`detail_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                                 {tem}
                                                             </Typography>
                                                         ))}
@@ -197,9 +197,9 @@ export const DataTable = (props) => {
                                                     </TableCell>) : null
                                             }
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }} >
-                                                {item.template[index].map((tem) => (
+                                                {item.template[index].map((tem,i) => (
                                                     <Link>
-                                                        <Typography gutterBottom fontSize={14}>
+                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
