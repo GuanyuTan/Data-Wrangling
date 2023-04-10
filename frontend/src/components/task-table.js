@@ -67,8 +67,8 @@ export const DataTable = (props) => {
                                         {(item.template.length == 1 && index == 0) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
                                                 {item.template[0].map((tem, i) => (
-                                                    <Link>
-                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
+                                                    <Link key={`template_${id}_${index}_${i}`}>
+                                                        <Typography  gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -77,7 +77,7 @@ export const DataTable = (props) => {
                                         ) : (index < item.template.length && item.template.length != 1) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }}>
                                                 {item.template[index].map((tem, i) => (
-                                                    <Link>
+                                                    <Link key={`template_${id}_${index}_${i}`}>
                                                         <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
@@ -125,8 +125,8 @@ export const DataTable = (props) => {
                                         {(item.template.length == 1 && index == 0) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }} rowSpan={maxRows}>
                                                 {item.template[0].map((tem, i) => (
-                                                    <Link>
-                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
+                                                    <Link key={`template_${id}_${index}_${i}`}>
+                                                        <Typography  gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -135,8 +135,8 @@ export const DataTable = (props) => {
                                         ) : (index < item.template.length && item.template.length != 1) ? (
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }}>
                                                 {item.template[index].map((tem,i) => (
-                                                    <Link>
-                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
+                                                    <Link key={`template_${id}_${index}_${i}`}>
+                                                        <Typography gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
@@ -198,8 +198,8 @@ export const DataTable = (props) => {
                                             }
                                             <TableCell key={`template_${id}_${index}`} sx={{ verticalAlign: 'top', }} >
                                                 {item.template[index].map((tem,i) => (
-                                                    <Link>
-                                                        <Typography key={`template_${id}_${index}_${i}`} gutterBottom fontSize={14}>
+                                                    <Link key={`template_${id}_${index}_${i}`}>
+                                                        <Typography gutterBottom fontSize={14}>
                                                             {tem}
                                                         </Typography>
                                                     </Link>
