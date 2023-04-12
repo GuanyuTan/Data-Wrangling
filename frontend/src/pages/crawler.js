@@ -74,7 +74,6 @@ const Page = () => {
     const [fileName, setFileName] = useState("No File is Picked");
     const [isFilePicked, setIsFilePicked] = useState(false);
     const [disableResult, setDisableResult] = useState(true);
-    const [progress, setProgress] = useState(100);
     const [tabValue, setTabValue] = useState(0)
     const [queryErrorMessage, setQueryErrorMessage] = useState("");
     const [urlErrorMessage, setUrlErrorMessage] = useState("");
@@ -91,7 +90,7 @@ const Page = () => {
             {
                 pathname: "/retrain",
                 query: {
-                    document: JSON.stringify(result.documents),
+                    document_: JSON.stringify(result.documents),
                     queryArray: [...queryArray]
                 }
             }
@@ -235,8 +234,7 @@ const Page = () => {
                         indicatorColor='primary'
                         value={tabValue}
                         centered
-                        onChange={handleTabChange}
-                        sx={{ borderRight: 1, borderColor: 'divider', paddingTop: "10px" }}>
+                        onChange={handleTabChange}>
                         <Tab label="Web Scraping" />
                         <Tab label="PDF Scraping" />
                         <Tab name="results" label="Results" disabled={disableResult} />
@@ -502,7 +500,6 @@ const Page = () => {
                                     <Typography variant='h4' gutterBottom>
                                         Results
                                     </Typography>
-                                    <Divider />
                                     <Box>
                                         {(result != null) ? <Answer document={result.documents} sendProps={sendProps} answers={result.answers}></Answer> : null}
                                     </Box>

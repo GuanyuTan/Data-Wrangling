@@ -35,7 +35,7 @@ export const Answer = (props) => {
                         <Box height="300px" overflow="scroll">
                             {document.map((doc, index) => (
                                 <Box marginBottom="15px" key={doc.id}>
-                                    <Typography sx={{overflowWrap: "anywhere"}} variant='body1'>
+                                    <Typography sx={{ overflowWrap: "anywhere" }} variant='body1'>
                                         {doc["content"]}
                                     </Typography>
                                 </Box>
@@ -55,11 +55,15 @@ export const Answer = (props) => {
                     <AccordionDetails>
                         {answers.map((ans, index) => (
                             <Box
-                            key={`answer_${index}`} 
-                            sx={{ height: 400, width: '100%' }}>
-                                <Typography variant='body1'>
-                                    {ans["query"]}
-                                </Typography >
+                                marginY='50px'
+                                key={`answer_${index}`}
+                                sx={{ height: 400, width: '100%' }}>
+                                <Box>
+                                    <Typography variant='body1' gutterBottom >
+                                        {ans["query"]}
+                                    </Typography >
+                                </Box>
+
                                 <DataGrid
                                     pageSize={5}
                                     rows={ans["answers"]}

@@ -1,48 +1,59 @@
 import {
-    Box, Tooltip, CircularProgress, LinearProgress, Typography, Paper, Accordion, AccordionSummary, AccordionDetails, Divider, Button, TextField, IconButton
+    Box, Tooltip, CircularProgress, InputAdornment, Typography, Paper, Accordion, AccordionSummary, AccordionDetails, Divider, Button, TextField, IconButton
 
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from 'react';
+import DoneIcon from '@mui/icons-material/Done';
+import { useEffect, useState } from 'react';
 
 
 export const QueryComponent = (props) => {
-    const {queryAns, setQueryAns, answer, id, ...others } = props;
+    const { queryAns,
+        setQueryAns,
+        id,
+        openId,
+        handleAccChange,
+        selection,
+        setSelectedDoc,
+        ...others } = props;
     const [currentAns, setCurrentAns] = useState("Here");
-    const [edit, toggleEdit] = useState(false)
-    const [helperText, setHelperText] = useState("")
+    const [edit, toggleEdit] = useState(false);
+    const [helperText, setHelperText] = useState("");
+
     const handleChange = (event) => {
         if (event.target.value.trim() === "") {
-            setHelperText("Enter an answer.")
-            setCurrentAns(event.target.value.trim())
+            setHelperText("Enter an answer.");
+            setCurrentAns(event.target.value.trim());
         }
         else {
-            setHelperText("")
-            setCurrentAns(event.target.value.trim())
+
         }
     }
+    useEffect(() => {
+        if (openId == id) {
+            setCurrentAns(selection.context)
+            setSelectedDoc(selection.pageIndex)
+        }
+    }, [selection])
 
     const removeQueryComponent = (e) => {
-        e.stopPropagation()
-        const copy = [...queryAns]
-        copy.splice(id, 1)
-        console.log(copy)
-        setQueryAns([...copy])
+        e.stopPropagation();
+        const copy = [...queryAns];
+        copy.splice(id, 1);
+        setQueryAns([...copy]);
     }
     const handleEdit = (e) => {
         toggleEdit(true);
-        console.log("toggled")
     }
 
     const keyPress = (e) => {
         if (e.keyCode == 13) {
             if (!(currentAns.trim() === "")) {
-                const copy = [...queryAns]
-                console.log(copy)
-                copy[id].answer = currentAns
-                setQueryAns([...copy])
-                toggleEdit(false)
+                const copy = [...queryAns];
+                copy[id].answer = currentAns;
+                setQueryAns([...copy]);
+                toggleEdit(false);
             }
         }
     }
@@ -50,9 +61,14 @@ export const QueryComponent = (props) => {
     return (
         <>
             <Box marginBottom="10px">
-                <Accordion sx={{color: (helperText.length>1)?"error.main":"black"}}>
+                <Accordion
+                    sx={{ color: (helperText.length > 1) ? "error.main" : "black" }}
+                    elevation={9}
+                    expanded={id === openId}
+                    onChange={handleAccChange(id)}
+                >
                     <AccordionSummary
-                       
+
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                     >
@@ -69,7 +85,7 @@ export const QueryComponent = (props) => {
                     </AccordionSummary>
                     <AccordionDetails>
                         {!edit ? (
-                            <Box>
+                            <Box paddingLeft='10px'>
                                 <Tooltip title="Click to edit" placement='bottom-start'>
                                     <Typography
                                         onClick={handleEdit}
@@ -91,7 +107,6 @@ export const QueryComponent = (props) => {
                                     onKeyDown={keyPress}
                                     fullWidth
                                     defaultValue={currentAns}
-                                    value={answer}
                                     required
                                     onChange={handleChange}
 

@@ -16,6 +16,9 @@ import {
     IconButton,
     Button,
     Divider,
+    Snackbar,
+    Alert,
+    Pagination,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useEffect, useRef, useState } from 'react';
@@ -23,6 +26,8 @@ import { QueryComponent } from '../components/datawrangling/query_component';
 import Highlighter from 'react-highlight-words';
 import { Router, useRouter } from 'next/router';
 import { SearchBar } from '../components/datawrangling/search-bar';
+import CloseIcon from '@mui/icons-material/Close';
+import SelectionHighlighter from 'react-highlight-selection'
 
 
 const queries = [
@@ -32,16 +37,27 @@ const queries = [
 const Page = () => {
 
     const router = useRouter();
+    const [selectedAcc, setSelectedAccordion] = useState(0);
     const [search, setSearch] = useState([])
     const [queryAns, setQueryAns] = useState([]);
-    const [doc, setDoc] = useState("")
-    const [open, setOpen] = useState(false);
+    const [queryDoc, setQueryDoc] = useState([]);
+    const [selectedDoc, setSelectedDoc] = useState([]);
+    const [doc, setDoc] = useState([]);
+    const [textOnly, setTextOnly] = useState([]);
+    const [openDialog, setOpenDialog] = useState(false);
     const [queryPlaceholder, setQuery] = useState("");
+    const [error, setError] = useState({});
+    const [openSnack, setOpenSnack] = useState(false);
+    const [pageIndex, setPageIndex] = useState(0);
+    const page_ = useRef(0);
+    const [selection, setSelectedContext] = useState({});
+    const [openId, setOpenId] = useState(0);
+
 
     const {
         isReady,
         query: {
-            document,
+            document_,
             queryArray
         }
     } = router;
@@ -51,19 +67,20 @@ const Page = () => {
             console.log('Router not ready');
             return;
         }
-        // console.log(queryArray);
-        if (!doc) {
+        if (doc.length == 0) {
             if (typeof queryArray === "string") {
                 const copy = queryArray
                 queryArray = []
                 queryArray.push(copy)
             }
-            const str = ""  
-            // JSON.parse(document).forEach((item)=>{
-            //     str = str.concat(item.content)
-            // })
-            console.log(JSON.parse(document))
-            setDoc(JSON.parse(document)[0].content)
+
+            const d = JSON.parse(document_)
+            setDoc([...d])
+            const a = []
+            d.forEach(element => {
+                a.push(element.content)
+            })
+            setTextOnly([...a])
             const arr = [];
             queryArray.forEach(element => {
                 arr.push({
@@ -72,31 +89,56 @@ const Page = () => {
                 })
             });
             setQueryAns([...arr])
+            const textarea = document.getElementById('textarea')
+            textarea.addEventListener('mouseup', onMouseUp, false)
         }
-
     }, [isReady]);
 
-
+    const onMouseUp = (e) => {
+        console.log(e)
+        setSelectedContext({
+            context: window.getSelection().toString(),
+            pageIndex: page_.current
+        })
+    }
+    
     const handleSubmit = async () => {
-        const body_ = JSON.stringify(
-            {
-                "query_ans": queryAns,
-                "document": {
-                    "content": doc,
-                    "id": 0,
+        if (queryAns.length < 1) {
+            setError({
+                message: 'No Query Given',
+                type: 'error'
+            })
+        } else {
+            const body_ = JSON.stringify(
+                {
+                    "query_ans": queryAns,
+                    "document": {
+                        "content": textOnly,
+                        "id": 0,
+                    }
                 }
-            }
-        )
-        await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/train`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Origin': `${process.env.NEXT_PUBLIC_API_URL}/api/train`
-                },
-                body: body_
-            }
-        ).then((response)=>(console.log(response)))
+            )
+            await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/train`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Origin': `${process.env.NEXT_PUBLIC_API_URL}/api/train`
+                    },
+                    body: body_
+                }
+            ).then((response) => (
+                setError({
+                    message: 'Done',
+                    type: 'success'
+                })
+            ))
+            setError({
+                message: 'Sent for training',
+                type: 'info'
+            })
+        }
+        setOpenSnack(true);
     }
     const handleChange = (e) => {
         const string = e.target.value.trim();
@@ -106,6 +148,7 @@ const Page = () => {
     const clearQueries = (e) => {
         e.stopPropagation();
         setQueryAns([]);
+        setQueryDoc([]);
     }
 
     const handleCreate = () => {
@@ -118,30 +161,75 @@ const Page = () => {
             });
             setQueryAns([...copy]);
             setQuery("");
+            const copy_ = [...queryDoc]
+            copy_.push({
+                doc_index: 0
+            })
+            setQueryDoc(copy_)
         }
-        handleClose();
+        handleDialogClose();
     }
-    const handleClickOpen = () => {
-        setOpen(true);
+
+    const handleDialogClose = () => {
+        setOpenDialog(false);
     };
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const handleSnackClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnack(false);
+    }
     const addQueryComponent = () => {
-        setOpen(true);
+        setOpenDialog(true);
     }
 
+    const handlePageChange = (event, page) => {
+        page_.current = page-1
+        setPageIndex(page-1)
+    }
+
+    const handleSelection = (s) => {
+        const copy = [...queryDoc]
+        copy[selectedAcc] = pageIndex
+        setQueryDoc([...copy])
+        setSelectedContext(s)
+    }
+
+    const handleAccChange = (id) => (event, isExpanded) => {
+        console.log('Pressed')
+        if (isExpanded) {
+            setOpenId(id)
+            setSelectedAccordion(id)
+
+        } else {
+            setOpenId(-1)
+            setSelectedAccordion(-1)
+        }
+    };
 
     return (
         <>
             <Head>
                 <title>
                     Data Wrangling
-                    {console.log(doc)}
                 </title>
             </Head>
-            <Dialog open={open} onClose={handleClose}>
+            <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleSnackClose} >
+                <Alert variant='filled' severity={(error) ? error.type : 'info'}>
+                    {(error) ? error.message : ''}
+                    <IconButton onClick={handleSnackClose}>
+                        <CloseIcon
+                            aria-label="close"
+                            sx={{ color: 'white', fontSize: 15 }}
+                        >
+
+                        </CloseIcon>
+                    </IconButton>
+                </Alert>
+
+            </Snackbar>
+            <Dialog open={openDialog} onClose={handleDialogClose}>
                 <DialogTitle>Enter a Query</DialogTitle>
                 <DialogContent>
                     <TextField
@@ -156,7 +244,7 @@ const Page = () => {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
+                    <Button onClick={handleDialogClose}>Cancel</Button>
                     <Button disabled={queryPlaceholder === ""} onClick={handleCreate}>Create</Button>
                 </DialogActions>
             </Dialog>
@@ -181,9 +269,8 @@ const Page = () => {
                             Retraining Pipeline
                         </Typography>
                     </Box>
-                    <Divider>
+                    <Divider sx={{ borderColor: 'neutral.300' }} />
 
-                    </Divider>
                     <Box
                         sx={{ display: 'flex', height: "90%" }}
                     >
@@ -206,7 +293,17 @@ const Page = () => {
                             </Box>
                             <Box overflow="auto" height="600px">
                                 {queryAns.map((query, index) => (
-                                    <QueryComponent key={index} maxWidth="100%" queryAns={queryAns} setQueryAns={setQueryAns} id={index}>
+                                    <QueryComponent
+                                        key={index}
+                                        maxWidth="100%"
+                                        queryAns={queryAns}
+                                        setQueryAns={setQueryAns}
+                                        id={index}
+                                        openId={openId}
+                                        handleAccChange={handleAccChange}
+                                        selection={selection}
+                                        setSelectedDoc={setSelectedDoc}
+                                    >
 
                                     </QueryComponent>
                                 )
@@ -218,7 +315,7 @@ const Page = () => {
                         <Divider
                             orientation='vertical'
                             variant='middle'
-                            flexItem="true"
+                            sx={{ borderColor: 'neutral.300' }}
                         >
 
                         </Divider>
@@ -236,15 +333,18 @@ const Page = () => {
 
                                 </SearchBar>
                             </Box>
-                            <Box height="90%" >
-                                <Typography height="600px" overflow="scroll">
-                                    <Highlighter
-                                        searchWords={search}
-                                        textToHighlight={doc}
-                                    >
-
-                                    </Highlighter>
+                            <Box height="90%"  >
+                                <Typography id='textarea' height="600px" overflow="auto">
+                                    {textOnly[pageIndex]}
                                 </Typography>
+                            </Box>
+                            <Box
+                                display='flex'
+                                justifyContent='space-around'
+                            >
+                                <Pagination count={textOnly.length} onChange={handlePageChange}>
+
+                                </Pagination>
                             </Box>
 
                         </Box>
