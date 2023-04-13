@@ -1,0 +1,2560 @@
+{
+    "queries": [
+      "What are the bad effects on health when you smoke?",
+      "Cancer by smoking?"
+    ],
+    "answers": [
+      [
+        [],
+        [
+          {
+            "answer": "HomeQuit Smoking\n\nBACK\n\nQuit Smoking",
+            "type": "extractive",
+            "score": 0.03165113180875778,
+            "context": "Stay ConnectedOrganizationSmoking & Tobacco Use Features HomeQuit Smoking\n\nBACK\n\nQuit Smoking\nHow to Quit\n\nBACK\n\nHow to Quit\n\nBACK\n\nQuit SmokingHow to",
+            "offsets_in_document": [
+              {
+                "start": 191,
+                "end": 227
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 57,
+                "end": 93
+              }
+            ],
+            "document_id": "407868a6981fd4755727e9352d3fd32e",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "CancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease (COPD)Smoking During PregnancyEquality in Smoking & Disease: Nobody Wins! HomeElectronic Cigarettes\n\nBACK\n\nElectronic Cigarettes\n\nBACK\n\nBasic InformationElectronic Cigarettes\nAbout Electronic Cigarettes (E-Cigarettes)Quick Facts on the Risks of E-cigarettes for Kids, Teens, and Young Adults HomeMenthol Tobacco Products\n\nBACK\n\nMenthol Tobacco Products\n\nBACK\n\nBasic",
+            "type": "extractive",
+            "score": 0.008057693019509315,
+            "context": "\nCancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease (COPD)Smoking During PregnancyEquality in Smoking & Disease: Nobody Wins! HomeElectronic Cigarettes\n\nBACK\n\nElectronic Cigarettes\n\nBACK\n\nBasic InformationElectronic Cigarettes\nAbout Electronic Cigarettes (E-Cigarettes)Quick Facts on the Risks of E-cigarettes for Kids, Teens, and Young Adults HomeMenthol Tobacco Products\n\nBACK\n\nMenthol Tobacco Products\n\nBACK\n\nBasic",
+            "offsets_in_document": [
+              {
+                "start": 143,
+                "end": 576
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 434
+              }
+            ],
+            "document_id": "13a8923e78fd64bf9db2147446a3c90",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "HomeHeated Tobacco ProductsPolicy and Legislation\n\nBACK\n\nPolicy and Legislation\n\nBACK\n\nBasic Information",
+            "type": "extractive",
+            "score": 0.017420854419469833,
+            "context": "nthol Tobacco Products HomeHeated Tobacco ProductsPolicy and Legislation\n\nBACK\n\nPolicy and Legislation\n\nBACK\n\nBasic InformationPolicy and Legislation\n",
+            "offsets_in_document": [
+              {
+                "start": 170,
+                "end": 274
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 23,
+                "end": 127
+              }
+            ],
+            "document_id": "58d40b016430017fe05981957a09df7f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "American Indian and Alaska Native People\n\nBACK\n\nCommercial Tobacco and Health Equity",
+            "type": "extractive",
+            "score": 0.027440356090664864,
+            "context": " and Alaska Native People\n\nBACK\n\nAmerican Indian and Alaska Native People\n\nBACK\n\nCommercial Tobacco and Health EquityAmerican Indian and Alaska Native",
+            "offsets_in_document": [
+              {
+                "start": 191,
+                "end": 275
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 33,
+                "end": 117
+              }
+            ],
+            "document_id": "58a389af4e194123ea0ccea48b1ef861",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Secondhand SmokeQuitting Tobacco Home",
+            "type": "extractive",
+            "score": 0.052191004157066345,
+            "context": "e\nHealth BurdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting Tobacco HomeLGBTQ+ People\n\nBACK\n\nLGBTQ+ People\n\nBACK\n\nCommercial Tob",
+            "offsets_in_document": [
+              {
+                "start": 402,
+                "end": 439
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 57,
+                "end": 94
+              }
+            ],
+            "document_id": "1c5f9bdaf73e8153e2feab1dc8bfc5f3",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Secondhand SmokeQuitting Tobacco HomePeople with Behavioral Health Conditions\n\nBACK\n\nPeople with Behavioral Health Conditions\n\nBACK\n\nCommercial Tobacco and Health EquityPeople with Behavioral Health Conditions\nHealth BurdenUnfair",
+            "type": "extractive",
+            "score": 0.05486410856246948,
+            "context": "sSecondhand SmokeQuitting Tobacco HomePeople with Behavioral Health Conditions\n\nBACK\n\nPeople with Behavioral Health Conditions\n\nBACK\n\nCommercial Tobacco and Health EquityPeople with Behavioral Health Conditions\nHealth BurdenUnfair",
+            "offsets_in_document": [
+              {
+                "start": 307,
+                "end": 536
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 230
+              }
+            ],
+            "document_id": "e1a8b3de4a126c87a70b8410f1253f4a",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Unfair",
+            "type": "extractive",
+            "score": 0.01950554922223091,
+            "context": "acco and Health EquityPeople with Low Socioeconomic Status\nHealth BurdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting Tobacco Hom",
+            "offsets_in_document": [
+              {
+                "start": 315,
+                "end": 321
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 72,
+                "end": 78
+              }
+            ],
+            "document_id": "abfb7701fcdddb9f691b50dfec2c702f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Resources",
+            "type": "extractive",
+            "score": 0.01639607362449169,
+            "context": "Smoke in the CommunitySecondhand Smoke in the HomeSmokefree PoliciesResourcesGoing Smokefree Matters\n\nBACK\n\nGoing Smokefree Matters\n\nBACK\n\nSecondhand ",
+            "offsets_in_document": [
+              {
+                "start": 68,
+                "end": 77
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 68,
+                "end": 77
+              }
+            ],
+            "document_id": "b0477f5e414ff300872f17af8c81a862",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Diseases and Death",
+            "type": "extractive",
+            "score": 0.9304690957069397,
+            "context": "ta and StatisticsFast Facts and Fact Sheets\nSmoking and CigarettesDiseases and DeathHealth Effects of Cigarette SmokingTobacco-Related MortalityCigare",
+            "offsets_in_document": [
+              {
+                "start": 178,
+                "end": 196
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 66,
+                "end": 84
+              }
+            ],
+            "document_id": "6df60726ca0b4e25f8adeac78d6732d2",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Vital Signs HomePatient Care",
+            "type": "extractive",
+            "score": 0.009557660669088364,
+            "context": "fic Evidence BriefsSTATE SystemMorbidity and Mortality Weekly Reports (MMWR)Vital Signs HomePatient Care\n\nBACK\n\nPatient Care\nPatient Care Settings and",
+            "offsets_in_document": [
+              {
+                "start": 438,
+                "end": 466
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 76,
+                "end": 104
+              }
+            ],
+            "document_id": "b8d29fed67018b192ad8d6a516dcd419",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "BACK\n\nPatient Care Settings and Smoking Cessation\n\nBACK\n\nPatient Care",
+            "type": "extractive",
+            "score": 0.07888881862163544,
+            "context": "Smoking Cessation\n\nBACK\n\nPatient Care Settings and Smoking Cessation\n\nBACK\n\nPatient CarePatient Care Settings and Smoking Cessation\nCardiovascular Car",
+            "offsets_in_document": [
+              {
+                "start": 19,
+                "end": 88
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 19,
+                "end": 88
+              }
+            ],
+            "document_id": "9129ddd4377e36b2eec9d0c8724d746d",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Community Work",
+            "type": "extractive",
+            "score": 0.004357500001788139,
+            "context": "Community Work\n\nBACK\n\nState and Community Work\nTobacco Control Programs\n\nBACK\n\nTobacco Control Programs\n\nBACK\n\nState and Community WorkTobacco Control",
+            "offsets_in_document": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "document_id": "35b6ca769393b742e43f1c32bb8cb05",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "State Fact Sheets",
+            "type": "extractive",
+            "score": 0.017596792429685593,
+            "context": "al And Substance Use Disorders HomeEvidence Based Guides for StatesState Fact SheetsTobacco Ingredient and Nicotine Reporting\n\nBACK\n\nTobacco Ingredien",
+            "offsets_in_document": [
+              {
+                "start": 124,
+                "end": 141
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 67,
+                "end": 84
+              }
+            ],
+            "document_id": "82c60e8548c2447fcdf4725120e0bd48",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "PrintHealth Effects of Cigarette Smoking\n\nOn This Page\n\nSmoking and DeathSmoking and Increased Health Risks",
+            "type": "extractive",
+            "score": 0.014238983392715454,
+            "context": "s of Cigarette SmokingPrintHealth Effects of Cigarette Smoking\n\nOn This Page\n\nSmoking and DeathSmoking and Increased Health RisksSmoking and Cardiovas",
+            "offsets_in_document": [
+              {
+                "start": 335,
+                "end": 442
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 22,
+                "end": 129
+              }
+            ],
+            "document_id": "8c0b08f4aa816013217ec303c07ea5c5",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "causes many diseases",
+            "type": "extractive",
+            "score": 0.7443271279335022,
+            "context": "erences\n\nCigarette smoking harms nearly every organ of the body, causes many diseases, and reduces the health of smokers in general.1,2\nQuitting smoki",
+            "offsets_in_document": [
+              {
+                "start": 163,
+                "end": 183
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 65,
+                "end": 85
+              }
+            ],
+            "document_id": "a6ba48dc33ae66d19c352ec8a2a3b49c",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Smoking causes more deaths",
+            "type": "extractive",
+            "score": 0.050258196890354156,
+            "context": "in the United States. This is nearly one in five deaths.1,2,3\nSmoking causes more deaths each year than the following causes combined:4\n\nHuman immunod",
+            "offsets_in_document": [
+              {
+                "start": 173,
+                "end": 199
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 62,
+                "end": 88
+              }
+            ],
+            "document_id": "d3d025f231db311dc84c758d1f3e49d9",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "lung cancer deaths",
+            "type": "extractive",
+            "score": 0.6207472085952759,
+            "context": " United States.1\nSmoking causes about 90% (or 9 out of 10) of all lung cancer deaths.1,2 More women die from lung cancer each year than from breast ca",
+            "offsets_in_document": [
+              {
+                "start": 174,
+                "end": 192
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 66,
+                "end": 84
+              }
+            ],
+            "document_id": "18593caec480494820b868cc58159667",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "increases risk for death from all causes in men and women",
+            "type": "extractive",
+            "score": 0.2509304881095886,
+            "context": "e pulmonary disease (COPD).1\nCigarette smoking increases risk for death from all causes in men and women.1\nThe risk of dying from cigarette smoking ha",
+            "offsets_in_document": [
+              {
+                "start": 95,
+                "end": 152
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 47,
+                "end": 104
+              }
+            ],
+            "document_id": "57557442ac1192ca4a17030be089c793",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "diminished overall health, increased absenteeism from work",
+            "type": "extractive",
+            "score": 0.6938701868057251,
+            "context": "ng lung cancer by 25 times1\nOf women developing lung cancer by 25.7 times1\n\nSmoking causes diminished overall health, increased absenteeism from work,",
+            "offsets_in_document": [
+              {
+                "start": 288,
+                "end": 346
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 91,
+                "end": 149
+              }
+            ],
+            "document_id": "58cde0b8284e9082dc70bfe54438e42d",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "stroke and coronary heart disease",
+            "type": "extractive",
+            "score": 0.09303487092256546,
+            "context": "blood vessels (cardiovascular disease).1,2\n\nSmoking causes stroke and coronary heart disease, which are among the leading causes of death in the Unite",
+            "offsets_in_document": [
+              {
+                "start": 221,
+                "end": 254
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 59,
+                "end": 92
+              }
+            ],
+            "document_id": "d2ef4bcbe762b54d859fdb58ff9ee152",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "damages blood vessels and can make them thicken and grow narrower",
+            "type": "extractive",
+            "score": 0.363700807094574,
+            "context": " signs of cardiovascular disease.1\nSmoking damages blood vessels and can make them thicken and grow narrower. This makes your heart beat faster and yo",
+            "offsets_in_document": [
+              {
+                "start": 79,
+                "end": 144
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 43,
+                "end": 108
+              }
+            ],
+            "document_id": "96e898aa912eeb34209229c8cbacb1d",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "damaging your airways and the small air sacs (alveoli) found in your lungs",
+            "type": "extractive",
+            "score": 0.5436966419219971,
+            "context": "easeSmoking can cause lung disease by damaging your airways and the small air sacs (alveoli) found in your lungs.1,2\n\nLung diseases caused by smoking ",
+            "offsets_in_document": [
+              {
+                "start": 216,
+                "end": 290
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 38,
+                "end": 112
+              }
+            ],
+            "document_id": "b992d0b82e627aa3547752516f736979",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "lung cancer",
+            "type": "extractive",
+            "score": 0.5832474231719971,
+            "context": "ema and chronic bronchitis.1,2\nCigarette smoking causes most cases of lung cancer.1,2\nIf you have asthma, tobacco smoke can trigger an attack or make ",
+            "offsets_in_document": [
+              {
+                "start": 97,
+                "end": 108
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 81
+              }
+            ],
+            "document_id": "7dc6a4e3fcf22b3da8ac29cb0b777c07",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "increases the risk of dying from cancer",
+            "type": "extractive",
+            "score": 0.551372766494751,
+            "context": "creas\nStomach\nTrachea, bronchus, and lung\n\nSmoking also increases the risk of dying from cancer and other diseases in cancer patients and survivors.1\n",
+            "offsets_in_document": [
+              {
+                "start": 274,
+                "end": 313
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 56,
+                "end": 95
+              }
+            ],
+            "document_id": "b19c5b8392b3001adf88ed675b94e93c",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "nearly every organ of the body",
+            "type": "extractive",
+            "score": 0.44380027055740356,
+            "context": ".1,2\nTop of PageSmoking and Other Health RisksSmoking harms nearly every organ of the body and affects a person’s overall health.1,2\n\nSmoking can make",
+            "offsets_in_document": [
+              {
+                "start": 94,
+                "end": 124
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 60,
+                "end": 90
+              }
+            ],
+            "document_id": "29e94e75a86b80fe916fccdf5310bccb",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Smoking can affect bone health",
+            "type": "extractive",
+            "score": 0.4097747206687927,
+            "context": "duce fertility and also increase risks for birth defects and miscarriage.2\nSmoking can affect bone health.1,5\n\nWomen past childbearing years who smoke",
+            "offsets_in_document": [
+              {
+                "start": 308,
+                "end": 338
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 75,
+                "end": 105
+              }
+            ],
+            "document_id": "ad73962cbd9a8657ac345de2a573d842",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "teeth and gums and can cause tooth loss",
+            "type": "extractive",
+            "score": 0.5776707530021667,
+            "context": "k for broken bones.\n\nSmoking affects the health of your teeth and gums and can cause tooth loss.1\nSmoking can increase your risk for cataracts (cloudi",
+            "offsets_in_document": [
+              {
+                "start": 131,
+                "end": 170
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 56,
+                "end": 95
+              }
+            ],
+            "document_id": "51bd793bd4440af81a54d4b43f7752c0",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "type 2 diabetes mellitus and can make it harder to control",
+            "type": "extractive",
+            "score": 0.08222955465316772,
+            "context": "e eye needed for central vision.1\nSmoking is a cause of type 2 diabetes mellitus and can make it harder to control. The risk of developing diabetes is",
+            "offsets_in_document": [
+              {
+                "start": 186,
+                "end": 244
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 56,
+                "end": 114
+              }
+            ],
+            "document_id": "79eebd8a00226ff70463f2bfe5cd3b4b",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "inflammation and decreased immune function",
+            "type": "extractive",
+            "score": 0.988750159740448,
+            "context": "causes general adverse effects on the body, including inflammation and decreased immune function.1\nSmoking is a cause of rheumatoid arthritis.1\n\nTop o",
+            "offsets_in_document": [
+              {
+                "start": 115,
+                "end": 157
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 54,
+                "end": 96
+              }
+            ],
+            "document_id": "1c7abcaebf73527d7a41c433529736e3",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "The Health Consequences of Smoking—50 Years of Progress: A Report of the Surgeon General",
+            "type": "extractive",
+            "score": 0.009145723655819893,
+            "context": "t of Health and Human Services.The Health Consequences of Smoking—50 Years of Progress: A Report of the Surgeon General. Atlanta: U.S. Department of H",
+            "offsets_in_document": [
+              {
+                "start": 215,
+                "end": 303
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 31,
+                "end": 119
+              }
+            ],
+            "document_id": "2c1dad40cecfcaeba1bac1e9649e25d2",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "How Tobacco Smoke Causes Disease",
+            "type": "extractive",
+            "score": 0.0050314320251345634,
+            "context": "017 Apr 20].\nU.S. Department of Health and Human Services. How Tobacco Smoke Causes Disease: What It Means to You. Atlanta: U.S. Department of Health ",
+            "offsets_in_document": [
+              {
+                "start": 238,
+                "end": 270
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 59,
+                "end": 91
+              }
+            ],
+            "document_id": "8a0031bedfc25978c3796d6c860b4327",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Office on Smoking and Health, 2010",
+            "type": "extractive",
+            "score": 0.0001238445402123034,
+            "context": "nter for Chronic Disease Prevention and Health Promotion, Office on Smoking and Health, 2010 [accessed 2017 Apr 20].\nCenters for Disease Control and P",
+            "offsets_in_document": [
+              {
+                "start": 129,
+                "end": 163
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 58,
+                "end": 92
+              }
+            ],
+            "document_id": "5532890735bdd58a6dffd01664b67987",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Actual Causes of Death in the United States. JAMA: Journal of the American Medical Association 2004;291(10):1238–45",
+            "type": "extractive",
+            "score": 0.0001229213667102158,
+            "context": "F, Gerberding JL. Actual Causes of Death in the United States. JAMA: Journal of the American Medical Association 2004;291(10):1238–45 [cited 2017 Apr ",
+            "offsets_in_document": [
+              {
+                "start": 95,
+                "end": 210
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 18,
+                "end": 133
+              }
+            ],
+            "document_id": "9525192c0e681f996425f86053c0deca",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Reducing the Health Consequences",
+            "type": "extractive",
+            "score": 0.18256528675556183,
+            "context": "017 Apr 20].\nU.S. Department of Health and Human Services. Reducing the Health Consequences of Smoking: 25 Years of Progress. A Report of the Surgeon ",
+            "offsets_in_document": [
+              {
+                "start": 175,
+                "end": 207
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 59,
+                "end": 91
+              }
+            ],
+            "document_id": "25adf6bc6035266783f1d21cef72be2a",
+            "meta": {}
+          }
+        ],
+        [],
+        [
+          {
+            "answer": "CancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease",
+            "type": "extractive",
+            "score": 0.0073597626760602,
+            "context": "tline Data WarehouseBasic Informationplus iconHealth Effectsplus iconCancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease (COPD)Smoking",
+            "offsets_in_document": [
+              {
+                "start": 425,
+                "end": 492
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 69,
+                "end": 136
+              }
+            ],
+            "document_id": "c30da007b656ffe1c961da3297813ecf",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Disparities",
+            "type": "extractive",
+            "score": 0.5398404598236084,
+            "context": "roducts are a Public Health ProblemMenthol Smoking and Related Health DisparitiesAddressing Menthol Tobacco ProductsHeated Tobacco ProductsPolicy and ",
+            "offsets_in_document": [
+              {
+                "start": 325,
+                "end": 336
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 81
+              }
+            ],
+            "document_id": "ff21f5f4829d098ea9ddec42989d0a8f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Unjust Practices and Conditions",
+            "type": "extractive",
+            "score": 0.06882704049348831,
+            "context": "and African American Peopleplus iconHealth BurdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting TobaccoAmerican Indian and Alaska ",
+            "offsets_in_document": [
+              {
+                "start": 120,
+                "end": 151
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 60,
+                "end": 91
+              }
+            ],
+            "document_id": "697a2bd80a5fdf565535baf9674d2e6b",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Tobacco Product Use and Behavioral Health Conditions",
+            "type": "extractive",
+            "score": 0.155826598405838,
+            "context": "h Conditionsplus iconHealth BurdenUnfair and Unjust Practices and ConditionsCommercial Tobacco Product Use and Behavioral Health Conditions can Affect",
+            "offsets_in_document": [
+              {
+                "start": 427,
+                "end": 479
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 87,
+                "end": 139
+              }
+            ],
+            "document_id": "2688ace886414a3bcf5d1ac6164e065b",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Health Problems",
+            "type": "extractive",
+            "score": 0.5524593591690063,
+            "context": "coSecondhand Smokeplus iconGeneral InformationTrends and DisparitiesHealth ProblemsSecondhand Smoke in the CommunitySecondhand Smoke in the HomeSmokef",
+            "offsets_in_document": [
+              {
+                "start": 224,
+                "end": 239
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 68,
+                "end": 83
+              }
+            ],
+            "document_id": "fd0b2b0f019b7e4520bfe3909b91c94a",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Diseases and Death",
+            "type": "extractive",
+            "score": 0.9735536575317383,
+            "context": "plus iconFast Facts and Fact Sheetsplus iconSmoking and CigarettesDiseases and DeathHealth Effects of Cigarette SmokingTobacco-Related MortalityCigare",
+            "offsets_in_document": [
+              {
+                "start": 157,
+                "end": 175
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 66,
+                "end": 84
+              }
+            ],
+            "document_id": "8221d4b0162d7e66c59a7b465f2e15f7",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Trends in Tobacco Use Among Youth",
+            "type": "extractive",
+            "score": 0.00025875685969367623,
+            "context": "SmokeYouth Tobacco UseYouth DataSmoking in the MoviesTrends in Tobacco Use Among YouthTobacco IndustryTobacco Brand PreferencesIndustry MarketingSurve",
+            "offsets_in_document": [
+              {
+                "start": 53,
+                "end": 86
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 53,
+                "end": 86
+              }
+            ],
+            "document_id": "d0d9950580a4f007bc50d51bcbc45ce9",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Dependence",
+            "type": "extractive",
+            "score": 0.01048017293214798,
+            "context": "d Infant Care SettingsClinical Interventions to Treat Tobacco Use and Dependence Among AdultsClinical Cessation ToolsPatient Cessation MaterialsQuitli",
+            "offsets_in_document": [
+              {
+                "start": 114,
+                "end": 124
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 80
+              }
+            ],
+            "document_id": "243392c5694b955b2db15d7f0eae40b0",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Disorders",
+            "type": "extractive",
+            "score": 0.002814844949170947,
+            "context": "ctices To Address Tobacco Use By Persons With Mental And Substance Use DisordersEvidence Based Guides for StatesState Fact SheetsTobacco Ingredient an",
+            "offsets_in_document": [
+              {
+                "start": 180,
+                "end": 189
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 71,
+                "end": 80
+              }
+            ],
+            "document_id": "ed189a881d231ddfa4c9e9eaacf1db2c",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "800-232-4636",
+            "type": "extractive",
+            "score": 0.04522453248500824,
+            "context": "\nDivision of Reproductive\nHealth\n\nSocial Media\n\nAbout CDC\nContact Us\n800-232-4636\n\nFacebook\nTwitter\nInstagram\nLinkedIn\nYoutube\nPinterest\nSnapchat\n\nCON",
+            "offsets_in_document": [
+              {
+                "start": 572,
+                "end": 584
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 69,
+                "end": 81
+              }
+            ],
+            "document_id": "c0e26533cdaed63a01353c11ef72e6ed",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Department of Health & Human Services",
+            "type": "extractive",
+            "score": 0.012022568844258785,
+            "context": "olski\nPortuguês\nItaliano\nDeutsch\n日本語\nفارسی\nEnglish\n\nU.S. Department of Health & Human Services\nAccessibility\nExternal Links\nPrivacy\nPolicies\nNo Fear A",
+            "offsets_in_document": [
+              {
+                "start": 420,
+                "end": 457
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 57,
+                "end": 94
+              }
+            ],
+            "document_id": "1a065f86f2c5525aac77e56eba08cfc3",
+            "meta": {}
+          },
+          {
+            "answer": "SAS\n\nstats\n\n.st0 {\nfill: #FFFFFF;\n}\n\n.st1 {\nfill: none;\nstroke: #FFFFFF;\nstroke-width: 2.1206;\n}\n\n.st2 {\nfill: #005DA9;\n}\n\n.st3 {\nfill: none;\nstroke: #FFFFFF;\nstroke-width: 1.8943",
+            "type": "extractive",
+            "score": 0.0012281478848308325,
+            "context": "\nSAS\n\nstats\n\n.st0 {\nfill: #FFFFFF;\n}\n\n.st1 {\nfill: none;\nstroke: #FFFFFF;\nstroke-width: 2.1206;\n}\n\n.st2 {\nfill: #005DA9;\n}\n\n.st3 {\nfill: none;\nstroke: #FFFFFF;\nstroke-width: 1.8943",
+            "offsets_in_document": [
+              {
+                "start": 645,
+                "end": 824
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 180
+              }
+            ],
+            "document_id": "1a065f86f2c5525aac77e56eba08cfc3",
+            "meta": {}
+          },
+          {
+            "answer": "SAS",
+            "type": "extractive",
+            "score": 0.0005860128439962864,
+            "context": "icy\nUSA.gov\n\nvar CDC_POST={\"id\":\"577_15953\",\"type\":\"cdc_page\",\"tax\":[]};\n\nSAS\n\nstats\n\n.st0 {\nfill: #FFFFFF;\n}\n\n.st1 {\nfill: none;\nstroke: #FFFFFF;\nstr",
+            "offsets_in_document": [
+              {
+                "start": 645,
+                "end": 648
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 74,
+                "end": 77
+              }
+            ],
+            "document_id": "1a065f86f2c5525aac77e56eba08cfc3",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "effects cigarette smoking",
+            "type": "extractive",
+            "score": 0.0024535052943974733,
+            "context": "\nsiteCatalyst.setLevel5(\"fact sheet\");\nsiteCatalyst.setLevel6(\"effects cigarette smoking\");\n\nwindow.shortTitle = \"Health Effects of Cigarette Smoking\"",
+            "offsets_in_document": [
+              {
+                "start": 289,
+                "end": 314
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 63,
+                "end": 88
+              }
+            ],
+            "document_id": "49f46bf1cece1d4397ae51f70d7e0f4",
+            "meta": {}
+          },
+          {
+            "answer": "window.pageOptions.navigation.breadcrumbs = {\nmode: 'auto',\nshowCurrentPage: false\n};\nwindow.CDC.tp4.public.appInit( window.pageOptions );\n\nExit Notification / Disclaimer Policy\n\nClose\n\nLinks with this icon  indicate that you are leaving the CDC website.",
+            "type": "extractive",
+            "score": 0.0001443562505301088,
+            "context": "window.pageOptions.navigation.breadcrumbs = {\nmode: 'auto',\nshowCurrentPage: false\n};\nwindow.CDC.tp4.public.appInit( window.pageOptions );\n\nExit Notification / Disclaimer Policy\n\nClose\n\nLinks with this icon  indicate that you are leaving the CDC website.",
+            "offsets_in_document": [
+              {
+                "start": 605,
+                "end": 859
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 254
+              }
+            ],
+            "document_id": "49f46bf1cece1d4397ae51f70d7e0f4",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "You will be subject to the destination",
+            "type": "extractive",
+            "score": 0.000010741043297457509,
+            "context": "sement by CDC or any of its employees of the sponsors or the information and products presented on the website.\nYou will be subject to the destination",
+            "offsets_in_document": [
+              {
+                "start": 278,
+                "end": 316
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 112,
+                "end": 150
+              }
+            ],
+            "document_id": "e8cb5d83d182abdf011bcf901c09f25f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cancel\nContinue",
+            "type": "extractive",
+            "score": 0.00010004567593568936,
+            "context": "ation on CDC's web notification policies, see Website Disclaimers.\n\nCancel\nContinue\n\nCDC.gov Privacy Settings\n\nWe take your privacy seriously. You can",
+            "offsets_in_document": [
+              {
+                "start": 238,
+                "end": 253
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 68,
+                "end": 83
+              }
+            ],
+            "document_id": "537b10619ac9a02a471ff3917b060408",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Checkbox\n\nPerformance Cookies",
+            "type": "extractive",
+            "score": 0.000017960945115191862,
+            "context": "Checkbox\n\nPerformance Cookies\n\nThese cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. T",
+            "offsets_in_document": [
+              {
+                "start": 0,
+                "end": 29
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 29
+              }
+            ],
+            "document_id": "42c21a1e207dcf3d9e446a54e6838708",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Functional Cookies Checkbox",
+            "type": "extractive",
+            "score": 0.00004282231748220511,
+            "context": "d our site, and will not be able to monitor its performance.\n\nFunctional Cookies Checkbox\n\nFunctional Cookies\n\nCookies used to make website functional",
+            "offsets_in_document": [
+              {
+                "start": 158,
+                "end": 185
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 62,
+                "end": 89
+              }
+            ],
+            "document_id": "44976e827602ba14267bf1058dbc34b7",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Campaign Cookies Checkbox",
+            "type": "extractive",
+            "score": 0.000022741440261597745,
+            "context": " web content that based on self-identified area of interests.\n\nCampaign Cookies Checkbox\n\nCampaign Cookies\n\nCookies used to track the effectiveness of",
+            "offsets_in_document": [
+              {
+                "start": 102,
+                "end": 127
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 63,
+                "end": 88
+              }
+            ],
+            "document_id": "4647f5cd5b47ab2b4829e7ea021cdba",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "cookies may also be used for advertising purposes by these third parties.\n\nRemove all",
+            "type": "extractive",
+            "score": 0.00004292253652238287,
+            "context": "orking and other websites. These cookies may also be used for advertising purposes by these third parties.\n\nRemove all\n\nConfirm Choices\n\nConfirmed!\nTh",
+            "offsets_in_document": [
+              {
+                "start": 75,
+                "end": 160
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 33,
+                "end": 118
+              }
+            ],
+            "document_id": "9b7e13d4d64b1cf083ad951ee2bbe4e7",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "!function(){if(\"cdcgov\"==s.account||\"cdcpartners\"==s.account||\"vaxgov\"==s.account){var c=document.createElement(\"script\");c.id=\"_fed_an_ua_tag\",c.src=\"https://www.cdc.gov/JScript/metrics/google/Universal-Federated-Analytics-Min.js?agency=HHS&amp;subagency=CDC\",document.body.appendChild(c)}document.getElementsByTagName(\"body\")[0].className+=\" adobe-launch-complete\"}();",
+            "type": "extractive",
+            "score": 0.00009484279144089669,
+            "context": "!function(){if(\"cdcgov\"==s.account||\"cdcpartners\"==s.account||\"vaxgov\"==s.account){var c=document.createElement(\"script\");c.id=\"_fed_an_ua_tag\",c.src=\"https://www.cdc.gov/JScript/metrics/google/Universal-Federated-Analytics-Min.js?agency=HHS&amp;subagency=CDC\",document.body.appendChild(c)}document.getElementsByTagName(\"body\")[0].className+=\" adobe-launch-complete\"}();",
+            "offsets_in_document": [
+              {
+                "start": 219,
+                "end": 589
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 370
+              }
+            ],
+            "document_id": "ea1cac53b4d5c68a2862511986e1b1cd",
+            "meta": {}
+          }
+        ]
+      ],
+      [
+        [],
+        [
+          {
+            "answer": "HomeQuit Smoking\n\nBACK\n\nQuit Smoking",
+            "type": "extractive",
+            "score": 0.008290408179163933,
+            "context": "Stay ConnectedOrganizationSmoking & Tobacco Use Features HomeQuit Smoking\n\nBACK\n\nQuit Smoking\nHow to Quit\n\nBACK\n\nHow to Quit\n\nBACK\n\nQuit SmokingHow to",
+            "offsets_in_document": [
+              {
+                "start": 191,
+                "end": 227
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 57,
+                "end": 93
+              }
+            ],
+            "document_id": "407868a6981fd4755727e9352d3fd32e",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "CancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease (COPD)Smoking During PregnancyEquality in Smoking & Disease: Nobody Wins! HomeElectronic Cigarettes\n\nBACK\n\nElectronic Cigarettes\n\nBACK\n\nBasic InformationElectronic Cigarettes\nAbout Electronic Cigarettes (E-Cigarettes)Quick Facts on the Risks of E-cigarettes for Kids, Teens, and Young Adults HomeMenthol Tobacco Products\n\nBACK\n\nMenthol Tobacco Products\n\nBACK\n\nBasic",
+            "type": "extractive",
+            "score": 0.012806279584765434,
+            "context": "\nCancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease (COPD)Smoking During PregnancyEquality in Smoking & Disease: Nobody Wins! HomeElectronic Cigarettes\n\nBACK\n\nElectronic Cigarettes\n\nBACK\n\nBasic InformationElectronic Cigarettes\nAbout Electronic Cigarettes (E-Cigarettes)Quick Facts on the Risks of E-cigarettes for Kids, Teens, and Young Adults HomeMenthol Tobacco Products\n\nBACK\n\nMenthol Tobacco Products\n\nBACK\n\nBasic",
+            "offsets_in_document": [
+              {
+                "start": 143,
+                "end": 576
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 434
+              }
+            ],
+            "document_id": "13a8923e78fd64bf9db2147446a3c90",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Information",
+            "type": "extractive",
+            "score": 0.005439248867332935,
+            "context": "uctsPolicy and Legislation\n\nBACK\n\nPolicy and Legislation\n\nBACK\n\nBasic InformationPolicy and Legislation\nLegislationRegulation HomeYouth Tobacco Preven",
+            "offsets_in_document": [
+              {
+                "start": 263,
+                "end": 274
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 81
+              }
+            ],
+            "document_id": "58d40b016430017fe05981957a09df7f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "American Indian and Alaska Native People\n\nBACK\n\nCommercial Tobacco",
+            "type": "extractive",
+            "score": 0.004712224472314119,
+            "context": "an Indian and Alaska Native People\n\nBACK\n\nAmerican Indian and Alaska Native People\n\nBACK\n\nCommercial Tobacco and Health EquityAmerican Indian and Alas",
+            "offsets_in_document": [
+              {
+                "start": 191,
+                "end": 257
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 42,
+                "end": 108
+              }
+            ],
+            "document_id": "58a389af4e194123ea0ccea48b1ef861",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Hispanic and Latino People\n\nBACK\n\nCommercial Tobacco and Health EquityHispanic and Latino People\nHealth BurdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting Tobacco HomeLGBTQ+ People\n\nBACK\n\nLGBTQ+ People",
+            "type": "extractive",
+            "score": 0.002402026206254959,
+            "context": "\nHispanic and Latino People\n\nBACK\n\nCommercial Tobacco and Health EquityHispanic and Latino People\nHealth BurdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting Tobacco HomeLGBTQ+ People\n\nBACK\n\nLGBTQ+ People",
+            "offsets_in_document": [
+              {
+                "start": 250,
+                "end": 473
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 224
+              }
+            ],
+            "document_id": "1c5f9bdaf73e8153e2feab1dc8bfc5f3",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Secondhand SmokeQuitting Tobacco HomePeople with Behavioral Health Conditions\n\nBACK\n\nPeople with Behavioral Health Conditions\n\nBACK\n\nCommercial Tobacco and Health EquityPeople with Behavioral Health Conditions\nHealth BurdenUnfair",
+            "type": "extractive",
+            "score": 0.0020035691559314728,
+            "context": "sSecondhand SmokeQuitting Tobacco HomePeople with Behavioral Health Conditions\n\nBACK\n\nPeople with Behavioral Health Conditions\n\nBACK\n\nCommercial Tobacco and Health EquityPeople with Behavioral Health Conditions\nHealth BurdenUnfair",
+            "offsets_in_document": [
+              {
+                "start": 307,
+                "end": 536
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 230
+              }
+            ],
+            "document_id": "e1a8b3de4a126c87a70b8410f1253f4a",
+            "meta": {}
+          }
+        ],
+        [],
+        [
+          {
+            "answer": "Bars and RestaurantsCasinosIn Your HomeMultiunit Housing Home HomeSurgeon General's Reports on Smoking and Tobacco Use",
+            "type": "extractive",
+            "score": 0.0020772882271558046,
+            "context": "okefree Matters\nBars and RestaurantsCasinosIn Your HomeMultiunit Housing Home HomeSurgeon General's Reports on Smoking and Tobacco Use\n\nBACK\n\nSurgeon ",
+            "offsets_in_document": [
+              {
+                "start": 179,
+                "end": 297
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 16,
+                "end": 134
+              }
+            ],
+            "document_id": "b0477f5e414ff300872f17af8c81a862",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Smoking and Cigarettes",
+            "type": "extractive",
+            "score": 0.006342842243611813,
+            "context": "act Sheets\n\nBACK\n\nData and StatisticsFast Facts and Fact Sheets\nSmoking and CigarettesDiseases and DeathHealth Effects of Cigarette SmokingTobacco-Rel",
+            "offsets_in_document": [
+              {
+                "start": 156,
+                "end": 178
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 64,
+                "end": 86
+              }
+            ],
+            "document_id": "6df60726ca0b4e25f8adeac78d6732d2",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Vital Signs HomePatient Care",
+            "type": "extractive",
+            "score": 0.002527981298044324,
+            "context": "fic Evidence BriefsSTATE SystemMorbidity and Mortality Weekly Reports (MMWR)Vital Signs HomePatient Care\n\nBACK\n\nPatient Care\nPatient Care Settings and",
+            "offsets_in_document": [
+              {
+                "start": 438,
+                "end": 466
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 76,
+                "end": 104
+              }
+            ],
+            "document_id": "b8d29fed67018b192ad8d6a516dcd419",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Patient Care",
+            "type": "extractive",
+            "score": 0.052576493471860886,
+            "context": " Cessation\n\nBACK\n\nPatient Care Settings and Smoking Cessation\n\nBACK\n\nPatient CarePatient Care Settings and Smoking Cessation\nCardiovascular Care Setti",
+            "offsets_in_document": [
+              {
+                "start": 76,
+                "end": 88
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 69,
+                "end": 81
+              }
+            ],
+            "document_id": "9129ddd4377e36b2eec9d0c8724d746d",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Community Work",
+            "type": "extractive",
+            "score": 0.0006884783506393433,
+            "context": "Community Work\n\nBACK\n\nState and Community Work\nTobacco Control Programs\n\nBACK\n\nTobacco Control Programs\n\nBACK\n\nState and Community WorkTobacco Control",
+            "offsets_in_document": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 14
+              }
+            ],
+            "document_id": "35b6ca769393b742e43f1c32bb8cb05",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "BACK",
+            "type": "extractive",
+            "score": 0.0003914308035746217,
+            "context": "es for StatesState Fact SheetsTobacco Ingredient and Nicotine Reporting\n\nBACK\n\nTobacco Ingredient and Nicotine Reporting\n\nBACK\n\nState and Community Wo",
+            "offsets_in_document": [
+              {
+                "start": 184,
+                "end": 188
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 73,
+                "end": 77
+              }
+            ],
+            "document_id": "82c60e8548c2447fcdf4725120e0bd48",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "BACK\n\nGlobal Tobacco Control\nAbout GTSSThe GATS Atlas HomeMultimedia & Tools",
+            "type": "extractive",
+            "score": 0.0006275788182392716,
+            "context": "HomeGlobal Tobacco Control\n\nBACK\n\nGlobal Tobacco Control\nAbout GTSSThe GATS Atlas HomeMultimedia & Tools\n\nBACK\n\nMultimedia & Tools\nMedia Campaign Reso",
+            "offsets_in_document": [
+              {
+                "start": 28,
+                "end": 104
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 28,
+                "end": 104
+              }
+            ],
+            "document_id": "8c0b08f4aa816013217ec303c07ea5c5",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Respiratory Disease\n\nSmoking and CancerSmoking and Other Health RisksQuitting and Reduced RisksReferences\n\nCigarette smoking harms nearly every organ of the body, causes many diseases, and reduces the health of smokers in general.1,2",
+            "type": "extractive",
+            "score": 0.00012713698379229754,
+            "context": "Respiratory Disease\n\nSmoking and CancerSmoking and Other Health RisksQuitting and Reduced RisksReferences\n\nCigarette smoking harms nearly every organ of the body, causes many diseases, and reduces the health of smokers in general.1,2\n",
+            "offsets_in_document": [
+              {
+                "start": 0,
+                "end": 233
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 233
+              }
+            ],
+            "document_id": "a6ba48dc33ae66d19c352ec8a2a3b49c",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "1,2,3",
+            "type": "extractive",
+            "score": 0.000340541620971635,
+            "context": "deaths each year in the United States. This is nearly one in five deaths.1,2,3\nSmoking causes more deaths each year than the following causes combined",
+            "offsets_in_document": [
+              {
+                "start": 167,
+                "end": 172
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 73,
+                "end": 78
+              }
+            ],
+            "document_id": "d3d025f231db311dc84c758d1f3e49d9",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "lung cancer",
+            "type": "extractive",
+            "score": 0.0016677787061780691,
+            "context": " the United States.1\nSmoking causes about 90% (or 9 out of 10) of all lung cancer deaths.1,2 More women die from lung cancer each year than from breas",
+            "offsets_in_document": [
+              {
+                "start": 174,
+                "end": 185
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 81
+              }
+            ],
+            "document_id": "18593caec480494820b868cc58159667",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cigarette smoking increases risk for death from all causes in men and women.1\nThe risk of dying from cigarette smoking has increased over the last 50 years in the U.",
+            "type": "extractive",
+            "score": 0.00006924533954588696,
+            "context": "\nCigarette smoking increases risk for death from all causes in men and women.1\nThe risk of dying from cigarette smoking has increased over the last 50 years in the U.",
+            "offsets_in_document": [
+              {
+                "start": 77,
+                "end": 242
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 166
+              }
+            ],
+            "document_id": "57557442ac1192ca4a17030be089c793",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "2 to 4 times1,6",
+            "type": "extractive",
+            "score": 0.0035712430253624916,
+            "context": "tes show smoking increases the risk:\n\nFor coronary heart disease by 2 to 4 times1,6\nFor stroke by 2 to 4 times1\nOf men developing lung cancer by 25 ti",
+            "offsets_in_document": [
+              {
+                "start": 138,
+                "end": 153
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 68,
+                "end": 83
+              }
+            ],
+            "document_id": "58cde0b8284e9082dc70bfe54438e42d",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Top of PageSmoking and Cardiovascular DiseaseSmokers are at greater risk for diseases that affect the heart and blood vessels (cardiovascular disease).1,2",
+            "type": "extractive",
+            "score": 0.00006016093539074063,
+            "context": "Top of PageSmoking and Cardiovascular DiseaseSmokers are at greater risk for diseases that affect the heart and blood vessels (cardiovascular disease).1,2",
+            "offsets_in_document": [
+              {
+                "start": 50,
+                "end": 204
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 154
+              }
+            ],
+            "document_id": "d2ef4bcbe762b54d859fdb58ff9ee152",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Smoking damages blood vessels",
+            "type": "extractive",
+            "score": 0.00007694849045947194,
+            "context": "ettes a day can have early signs of cardiovascular disease.1\nSmoking damages blood vessels and can make them thicken and grow narrower. This makes you",
+            "offsets_in_document": [
+              {
+                "start": 71,
+                "end": 100
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 61,
+                "end": 90
+              }
+            ],
+            "document_id": "96e898aa912eeb34209229c8cbacb1d",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Smoking and Respiratory DiseaseSmoking can cause lung disease by damaging your airways and the small air sacs (alveoli) found in your lungs.1,2",
+            "type": "extractive",
+            "score": 0.00016327720368281007,
+            "context": "PageSmoking and Respiratory DiseaseSmoking can cause lung disease by damaging your airways and the small air sacs (alveoli) found in your lungs.1,2\n\nL",
+            "offsets_in_document": [
+              {
+                "start": 151,
+                "end": 294
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 4,
+                "end": 147
+              }
+            ],
+            "document_id": "b992d0b82e627aa3547752516f736979",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "almost anywhere",
+            "type": "extractive",
+            "score": 0.003352442290633917,
+            "context": ".1,2\nSmokers are 12 to 13 times more likely to die from COPD than nonsmokers.1\n\nTop of PageSmoking and Cancer\nSmoking can cause cancer almost anywhere",
+            "offsets_in_document": [
+              {
+                "start": 327,
+                "end": 342
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 135,
+                "end": 150
+              }
+            ],
+            "document_id": "7dc6a4e3fcf22b3da8ac29cb0b777c07",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Esophagus",
+            "type": "extractive",
+            "score": 0.001207241090014577,
+            "context": "er\nBlood (acute myeloid leukemia)\nCervix\nColon and rectum (colorectal)\nEsophagus\nKidney and ureter\nLarynx\nLiver\nOropharynx (includes parts of the thro",
+            "offsets_in_document": [
+              {
+                "start": 94,
+                "end": 103
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 71,
+                "end": 80
+              }
+            ],
+            "document_id": "b19c5b8392b3001adf88ed675b94e93c",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Preterm",
+            "type": "extractive",
+            "score": 0.0003123298520222306,
+            "context": "make it harder for a woman to become pregnant. It can also affect her baby’s health before and after birth. Smoking increases risks for:1,2,5\n\nPreterm",
+            "offsets_in_document": [
+              {
+                "start": 323,
+                "end": 330
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 143,
+                "end": 150
+              }
+            ],
+            "document_id": "29e94e75a86b80fe916fccdf5310bccb",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "1,5",
+            "type": "extractive",
+            "score": 0.00026105871074832976,
+            "context": "duce fertility and also increase risks for birth defects and miscarriage.2\nSmoking can affect bone health.1,5\n\nWomen past childbearing years who smoke",
+            "offsets_in_document": [
+              {
+                "start": 339,
+                "end": 342
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 106,
+                "end": 109
+              }
+            ],
+            "document_id": "ad73962cbd9a8657ac345de2a573d842",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "broken bones.\n\nSmoking affects the health of your teeth and gums and can cause tooth loss.1",
+            "type": "extractive",
+            "score": 0.00007161030225688592,
+            "context": " are also at greater risk for broken bones.\n\nSmoking affects the health of your teeth and gums and can cause tooth loss.1\nSmoking can increase your ri",
+            "offsets_in_document": [
+              {
+                "start": 81,
+                "end": 172
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 30,
+                "end": 121
+              }
+            ],
+            "document_id": "51bd793bd4440af81a54d4b43f7752c0",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "1",
+            "type": "extractive",
+            "score": 0.000012485776096582413,
+            "context": "ar the center of the retina, the part of the eye needed for central vision.1\nSmoking is a cause of type 2 diabetes mellitus and can make it harder to ",
+            "offsets_in_document": [
+              {
+                "start": 162,
+                "end": 163
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 75,
+                "end": 76
+              }
+            ],
+            "document_id": "79eebd8a00226ff70463f2bfe5cd3b4b",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "30–40% higher for active smokers than nonsmokers.1,2",
+            "type": "extractive",
+            "score": 0.00014571103383786976,
+            "context": "30–40% higher for active smokers than nonsmokers.1,2\nSmoking causes general adverse effects on the body, including inflammation and decreased immune f",
+            "offsets_in_document": [
+              {
+                "start": 0,
+                "end": 52
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 52
+              }
+            ],
+            "document_id": "1c7abcaebf73527d7a41c433529736e3",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Benefits of Quitting page for more information about how quitting smoking can improve your health.\n\nReferences\nU.S. Department of Health and Human Services.The Health Consequences of Smoking—50 Years of Progress: A Report of the Surgeon General. Atlanta: U.",
+            "type": "extractive",
+            "score": 0.00013713192311115563,
+            "context": " Benefits of Quitting page for more information about how quitting smoking can improve your health.\n\nReferences\nU.S. Department of Health and Human Services.The Health Consequences of Smoking—50 Years of Progress: A Report of the Surgeon General. Atlanta: U.",
+            "offsets_in_document": [
+              {
+                "start": 59,
+                "end": 316
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 258
+              }
+            ],
+            "document_id": "2c1dad40cecfcaeba1bac1e9649e25d2",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "U.",
+            "type": "extractive",
+            "score": 0.000018991160686709918,
+            "context": "lth Promotion, Office on Smoking and Health, 2014 [accessed 2017 Apr 20].\nU.S. Department of Health and Human Services. How Tobacco Smoke Causes Disea",
+            "offsets_in_document": [
+              {
+                "start": 192,
+                "end": 194
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 74,
+                "end": 76
+              }
+            ],
+            "document_id": "8a0031bedfc25978c3796d6c860b4327",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "2010",
+            "type": "extractive",
+            "score": 0.000009330722605227493,
+            "context": "c Disease Prevention and Health Promotion, Office on Smoking and Health, 2010 [accessed 2017 Apr 20].\nCenters for Disease Control and Prevention. Quic",
+            "offsets_in_document": [
+              {
+                "start": 159,
+                "end": 163
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 73,
+                "end": 77
+              }
+            ],
+            "document_id": "5532890735bdd58a6dffd01664b67987",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "155. [accessed 2017 Apr 20].\nMokdad AH, Marks JS, Stroup DF, Gerberding JL. Actual Causes of Death in the United States. JAMA: Journal of the American Medical Association 2004;291(10):1238–45 [cited 2017 Apr 20].\nU.S. Department of Health and Human Services. Women and Smoking: A Report of the Surgeon General.",
+            "type": "extractive",
+            "score": 0.000021041390937170945,
+            "context": "155. [accessed 2017 Apr 20].\nMokdad AH, Marks JS, Stroup DF, Gerberding JL. Actual Causes of Death in the United States. JAMA: Journal of the American Medical Association 2004;291(10):1238–45 [cited 2017 Apr 20].\nU.S. Department of Health and Human Services. Women and Smoking: A Report of the Surgeon General.",
+            "offsets_in_document": [
+              {
+                "start": 19,
+                "end": 329
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 310
+              }
+            ],
+            "document_id": "9525192c0e681f996425f86053c0deca",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "2001",
+            "type": "extractive",
+            "score": 0.00001994983722397592,
+            "context": "nd Human Services, Public Health Service, Office of the Surgeon General, 2001 [accessed 2017 Apr 20].\nU.S. Department of Health and Human Services. Re",
+            "offsets_in_document": [
+              {
+                "start": 100,
+                "end": 104
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 73,
+                "end": 77
+              }
+            ],
+            "document_id": "25adf6bc6035266783f1d21cef72be2a",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Content source: \tOffice on Smoking and Health, National Center for Chronic Disease Prevention and Health Promotion\n\nFacebook\nTwitter\nLinkedIn\nSyndicate\n\nhomeHomeOffice",
+            "type": "extractive",
+            "score": 0.00020092114573344588,
+            "context": "\tContent source: \tOffice on Smoking and Health, National Center for Chronic Disease Prevention and Health Promotion\n\nFacebook\nTwitter\nLinkedIn\nSyndicate\n\nhomeHomeOffice",
+            "offsets_in_document": [
+              {
+                "start": 246,
+                "end": 413
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 168
+              }
+            ],
+            "document_id": "1e04639b24402bd8ac1acc2ffe886c38",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "COPD",
+            "type": "extractive",
+            "score": 0.00006497301365016028,
+            "context": "tline Data WarehouseBasic Informationplus iconHealth Effectsplus iconCancerHeart Disease and StrokeChronic Obstructive Pulmonary Disease (COPD)Smoking",
+            "offsets_in_document": [
+              {
+                "start": 494,
+                "end": 498
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 138,
+                "end": 142
+              }
+            ],
+            "document_id": "c30da007b656ffe1c961da3297813ecf",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Menthol Tobacco Products are a Public Health ProblemMenthol Smoking and Related Health DisparitiesAddressing Menthol Tobacco ProductsHeated Tobacco ProductsPolicy and Legislationplus iconLegislationRegulationYouth Tobacco PreventionRelated",
+            "type": "extractive",
+            "score": 0.0000029824032026226632,
+            "context": "nMenthol Tobacco Products are a Public Health ProblemMenthol Smoking and Related Health DisparitiesAddressing Menthol Tobacco ProductsHeated Tobacco ProductsPolicy and Legislationplus iconLegislationRegulationYouth Tobacco PreventionRelated",
+            "offsets_in_document": [
+              {
+                "start": 238,
+                "end": 477
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 240
+              }
+            ],
+            "document_id": "ff21f5f4829d098ea9ddec42989d0a8f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Tobacco",
+            "type": "extractive",
+            "score": 0.000009538889571558684,
+            "context": "urdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting TobaccoAmerican Indian and Alaska Native Peopleplus iconHealth BurdenUnfair an",
+            "offsets_in_document": [
+              {
+                "start": 176,
+                "end": 183
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 72,
+                "end": 79
+              }
+            ],
+            "document_id": "697a2bd80a5fdf565535baf9674d2e6b",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Tobacco",
+            "type": "extractive",
+            "score": 0.0000046165519052010495,
+            "context": "urdenUnfair and Unjust Practices and ConditionsSecondhand SmokeQuitting TobaccoLGBTQ+ Peopleplus iconHealth BurdenUnfair and Unjust Practices and Cond",
+            "offsets_in_document": [
+              {
+                "start": 84,
+                "end": 91
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 72,
+                "end": 79
+              }
+            ],
+            "document_id": "2688ace886414a3bcf5d1ac6164e065b",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Secondhand SmokeQuitting TobaccoSecondhand Smokeplus iconGeneral InformationTrends and DisparitiesHealth ProblemsSecondhand Smoke in the CommunitySecondhand Smoke in the HomeSmokefree PoliciesResourcesGoing Smokefree Mattersplus iconBars and RestaurantsCasinosIn Your HomeMultiunit HousingSurgeon General's Reports on Smoking and Tobacco Useplus icon2020 SGR—Smoking Cessation2016 SGR—E-Cigarette",
+            "type": "extractive",
+            "score": 0.000015449459169758484,
+            "context": "Secondhand SmokeQuitting TobaccoSecondhand Smokeplus iconGeneral InformationTrends and DisparitiesHealth ProblemsSecondhand Smoke in the CommunitySecondhand Smoke in the HomeSmokefree PoliciesResourcesGoing Smokefree Mattersplus iconBars and RestaurantsCasinosIn Your HomeMultiunit HousingSurgeon General's Reports on Smoking and Tobacco Useplus icon2020 SGR—Smoking Cessation2016 SGR—E-Cigarette",
+            "offsets_in_document": [
+              {
+                "start": 126,
+                "end": 522
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 396
+              }
+            ],
+            "document_id": "fd0b2b0f019b7e4520bfe3909b91c94a",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cigarette Smoking",
+            "type": "extractive",
+            "score": 0.00011428442667238414,
+            "context": "plus iconSmoking and CigarettesDiseases and DeathHealth Effects of Cigarette SmokingTobacco-Related MortalityCigarette Smoking in the U.S.Adult DataCe",
+            "offsets_in_document": [
+              {
+                "start": 193,
+                "end": 210
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 67,
+                "end": 84
+              }
+            ],
+            "document_id": "8221d4b0162d7e66c59a7b465f2e15f7",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cardiovascular Care SettingsRespiratory",
+            "type": "extractive",
+            "score": 0.000010637902960297652,
+            "context": "ality Weekly Reports (MMWR)Vital SignsPatient Careplus iconPatient Care Settings and Smoking Cessationplus iconCardiovascular Care SettingsRespiratory",
+            "offsets_in_document": [
+              {
+                "start": 450,
+                "end": 489
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 111,
+                "end": 150
+              }
+            ],
+            "document_id": "d0d9950580a4f007bc50d51bcbc45ce9",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cigarettes",
+            "type": "extractive",
+            "score": 0.000026856112526729703,
+            "context": "and Other Cessation Support ResourcesClinical Education and TrainingE-Cigarettes and Patient CareState and Community Workplus iconTobacco Control Prog",
+            "offsets_in_document": [
+              {
+                "start": 268,
+                "end": 278
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 80
+              }
+            ],
+            "document_id": "243392c5694b955b2db15d7f0eae40b0",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "icon",
+            "type": "extractive",
+            "score": 0.00000243692375079263,
+            "context": "for StatesState Fact SheetsTobacco Ingredient and Nicotine Reportingplus iconDescription of the LawsReporting InstructionsFederal Register NoticesLega",
+            "offsets_in_document": [
+              {
+                "start": 284,
+                "end": 288
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 73,
+                "end": 77
+              }
+            ],
+            "document_id": "ed189a881d231ddfa4c9e9eaacf1db2c",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "800-232-4636",
+            "type": "extractive",
+            "score": 0.03923878073692322,
+            "context": "\nDivision of Reproductive\nHealth\n\nSocial Media\n\nAbout CDC\nContact Us\n800-232-4636\n\nFacebook\nTwitter\nInstagram\nLinkedIn\nYoutube\nPinterest\nSnapchat\n\nCON",
+            "offsets_in_document": [
+              {
+                "start": 572,
+                "end": 584
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 69,
+                "end": 81
+              }
+            ],
+            "document_id": "c0e26533cdaed63a01353c11ef72e6ed",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Department of Health & Human Services",
+            "type": "extractive",
+            "score": 0.09891508519649506,
+            "context": "olski\nPortuguês\nItaliano\nDeutsch\n日本語\nفارسی\nEnglish\n\nU.S. Department of Health & Human Services\nAccessibility\nExternal Links\nPrivacy\nPolicies\nNo Fear A",
+            "offsets_in_document": [
+              {
+                "start": 420,
+                "end": 457
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 57,
+                "end": 94
+              }
+            ],
+            "document_id": "1a065f86f2c5525aac77e56eba08cfc3",
+            "meta": {}
+          },
+          {
+            "answer": "SAS",
+            "type": "extractive",
+            "score": 0.0003903905744664371,
+            "context": "icy\nUSA.gov\n\nvar CDC_POST={\"id\":\"577_15953\",\"type\":\"cdc_page\",\"tax\":[]};\n\nSAS\n\nstats\n\n.st0 {\nfill: #FFFFFF;\n}\n\n.st1 {\nfill: none;\nstroke: #FFFFFF;\nstr",
+            "offsets_in_document": [
+              {
+                "start": 645,
+                "end": 648
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 74,
+                "end": 77
+              }
+            ],
+            "document_id": "1a065f86f2c5525aac77e56eba08cfc3",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "window.pageOptions.navigation.breadcrumbs = {\nmode: 'auto',\nshowCurrentPage: false\n};\nwindow.CDC.tp4.public.appInit( window.pageOptions );\n\nExit Notification",
+            "type": "extractive",
+            "score": 0.00035813223803415895,
+            "context": "\twindow.pageOptions.navigation.breadcrumbs = {\nmode: 'auto',\nshowCurrentPage: false\n};\nwindow.CDC.tp4.public.appInit( window.pageOptions );\n\nExit Notification",
+            "offsets_in_document": [
+              {
+                "start": 605,
+                "end": 762
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 1,
+                "end": 158
+              }
+            ],
+            "document_id": "49f46bf1cece1d4397ae51f70d7e0f4",
+            "meta": {}
+          },
+          {
+            "answer": "window.pageOptions.navigation.breadcrumbs = {\nmode: 'auto',\nshowCurrentPage: false\n};\nwindow.CDC.tp4.public.appInit( window.pageOptions );\n\nExit Notification / Disclaimer Policy\n\nClose\n\nLinks with this icon  indicate that you are leaving the CDC website.",
+            "type": "extractive",
+            "score": 0.0001390499237459153,
+            "context": "window.pageOptions.navigation.breadcrumbs = {\nmode: 'auto',\nshowCurrentPage: false\n};\nwindow.CDC.tp4.public.appInit( window.pageOptions );\n\nExit Notification / Disclaimer Policy\n\nClose\n\nLinks with this icon  indicate that you are leaving the CDC website.",
+            "offsets_in_document": [
+              {
+                "start": 605,
+                "end": 859
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 254
+              }
+            ],
+            "document_id": "49f46bf1cece1d4397ae51f70d7e0f4",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Linking to a non-federal website does not constitute an endorsement by CDC or any of its employees of the sponsors or the information and products presented on the website.",
+            "type": "extractive",
+            "score": 0.000002405155782980728,
+            "context": "Linking to a non-federal website does not constitute an endorsement by CDC or any of its employees of the sponsors or the information and products presented on the website.",
+            "offsets_in_document": [
+              {
+                "start": 105,
+                "end": 277
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 172
+              }
+            ],
+            "document_id": "e8cb5d83d182abdf011bcf901c09f25f",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cancel\nContinue",
+            "type": "extractive",
+            "score": 0.00007125854608602822,
+            "context": "ation on CDC's web notification policies, see Website Disclaimers.\n\nCancel\nContinue\n\nCDC.gov Privacy Settings\n\nWe take your privacy seriously. You can",
+            "offsets_in_document": [
+              {
+                "start": 238,
+                "end": 253
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 68,
+                "end": 83
+              }
+            ],
+            "document_id": "537b10619ac9a02a471ff3917b060408",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Checkbox",
+            "type": "extractive",
+            "score": 0.0000066121897361881565,
+            "context": "Checkbox\n\nPerformance Cookies\n\nThese cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. T",
+            "offsets_in_document": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 8
+              }
+            ],
+            "document_id": "42c21a1e207dcf3d9e446a54e6838708",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cookies used to make website functionality more relevant to you.",
+            "type": "extractive",
+            "score": 0.000012501970559242181,
+            "context": "onal Cookies Checkbox\n\nFunctional Cookies\n\nCookies used to make website functionality more relevant to you. These cookies perform functions like remem",
+            "offsets_in_document": [
+              {
+                "start": 207,
+                "end": 271
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 43,
+                "end": 107
+              }
+            ],
+            "document_id": "44976e827602ba14267bf1058dbc34b7",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Cookies used to track the effectiveness of CDC public health campaigns through clickthrough data.",
+            "type": "extractive",
+            "score": 0.000024800228857202455,
+            "context": "heckbox\n\nCampaign Cookies\n\nCookies used to track the effectiveness of CDC public health campaigns through clickthrough data.\n\nSocial Media Cookies Che",
+            "offsets_in_document": [
+              {
+                "start": 147,
+                "end": 244
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 27,
+                "end": 124
+              }
+            ],
+            "document_id": "4647f5cd5b47ab2b4829e7ea021cdba",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "Remove all",
+            "type": "extractive",
+            "score": 0.000029456348784151487,
+            "context": "es may also be used for advertising purposes by these third parties.\n\nRemove all\n\nConfirm Choices\n\nConfirmed!\nThank you for taking the time to confirm",
+            "offsets_in_document": [
+              {
+                "start": 150,
+                "end": 160
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 70,
+                "end": 80
+              }
+            ],
+            "document_id": "9b7e13d4d64b1cf083ad951ee2bbe4e7",
+            "meta": {}
+          }
+        ],
+        [
+          {
+            "answer": "!function(){if(\"cdcgov\"==s.account||\"cdcpartners\"==s.account||\"vaxgov\"==s.account){var c=document.createElement(\"script\");c.id=\"_fed_an_ua_tag\",c.src=\"https://www.cdc.gov/JScript/metrics/google/Universal-Federated-Analytics-Min.js?agency=HHS&amp;subagency=CDC\",document.body.appendChild(c)}document.getElementsByTagName(\"body\")[0].className+=\" adobe-launch-complete\"}();",
+            "type": "extractive",
+            "score": 0.00007373133848886937,
+            "context": "!function(){if(\"cdcgov\"==s.account||\"cdcpartners\"==s.account||\"vaxgov\"==s.account){var c=document.createElement(\"script\");c.id=\"_fed_an_ua_tag\",c.src=\"https://www.cdc.gov/JScript/metrics/google/Universal-Federated-Analytics-Min.js?agency=HHS&amp;subagency=CDC\",document.body.appendChild(c)}document.getElementsByTagName(\"body\")[0].className+=\" adobe-launch-complete\"}();",
+            "offsets_in_document": [
+              {
+                "start": 219,
+                "end": 589
+              }
+            ],
+            "offsets_in_context": [
+              {
+                "start": 0,
+                "end": 370
+              }
+            ],
+            "document_id": "ea1cac53b4d5c68a2862511986e1b1cd",
+            "meta": {}
+          }
+        ]
+      ]
+    ],
+    "no_ans_gaps": [
+      -11.205092430114746,
+      -7.0716089606285095,
+      -9.778037130832672,
+      -8.189882010221481,
+      -7.463768422603607,
+      -5.386287569999695,
+      -5.81601870059967,
+      -7.662465512752533,
+      -8.251117467880249,
+      6.666502475738525,
+      -9.986721515655518,
+      -6.434148073196411,
+      -11.582282543182373,
+      -9.281695246696472,
+      -8.80233120918274,
+      6.084803581237793,
+      -5.617797136306763,
+      3.3013744354248047,
+      -0.02475762367248535,
+      12.398877024650574,
+      -4.086809396743774,
+      8.08425760269165,
+      7.799170970916748,
+      4.042346954345703,
+      4.51713752746582,
+      6.702133417129517,
+      -0.04001951217651367,
+      7.558741569519043,
+      -5.99967098236084,
+      14.927771806716919,
+      -9.943661332130432,
+      -10.575324058532715,
+      -17.99124240875244,
+      -18.398475646972656,
+      -3.3523778915405273,
+      -13.692415952682495,
+      -9.973412185907364,
+      1.9296298027038574,
+      -5.529837906360626,
+      -3.099133014678955,
+      1.2519407272338867,
+      10.226936340332031,
+      -16.512717247009277,
+      -9.785632371902466,
+      -13.242116451263428,
+      -5.442895770072937,
+      -9.0397469997406,
+      -12.180002927780151,
+      -23.039396286010742,
+      -18.453162670135498,
+      -21.949705123901367,
+      -20.293596267700195,
+      -21.38236904144287,
+      -20.44122314453125,
+      -18.534265518188477,
+      -12.275983810424805,
+      -9.66080617904663,
+      -9.004996061325073,
+      -11.8033607006073,
+      -11.594397068023682,
+      -12.025825023651123,
+      -12.41334056854248,
+      -15.845865249633789,
+      -12.580549716949463,
+      -10.432957887649536,
+      -12.733038902282715,
+      -7.671870708465576,
+      -15.360350608825684,
+      -15.745476722717285,
+      -14.782200813293457,
+      -18.490854263305664,
+      -16.329934120178223,
+      -12.845055103302002,
+      -19.258627891540527,
+      -11.681580543518066,
+      -19.57316493988037,
+      -19.04624652862549,
+      -17.43670654296875,
+      -11.374426364898682,
+      -13.811652183532715,
+      -16.192972660064697,
+      -16.649235725402832,
+      -19.42588996887207,
+      -22.963808059692383,
+      -17.71329402923584,
+      -18.059664726257324,
+      -21.95113754272461,
+      -23.186931610107422,
+      -21.69597339630127,
+      -21.796377182006836,
+      -17.089584827423096,
+      -19.331430435180664,
+      -25.449142456054688,
+      -23.15991973876953,
+      -24.61123275756836,
+      -22.16301441192627,
+      -18.164863109588623,
+      -22.90809726715088,
+      -21.18960666656494,
+      -25.87050437927246,
+      -5.907731652259827,
+      -4.339748859405518,
+      -16.163222312927246,
+      -25.879996299743652,
+      -19.10047149658203,
+      -23.945051193237305,
+      -22.60362434387207,
+      -21.394835472106934,
+      -21.19814109802246,
+      -19.12428331375122
+    ]
+  }

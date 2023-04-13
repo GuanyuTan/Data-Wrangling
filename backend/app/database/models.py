@@ -9,13 +9,23 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
-    full_name = Column(String, unique=False, index=True)
     email = Column(String, unique=True, index=True)
+    full_name = Column(String, unique=False, index=True)
     hashed_password = Column(String)
     disabled = Column(Boolean, default=False)
 
-    # items = relationship("Item", back_populates="owner")
+    file = relationship("File", back_populates="owner")
 
+
+class File(Base):
+    __tablename__ = "files"
+
+    id = Column(Integer, primary_key=True, index=True)
+    filename = Column(String, unique=True, index=True)
+    filepath = Column(String, unique=True, index=True)
+    owner_id = Column(Integer, ForeignKey("users.id"))
+
+    owner = relationship("User", back_populates="file")
 
 # class Item(Base):
 #     __tablename__ = "items"

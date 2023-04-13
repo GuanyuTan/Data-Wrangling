@@ -1,5 +1,5 @@
 from fastapi import Depends, FastAPI
-from routers import users, api
+from routers import users, api, file_upload
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -14,3 +14,4 @@ app.add_middleware(
 )
 app.include_router(users.router)
 app.include_router(api.router)
+app.include_router(file_upload.router)

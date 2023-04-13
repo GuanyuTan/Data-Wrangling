@@ -1,0 +1,20 @@
+{
+    "web":[
+        {
+            "url": "https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/",
+            "queries":[
+                "What are the bad effects on health when you smoke?",
+                "Cancer by smoking?"
+            ]
+        }
+    ],
+    "pdf":[
+        {
+            "file_name":"smoking.pdf",
+            "queries":[
+                "What are the bad effects on health when you smoke?",
+                "Cancer by smoking?"
+            ]
+        }
+    ]
+}

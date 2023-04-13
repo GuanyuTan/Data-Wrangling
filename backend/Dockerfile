@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.9
 
 ARG CHROME_VERSION="google-chrome-stable"
 
@@ -44,6 +44,9 @@ RUN if [ -z "$CHROME_DRIVER_VERSION" ]; \
 
 RUN echo "chrome" > /opt/selenium/browser_name
 
+# requirement for PDF reader
+RUN apt-get install xpdf 
+
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
@@ -54,7 +57,7 @@ RUN source .venv/bin/activate
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-RUN pip install 'farm-haystack[all-gpu]' --no-cache-dir
+RUN pip install 'farm-haystack[all-gpu]'>=1.13.0 --no-cache-dir
 
 # FAISS cpu and gpu versions are not coexistable
 RUN pip uninstall faiss-cpu -y
@@ -67,7 +70,9 @@ RUN pip install "passlib[bcrypt]"
 
 COPY ./app /code/app
 
-RUN mkdir -p {/code/Files/PDF, /code/Files/web}
+RUN mkdir -p /code/app/Files/PDF
+
+RUN mkdir -p /code/app/Files/web
 
 ENV PYTHONPATH "PYTHONPATH:/code/app"
 
