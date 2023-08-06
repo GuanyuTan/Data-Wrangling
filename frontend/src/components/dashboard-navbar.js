@@ -105,7 +105,7 @@ export const DashboardNavbar = (props) => {
 
               {
                 menuItems.map(item => (
-                  <NavItem title={item.title} items={item.items}>
+                  <NavItem title={item.title} key={item.title} items={item.items}>
 
                   </NavItem>
                 ))

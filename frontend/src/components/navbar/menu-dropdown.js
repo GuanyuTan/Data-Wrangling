@@ -11,7 +11,7 @@ export const MenuDropDown = (props) => {
         <Menu open={open} anchorEl={anchorEl} onMouseLeave={handleClose}>
             {
                 items.map(item => (
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem onClick={handleClose} key={item.title}>
                         {item.title}
                         {/* <Link href={item.href}>
                         </Link> */}

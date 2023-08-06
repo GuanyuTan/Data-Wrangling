@@ -62,7 +62,7 @@ const Links = (props) => {
     const { item, ...others } = props;
     return (
         <Box {...others}>
-            <Link href={item.href} style={{textDecoration: 'none'}} color={'neutral.500'}>
+            <Link href={item.href} key={item.title} style={{textDecoration: 'none'}} color={'neutral.500'}>
                 <Typography fontWeight={600}>
                     {item.title}
                 </Typography>

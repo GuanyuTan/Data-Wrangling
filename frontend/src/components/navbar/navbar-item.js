@@ -46,7 +46,7 @@ export const NavItem = (props) => {
                     transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                 >
                     {items.map(item => (
-                        <MenuItem onClick={popupState.close}>
+                        <MenuItem onClick={popupState.close} key={item.title}>
                             {item.title}
                         </MenuItem>
                     ))}
