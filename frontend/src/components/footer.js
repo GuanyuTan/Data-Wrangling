@@ -62,7 +62,7 @@ const Links = (props) => {
     const { item, ...others } = props;
     return (
         <Box {...others}>
-            <Link href={item.href} key={item.title} style={{textDecoration: 'none'}} color={'neutral.500'}>
+            <Link href={item.href} style={{textDecoration: 'none'}} color={'neutral.500'}>
                 <Typography fontWeight={600}>
                     {item.title}
                 </Typography>
@@ -116,6 +116,7 @@ export const Footer = () => {
                         {directoryList.map(item => (
                             <Links
                                 item={item}
+                                key={item.title}
                                 sx={{
                                     paddingBottom: '5px'
                                 }}>
@@ -130,6 +131,7 @@ export const Footer = () => {
                         {socialList.map(item => (
                             <Links
                                 item={item}
+                                key={item.title}
                                 sx={{
                                     paddingBottom: '5px'
                                 }}>
@@ -142,7 +144,8 @@ export const Footer = () => {
                             // justifyContent:'space-around'
                         }}>
                         {policyList.map(item => (
-                            <Links
+                            <Links 
+                                key={item.title}
                                 item={item}
                                 sx={{
                                     paddingBottom: '5px'
