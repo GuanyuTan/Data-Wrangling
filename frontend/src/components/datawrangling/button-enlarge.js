@@ -1,5 +1,4 @@
-import { Fab, styled, Avatar } from "@mui/material"
-import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+import { Fab, styled} from "@mui/material"
 
 export const StyledButton = styled(Fab)`
 ${({ theme }) => `
