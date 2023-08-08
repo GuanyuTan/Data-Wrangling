@@ -2,6 +2,7 @@ import { Accordion, AccordionSummary, AccordionDetails, Typography, Box } from "
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PropTypes from 'prop-types';
 import { TransitionGroup } from "react-transition-group";
+import { useState } from "react";
 
 
 const items = [
@@ -34,10 +35,15 @@ const items = [
 
 export const CustomAccordion = (props) => {
     const { children, title, ...others } = props
+    const [expanded, setExpanded] = useState(true)
+    const handleChange = (event) =>{
+        setExpanded(!expanded)
+    } 
     return (
         <Accordion
             elevation={12}
-            expanded={true}
+            expanded={expanded}
+            onChange={handleChange}
             sx={{
                 // border: '1px solid black'
                 
