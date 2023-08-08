@@ -171,7 +171,7 @@ export const theme = createTheme({
       default: '#F9FAFC',
       paper: '#FFFFFF'
     },
-    divider: '#000000',
+    divider: '#D1D5DB',
     primary: {
       main: '#3f51b5',
       light: '#c3cae3',

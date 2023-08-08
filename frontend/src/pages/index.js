@@ -73,13 +73,13 @@ const Page = () => {
                     sx={{
                         display: 'flex',
                         m: '20px',
-                        p: '20px',
-                        maxWidth: '80%',
-                        minWidth: '80%',
+                        p:'0px',
+                        maxWidth: '70%',
+                        minWidth: '70%',
                         justifyContent: '',
                     }}
                 >
-                    <Grid item lg={6}>
+                    <Grid item lg={6} display={'flex'} flexDirection='column' justifyContent={'space-between'} >
                         <Box sx={{ marginBottom: '5px' }}>
                             <Typography variant='h1'>
                                 Accelerating Digital Transformation through Big Data Adoption
@@ -107,18 +107,19 @@ const Page = () => {
                         </Box>
                     </Grid>
                     <Grid item lg={6}>
-                        {/* <Image src={'/adiba.png'} height={600} width={600}>
+                        <Image src={'/Remote meeting-pana.png'} width='1000px' height='700px'>
 
-                        </Image> */}
+                        </Image>
                     </Grid>
                 </Grid>
                 <Paper
                     sx={{
                         display: 'flex',
                         m: '20px',
-                        p: '20px',
-                        maxWidth: '80%',
-                        minWidth: '80%',
+                        paddingX: '20px',
+                        paddingY:'5px',
+                        maxWidth: '70%',
+                        minWidth: '70%',
                         justifyContent: '',
                     }}
                 >
@@ -126,11 +127,12 @@ const Page = () => {
                         sx={{
                             display: 'flex',
                             m: '20px',
-                            p: '20px',
+                            p: '0px',
+                            paddingBottom: '5px',
                             justifyContent: '',
                         }}
                     >
-                        <Grid item lg={4}>
+                        <Grid item lg={4} display={'flex'} flexDirection='column' justifyContent={'space-between'}>
                             <Box>
                                 <Typography variant='h1'>
                                     Bring Your Business To A New Height
@@ -152,6 +154,13 @@ const Page = () => {
                                 </Button>
                             </Box>
                         </Grid>
+                        <Grid item lg={8}>
+                            <Box display='flex' justifyContent='center'>
+                                <Image src={'/Investment data-rafiki.png'} width={500} height={400}>
+
+                                </Image>
+                            </Box>
+                        </Grid>
                     </Grid>
                 </Paper>
 
@@ -159,22 +168,24 @@ const Page = () => {
                     sx={{
                         display: 'flex',
                         m: '20px',
-                        p: '20px',
-                        maxWidth: '80%',
-                        minWidth: '80%',
+                        paddingX: '20px',
+                        paddingY:'5px',
+                        maxWidth: '70%',
+                        minWidth: '70%',
                         justifyContent: '',
                     }}
                 >
                     <Grid container
-                    spacing={2}
+                        spacing={2}
                         sx={{
                             display: 'flex',
                             m: '20px',
-                            p: '20px',
+                            p: '0px',
                             justifyContent: '',
                         }}
                     >
-                        <Grid item lg={6}>
+                        <Grid item lg={6} display={'flex'} flexDirection='column' justifyContent={'space-between'}>
+                            
                             <Box>
                                 <Typography variant='h2'>
                                     A Step-by-step Digital Transformation guide using Big Data Analytics.
@@ -197,20 +208,20 @@ const Page = () => {
                                 flexDirection: 'column',
                                 justifyContent: 'space-between'
                             }}>
-                            <Box sx={{marginBottom:'7px'}}>
+                            <Box sx={{ marginBottom: '7px' }}>
                                 <Typography variant='h2'>
                                     Step 1: Register
                                 </Typography>
                                 <Typography variant='body' fontSize={18}>
                                     Register with us!
                                 </Typography>
-                                <br/>
+                                <br />
                                 <Typography variant='body' fontSize={18}>
                                     Let our experts help you in your digital transformation planning journey.
                                 </Typography>
                             </Box>
-                            <Divider sx={{borderColor:'neutral.300'}}/>
-                            <Box sx={{marginBottom:'7px'}}>
+                            <Divider sx={{ borderColor: 'neutral.300' }} />
+                            <Box sx={{ marginBottom: '7px' }}>
                                 <Typography variant='h2'>
                                     Step 2: Use Our Tools
                                 </Typography>
@@ -218,8 +229,8 @@ const Page = () => {
                                     Follow the step-by-step guides in our 12+1 process framework to roll out your digital transformation plan.
                                 </Typography>
                             </Box>
-                            <Divider sx={{borderColor:'neutral.300'}}/>
-                            <Box sx={{marginBottom:'7px'}}>
+                            <Divider sx={{ borderColor: 'neutral.300' }} />
+                            <Box sx={{ marginBottom: '7px' }}>
                                 <Typography variant='h2'>
                                     Step 3: Engage With Us
                                 </Typography>

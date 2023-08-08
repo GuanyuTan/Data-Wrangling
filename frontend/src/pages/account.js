@@ -22,7 +22,7 @@ const Page = () => (
     >
       <Container maxWidth="lg">
         <Typography
-          sx={{ mb: 3 }}
+          sx={{ mb: 3, paddingTop:4 }}
           variant="h4"
         >
           Account

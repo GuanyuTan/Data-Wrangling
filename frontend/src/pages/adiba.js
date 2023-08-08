@@ -36,8 +36,13 @@ const Page = () => {
                 {/* <AdibaCircularButtonGraph>
 
                 </AdibaCircularButtonGraph> */}
-                <Box paddingX='10%'>
+                <Box paddingX='10%' marginBottom='10px'>
                     <CustomAccordion title='The 7 components of ADiBA'>
+                        <AdibaCircularButtonGraph></AdibaCircularButtonGraph>
+                    </CustomAccordion>
+                </Box>
+                <Box paddingX='10%' marginBottom='10px'>
+                    <CustomAccordion title='How ADiBA works'>
                         <AdibaCircularButtonGraph></AdibaCircularButtonGraph>
                     </CustomAccordion>
                 </Box>

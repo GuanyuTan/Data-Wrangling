@@ -12,7 +12,7 @@ import { NavItem } from './navbar/navbar-item';
 const menuItems = [
   {
     title: 'HOME',
-    href: '/home'
+    href: '/'
   },
   {
     title: 'ADIBA',

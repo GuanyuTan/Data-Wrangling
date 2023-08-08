@@ -35,11 +35,17 @@ const items = [
 export const CustomAccordion = (props) => {
     const { children, title, ...others } = props
     return (
-        <Accordion>
+        <Accordion
+            elevation={12}
+            expanded={true}
+            sx={{
+                // border: '1px solid black'
+                
+            }}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
             >
-                <Typography variant='h3' fontWeight={600}>
+                <Typography variant='h3' fontWeight={520}>
                     {title}
                 </Typography>
             </AccordionSummary>
