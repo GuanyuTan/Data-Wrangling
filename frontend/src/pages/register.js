@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useState } from 'react';
-import { login, signup } from '../requests/userApi';
+// import { login, signup } from '../requests/userApi';
 
 const Register = () => {
   const router = useRouter();
@@ -59,22 +59,6 @@ const Register = () => {
         )
     }),
     onSubmit: async (values) => {
-      const res = await signup(values);
-      if (res.status == 200) {
-        const res_2 = await login(values)
-        if (res_2.status == 200){
-          const json = res_2.json()
-          // if(typeof window !=='undefined'){
-          //   window.localStorage.setItem('token', json.access_token)
-          // }
-          router.push("/dashboard");
-        }
-        else{
-          alert(res_2.status+": "+res_2.detail)
-        }
-      }else{
-        alert(`Failed to perform user signup. ${res_2.status}`)
-      }
     }});
 
   return (
