@@ -1,7 +1,6 @@
 import { Accordion, AccordionSummary, AccordionDetails, Typography, Box } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import PropTypes from 'prop-types';
-import { TransitionGroup } from "react-transition-group";
 import { useState } from "react";
 
 

@@ -89,7 +89,7 @@ const Page = () => {
                             </Typography>
                         </Box>
                         <Box sx={{ marginBottom: '5px' }}>
-                            <Typography variant='body' fontSize={24}>
+                            <Typography variant='body' fontSize={20}>
                                 Business digitalization journey made easy with data analytics
                             </Typography>
                         </Box>
@@ -107,7 +107,7 @@ const Page = () => {
                         </Box>
                     </Grid>
                     <Grid item lg={6}>
-                        <Image src={'/Remote meeting-pana.png'} width='1000px' height='700px'>
+                        <Image src={'/illus-2.png'} width='1000px' height='700px'>
 
                         </Image>
                     </Grid>
@@ -139,12 +139,12 @@ const Page = () => {
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography variant='body' fontSize={20}>
+                                <Typography variant='body' fontSize={18}>
                                     Tapping into the power of Big Data Analytics.
                                 </Typography>
                                 <br>
                                 </br>
-                                <Typography variant='body' fontSize={20}>
+                                <Typography variant='body' fontSize={18}>
                                     Transform your business in Digitalization Age.
                                 </Typography>
                             </Box>
@@ -156,7 +156,7 @@ const Page = () => {
                         </Grid>
                         <Grid item lg={8}>
                             <Box display='flex' justifyContent='center'>
-                                <Image src={'/Investment data-rafiki.png'} width={500} height={400}>
+                                <Image src={'/illus-3.png'} width={500} height={400}>
 
                                 </Image>
                             </Box>
