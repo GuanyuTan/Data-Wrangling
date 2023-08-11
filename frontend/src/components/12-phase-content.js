@@ -18,7 +18,7 @@ const label = [
     'TEMPLATE'
 ]
 
-const data = [{
+const data_ = [{
     task: "IDENTIFY KEY VARIABLES",
     refs: 'CRISP-DM',
     subtask: [
@@ -40,7 +40,7 @@ const data = [{
 }]
 
 export function PhaseContent(props) {
-    const { introText, children, ...others } = props
+    const { introText, data, children, ...others } = props
     const [activeStep, setActiveStep] = React.useState(0);
 
     const totalSteps = () => {
@@ -108,7 +108,7 @@ export function PhaseContent(props) {
                         ))}
                     </Stepper>
                     <Box sx={{ margin: '20px' }}>
-                        <DataTable data={data} label={label}>
+                        <DataTable data={data_} label={label}>
 
                         </DataTable>
                     </Box>
@@ -136,5 +136,6 @@ export function PhaseContent(props) {
 };
 PhaseContent.propTypes = {
     introText: PropTypes.string,
+    data: PropTypes.Array,
 };
 
