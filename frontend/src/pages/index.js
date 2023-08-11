@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
-import { Answer } from '../components/datawrangling/answers'
 import { DashboardLayout } from '../components/dashboard-layout';
 import {
     Box,
@@ -67,31 +65,34 @@ const Page = () => {
                     justifyContent: 'space-around',
                     alignItems: 'center',
                     paddingTop: '80px',
+                    marginBottom: '40px'
                 }}
             >
                 <Grid container
                     sx={{
                         display: 'flex',
-                        m: '20px',
-                        p:'0px',
+                        m: '30px',
+                        p: '0px',
                         maxWidth: '70%',
                         minWidth: '70%',
-                        justifyContent: '',
+                        justifyContent: 'center',
                     }}
                 >
-                    <Grid item lg={6} display={'flex'} flexDirection='column' justifyContent={'space-between'} >
-                        <Box sx={{ marginBottom: '5px' }}>
-                            <Typography variant='h1'>
-                                Accelerating Digital Transformation through Big Data Adoption
-                            </Typography>
-                            <Typography variant='h1'>
-                                (ADiBA)
-                            </Typography>
-                        </Box>
-                        <Box sx={{ marginBottom: '5px' }}>
-                            <Typography variant='body' fontSize={20}>
-                                Business digitalization journey made easy with data analytics
-                            </Typography>
+                    <Grid item lg={6} display={'flex'} flexDirection='column' justifyContent={'space-between'}>
+                        <Box>
+                            <Box sx={{ marginBottom: '5px' }}>
+                                <Typography variant='h1'>
+                                    Accelerating Digital Transformation through Big Data Adoption
+                                </Typography>
+                                <Typography variant='h1'>
+                                    (ADiBA)
+                                </Typography>
+                            </Box>
+                            <Box sx={{ marginBottom: '5px' }}>
+                                <Typography variant='body' fontSize={20}>
+                                    Business digitalization journey made easy with data analytics
+                                </Typography>
+                            </Box>
                         </Box>
                         <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
                             <Box marginRight='5px'>
@@ -106,18 +107,17 @@ const Page = () => {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item lg={6}>
-                        <Image src={'/illus-2.png'} width='1000px' height='700px'>
-
+                    <Grid item lg={6} display={'flex'} flexGrow={1} alignSelf={'center'}>
+                        <Image src={'/illus-2.png'} width='500px' height={`${500 * 0.7}px`}>
                         </Image>
                     </Grid>
                 </Grid>
                 <Paper
                     sx={{
                         display: 'flex',
-                        m: '20px',
+                        m: '30px',
                         paddingX: '20px',
-                        paddingY:'5px',
+                        paddingY: '5px',
                         maxWidth: '70%',
                         minWidth: '70%',
                         justifyContent: '',
@@ -126,27 +126,29 @@ const Page = () => {
                     <Grid container
                         sx={{
                             display: 'flex',
-                            m: '20px',
+                            marginX: '30px',
                             p: '0px',
                             paddingBottom: '5px',
                             justifyContent: '',
                         }}
                     >
-                        <Grid item lg={4} display={'flex'} flexDirection='column' justifyContent={'space-between'}>
+                        <Grid item lg={5} display={'flex'} flexDirection='column' justifyContent={'space-between'} >
                             <Box>
-                                <Typography variant='h1'>
-                                    Bring Your Business To A New Height
-                                </Typography>
-                            </Box>
-                            <Box>
-                                <Typography variant='body' fontSize={18}>
-                                    Tapping into the power of Big Data Analytics.
-                                </Typography>
-                                <br>
-                                </br>
-                                <Typography variant='body' fontSize={18}>
-                                    Transform your business in Digitalization Age.
-                                </Typography>
+                                <Box>
+                                    <Typography variant='h1'>
+                                        Bring Your Business To A New Height
+                                    </Typography>
+                                </Box>
+                                <Box>
+                                    <Typography variant='body' fontSize={18}>
+                                        Tapping into the power of Big Data Analytics.
+                                    </Typography>
+                                    <br>
+                                    </br>
+                                    <Typography variant='body' fontSize={18}>
+                                        Transform your business in Digitalization Age.
+                                    </Typography>
+                                </Box>
                             </Box>
                             <Box marginRight='5px' marginTop='7px'>
                                 <Button variant='contained'>
@@ -154,10 +156,10 @@ const Page = () => {
                                 </Button>
                             </Box>
                         </Grid>
-                        <Grid item lg={8}>
-                            <Box display='flex' justifyContent='center'>
+                        <Grid item lg={7} height={'100%'}>
+                            <Box display='flex' justifyContent='center' padding='auto'>
                                 <Image src={'/illus-3.png'} width={500} height={400}>
-
+                                    {/* <a href="https://storyset.com/business">Business illustrations by Storyset</a> */}
                                 </Image>
                             </Box>
                         </Grid>
@@ -169,7 +171,7 @@ const Page = () => {
                         display: 'flex',
                         m: '20px',
                         paddingX: '20px',
-                        paddingY:'5px',
+                        paddingY: '5px',
                         maxWidth: '70%',
                         minWidth: '70%',
                         justifyContent: '',
@@ -185,7 +187,7 @@ const Page = () => {
                         }}
                     >
                         <Grid item lg={6} display={'flex'} flexDirection='column' justifyContent={'space-between'}>
-                            
+
                             <Box>
                                 <Typography variant='h2'>
                                     A Step-by-step Digital Transformation guide using Big Data Analytics.

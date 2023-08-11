@@ -1,13 +1,22 @@
 // import styled from "@emotion/styled";
-import { Divider, Link, Paper, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tabs, Typography } from "@mui/material";
+import { Divider, Link, Paper, Stepper, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tabs, Typography } from "@mui/material";
 import { DataTable } from "../components/task-table";
-import { Box } from "@mui/system";
+import { Box, maxWidth, minWidth } from "@mui/system";
 import Head from "next/head";
 import { DashboardLayout } from "../components/dashboard-layout"
 import { PropTypes } from "prop-types";
 import { useState } from "react";
+import HorizontalNonLinearStepper from "../components/custom-stepper";
+import { StyledButton } from "../components/datawrangling/button-enlarge";
+import { PhaseContent } from "../components/12-phase-content";
 const phase = [
-    { title: 'Strategic Teams Setup and Enculturation Preparation' },
+    {
+        title: 'Strategic Teams Setup and Enculturation Preparation',
+        introText: `In this phase, we outline the steps needed to prepare the organization for a big data-driven
+    analytics enculturation. The tasks in this step include creating a sense of urgency, building a
+    guiding coalition, building a vision of change, communicating the vision and removing barriers to
+    big data analytics adoption.`
+    },
     { title: 'Business Understanding' },
     { title: 'Data Management and Understanding' },
     { title: 'Data Governance' },
@@ -20,6 +29,8 @@ const phase = [
     { title: 'Evaluation' },
     { title: 'Data Product Deployment' }
 ]
+
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -76,20 +87,32 @@ const Page = () => {
                     alignItems: 'center',
                     paddingY: '70px',
                     paddingX: '40px',
-                    margin: '0px'
+                    margin: '0px',
                 }}
             >
-                <Box sx={{margin: '40px'}} display={'flex'}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        marginTop: '40px',
+                        marginX: '40px',
+                        maxHeight: '500px'
+                    }}>
                     <Tabs
                         orientation="vertical"
-                        variant="fullwidth"
                         onChange={handleTabChange}
                         value={tabValue}
                         centered
                         indicatorColor="primary"
-                        scrollButtons='auto'
+                        variant="scrollable"
+                        scrollButtons
                         selectionFollowsFocus
-                        sx={{ borderRight: 1, borderColor: 'divider' }}
+
+                        sx={{
+                            display: 'flex',
+                            flexGrow: 1,
+                            borderRight: 1,
+                            borderColor: 'divider'
+                        }}
 
                     >
                         {phase.map((item) => {
@@ -103,9 +126,22 @@ const Page = () => {
                             )
                         })}
                     </Tabs>
-                    <Divider orientation="vertical" />
-                    <TabPanel value={tabValue} index={0}>
-                        Item 1
+                    <TabPanel value={tabValue} index={0} display={'flex'}
+                        flexGrow={1}>
+                        <Box display={'flex'}
+                            flexGrow={1}
+                            flexDirection={'column'}
+                            // border={'1px solid black'}
+                            sx={{
+                                minHeight: '70vh',
+                                minWidth: '130vh',
+                                maxWidth: '130vh'
+                            }}
+                        >
+                            <PhaseContent introText={phase[0].introText}>
+
+                            </PhaseContent>
+                        </Box>
                     </TabPanel>
                     <TabPanel value={tabValue} index={1}>
                         Item 2

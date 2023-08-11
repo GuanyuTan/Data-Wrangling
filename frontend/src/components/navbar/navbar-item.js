@@ -33,7 +33,7 @@ export const NavItem = (props) => {
                     endIcon={<ArrowDropDownIcon fontSize='small' ></ArrowDropDownIcon>}
                     disableRipple
                     sx={{
-                        width: '100%', 
+                        width: '100%',
                         // justifyContent: 'flex-start',
                         textAlign: 'center',
                     }}
@@ -46,9 +46,11 @@ export const NavItem = (props) => {
                     transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                 >
                     {items.map(item => (
-                        <MenuItem onClick={popupState.close} key={item.title}>
-                            {item.title}
-                        </MenuItem>
+                        <Link href={`${item.href}`}>
+                            <MenuItem onClick={popupState.close} key={item.title}>
+                                {item.title}
+                            </MenuItem>
+                        </Link>
                     ))}
 
                 </HoverMenu>
@@ -62,13 +64,13 @@ export const NavItem = (props) => {
         >
             <Link
                 href={`${href}`}
-                style={{textDecoration: 'none'}} color={'inherit'}
+                style={{ textDecoration: 'none' }} color={'inherit'}
             >
                 <Button
                     component="a"
                     disableRipple
                     sx={{
-                        width: '100%', 
+                        width: '100%',
                         // justifyContent: 'flex-start',
                         textAlign: 'center',
                     }}

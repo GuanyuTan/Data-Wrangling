@@ -18,20 +18,20 @@ const menuItems = [
     title: 'ADIBA',
     items: [{
       title: 'What is ADIBA',
-      href: '/about'
+      href: '/adiba'
     }, {
       title: 'How it began',
-      href: '/about'
+      href: '/adiba'
     }],
   },
   {
     title: 'COMPONENTS',
     items: [{
       title: 'The 7 Components',
-      href: '/about'
+      href: '/components'
     }, {
-      title: 'How it works',
-      href: '/about'
+      title: 'How ADiBA works',
+      href: '/components'
     }],
   },
   {
@@ -65,15 +65,6 @@ export const DashboardNavbar = (props) => {
             px: 2
           }}
         >
-          {/* <Box
-            sx={{ display: 'inline-flex' }}
-          >
-            <IconButton
-              onClick={onSidebarOpen}
-            >
-              <MenuIcon fontSize="small" />
-            </IconButton>
-          </Box> */}
           <Box
             sx={{
               display: 'inline-flex',
@@ -92,20 +83,21 @@ export const DashboardNavbar = (props) => {
           <Box
             sx={{
               display: 'inline-flex',
-              flexGrow: 2
-              
+              flexGrow: 2,
+              justifyContent: 'space-around'
+
             }}
           >
             <List sx={{
               display: 'flex',
               flexDirection: 'row',
-              width: '100%',
+              width: '100vh',
               justifyContent: 'space-between'
             }}>
 
               {
                 menuItems.map(item => (
-                  <NavItem title={item.title} key={item.title} items={item.items}>
+                  <NavItem title={item.title} key={item.title} items={item.items} href={item.href}>
 
                   </NavItem>
                 ))
@@ -126,9 +118,12 @@ export const DashboardNavbar = (props) => {
               </Button>
             </Box>
             <Box sx={{ marginX: '5px' }}>
-              <Button variant='contained'>
-                SIGN UP
-              </Button>
+              <Link href={`/register`}
+                style={{ textDecoration: 'none' }} color={'inherit'}>
+                <Button variant='contained'>
+                  SIGN UP
+                </Button>
+              </Link>
             </Box>
           </Box>
 
