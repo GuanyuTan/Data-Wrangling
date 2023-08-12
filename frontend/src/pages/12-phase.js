@@ -133,9 +133,10 @@ const Page = () => {
                             flexDirection={'column'}
                             // border={'1px solid black'}
                             sx={{
-                                minHeight: '70vh',
-                                minWidth: '130vh',
-                                maxWidth: '130vh'
+                                minHeight: '550px',
+                                maxHeight: '70vh',
+                                minWidth: '80vw',
+                                maxWidth: '80vw',
                             }}
                         >
                             <PhaseContent introText={phase[0].introText}>

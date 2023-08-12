@@ -20,7 +20,6 @@ export const NavItem = (props) => {
         variant: 'popover',
         popupId: `menu${id}`,
     })
-    const router = useRouter();
 
 
 

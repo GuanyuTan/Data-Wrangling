@@ -18,10 +18,10 @@ const menuItems = [
     title: 'ADIBA',
     items: [{
       title: 'What is ADIBA',
-      href: '/adiba'
+      href: '/about'
     }, {
       title: 'How it began',
-      href: '/adiba'
+      href: '/about'
     }],
   },
   {
@@ -113,22 +113,24 @@ export const DashboardNavbar = (props) => {
             }}
           >
             <Box sx={{ marginX: '5px' }}>
+              <Link href={`/login`}>
               <Button variant='text'>
                 SIGN IN
               </Button>
-            </Box>
-            <Box sx={{ marginX: '5px' }}>
-              <Link href={`/register`}
-                style={{ textDecoration: 'none' }} color={'inherit'}>
-                <Button variant='contained'>
-                  SIGN UP
-                </Button>
-              </Link>
-            </Box>
+            </Link>
           </Box>
+          <Box sx={{ marginX: '5px' }}>
+            <Link href={`/register`}
+              style={{ textDecoration: 'none' }} color={'inherit'}>
+              <Button variant='contained'>
+                SIGN UP
+              </Button>
+            </Link>
+          </Box>
+        </Box>
 
-        </Toolbar>
-      </DashboardNavbarRoot >
+      </Toolbar>
+    </DashboardNavbarRoot >
       <AccountPopover
         anchorEl={settingsRef.current}
         open={openAccountPopover}
