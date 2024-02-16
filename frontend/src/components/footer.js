@@ -1,6 +1,8 @@
-import { Box, Link, List, ListItem, Paper, Typography, styled } from "@mui/material"
+import { Box, List, ListItem, Paper, Typography, styled } from "@mui/material"
+import { Link as LinkMUI } from "@mui/material"
 import { height, width } from "@mui/system"
 import Image from "next/image"
+import Link from "next/link"
 
 const FooterListItem = styled(ListItem)(({ theme }) => ({
     display: 'flex',
@@ -14,19 +16,19 @@ const FooterListItem = styled(ListItem)(({ theme }) => ({
 const directoryList = [
     {
         title: 'HOME',
-        href: ''
+        href: '/'
     },
     {
         title: 'SERVICES',
-        href: ''
+        href: '/services'
     },
     {
         title: 'ABOUT US',
-        href: ''
+        href: '/about'
     },
     {
         title: 'CONTACT',
-        href: ''
+        href: '/contact'
     },
 ]
 const socialList = [
@@ -62,10 +64,12 @@ const Links = (props) => {
     const { item, ...others } = props;
     return (
         <Box {...others}>
-            <Link href={item.href} style={{textDecoration: 'none'}} color={'neutral.500'}>
-                <Typography fontWeight={600}>
-                    {item.title}
-                </Typography>
+            <Link href={item.href} >
+                <LinkMUI style={{ textDecoration: 'none' }} color={'neutral.500'}>
+                    <Typography fontWeight={600}>
+                        {item.title}
+                    </Typography>
+                </LinkMUI>
             </Link>
         </Box>
     )
@@ -97,7 +101,10 @@ export const Footer = () => {
                             flexDirection: 'column',
                             alignItems: 'flex-start',
                         }}>
-                        <Link>
+                        <Link
+                            href="/"
+                            passHref
+                        >
                             <a>
                                 <Image src='/adiba.png' width={140} height={140 / 2} alt='logo' />
                             </a>
@@ -144,7 +151,7 @@ export const Footer = () => {
                             // justifyContent:'space-around'
                         }}>
                         {policyList.map(item => (
-                            <Links 
+                            <Links
                                 key={item.title}
                                 item={item}
                                 sx={{

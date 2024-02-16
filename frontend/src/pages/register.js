@@ -11,10 +11,12 @@ import {
   FormHelperText,
   Link,
   TextField,
-  Typography
+  Typography,
+  Grid
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useState } from 'react';
+import { Facebook as FacebookIcon } from '../icons/facebook';
+import { Google as GoogleIcon } from '../icons/google';
 // import { login, signup } from '../requests/userApi';
 
 const Register = () => {
@@ -59,7 +61,8 @@ const Register = () => {
         )
     }),
     onSubmit: async (values) => {
-    }});
+    }
+  });
 
   return (
     <>
@@ -210,7 +213,7 @@ const Register = () => {
                 {formik.errors.policy}
               </FormHelperText>
             )}
-            <Box sx={{ py: 2 }}>
+            <Box sx={{ py: 1 }}>
               <Button
                 color="primary"
                 disabled={formik.isSubmitting}
@@ -221,6 +224,55 @@ const Register = () => {
               >
                 Sign Up
               </Button>
+            </Box>
+            <Box>
+              <Box>
+                <Typography
+                  align="center"
+                  color="textSecondary"
+                  variant="body2"
+                >
+                  or login with Facebook/Google
+                </Typography>
+              </Box>
+              <Grid
+                container
+                spacing={3}
+                paddingY={1}
+              >
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                >
+                  <Button
+                    color="info"
+                    fullWidth
+                    startIcon={<FacebookIcon />}
+                    onClick={() => formik.handleSubmit()}
+                    size="large"
+                    variant="contained"
+                  >
+                    Login with Facebook
+                  </Button>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  md={6}
+                >
+                  <Button
+                    color="error"
+                    fullWidth
+                    onClick={() => formik.handleSubmit()}
+                    size="large"
+                    startIcon={<GoogleIcon />}
+                    variant="contained"
+                  >
+                    Login with Google
+                  </Button>
+                </Grid>
+              </Grid>
             </Box>
             <Typography
               color="textSecondary"
@@ -242,7 +294,7 @@ const Register = () => {
             </Typography>
           </form>
         </Container>
-      </Box>
+      </Box >
     </>
   );
 };
