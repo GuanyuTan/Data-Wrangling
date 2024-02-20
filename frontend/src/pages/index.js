@@ -35,7 +35,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const inInViewport = (ref) => {
+const useInInViewport = (ref) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const observer = useMemo(
     () =>
@@ -59,9 +59,9 @@ const Page = () => {
   const divRef2 = useRef(false);
   const divRef3 = useRef(false);
 
-  const inView1 = inInViewport(divRef1);
-  const inView2 = inInViewport(divRef2);
-  const inView3 = inInViewport(divRef3);
+  const inView1 = useInInViewport(divRef1);
+  const inView2 = useInInViewport(divRef2);
+  const inView3 = useInInViewport(divRef3);
 
 
   return (
@@ -159,7 +159,7 @@ const Page = () => {
               m: "30px",
               paddingX: "20px",
               width: "1000px",
-            paddingY: "40px",
+              paddingY: "40px",
 
               justifyContent: "",
             }}
@@ -212,7 +212,7 @@ const Page = () => {
         <Box
           ref={divRef3}
           sx={{
-            display:"flex",
+            display: "flex",
             width: '100%',
             justifyContent: 'center',
             backgroundImage: 'linear-gradient(to top, #B2E0F2, #F9FAFC)',
