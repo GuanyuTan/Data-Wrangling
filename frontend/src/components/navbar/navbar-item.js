@@ -46,7 +46,7 @@ export const NavItem = (props) => {
                 >
                     {items.map(item => (
                         <Link key={item.href} href={`${item.href}`}>
-                            <MenuItem onClick={popupState.close} key={item.title}>
+                            <MenuItem onClick={popupState.close} key={`${item.title}_1`}>
                                 {item.title}
                             </MenuItem>
                         </Link>

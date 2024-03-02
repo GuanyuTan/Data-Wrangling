@@ -67,7 +67,7 @@ const Page = () => {
     const queryRef = useRef();
     const [loading, setLoading] = useState(false);
     const [currentquery, setQuery] = useState("");
-    const [document, setDocument] = useState("");
+    const [doc, setDoc] = useState("");
     const [queryArray, setQueryArray] = useState([]);
     const [result, setResult] = useState()
     const [url, setUrl] = useState("");
@@ -88,7 +88,7 @@ const Page = () => {
         // console.log(JSON.stringify(result.documents))
         Router.push(
             {
-                pathname: "/retrain",
+                pathname: "/wrangling/retrain",
                 query: {
                     document_: JSON.stringify(result.documents),
                     queryArray: [...queryArray]
@@ -157,22 +157,25 @@ const Page = () => {
                         "url": url
                     }
                 )
-                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/web_scrape`,
+                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wrangling/web_scrape`,
                     {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Origin': `${process.env.NEXT_PUBLIC_API_URL}/api/web_scrape`
+                            'Origin': `${process.env.NEXT_PUBLIC_API_URL}/wrangling/web_scrape`
                         },
                         body: body_
                     }
-                ).then((result) => (result.json()))
-                    .then((data) => {
-                        setResult(data);
-                        setDocument(data.documents);
-                        setLoading(false);
-                        setTabValue(2);
-                    })
+                ).then((result) => (
+                    result.json())
+                ).then((data) => {
+                    setResult(data);
+                    setDoc(data.documents);
+                    setLoading(false);
+                    setTabValue(2);
+                }).catch(error=>{
+                    console.log(error)
+                })
             } else if (tabValue == 1) {
                 const body_ = new FormData();
                 // for(var i=0; i<queryArray.length; i++){
@@ -189,7 +192,7 @@ const Page = () => {
                 }).then((result) => (result.json()))
                     .then((data) => {
                         setResult(data);
-                        setDocument(data.documents);
+                        setDoc(data.documents);
                         setLoading(false);
                         setTabValue(2);
 

@@ -4,16 +4,17 @@ import NextLink from 'next/link';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, FormHelperText, Grid, Tab, Tabs, TextField, Typography } from '@mui/material';
-import { auth, ENABLE_AUTH } from '../../authlib/auth';
+// import { auth, ENABLE_AUTH } from '../../authlib/auth';
 import { Logo } from '../../components/logo';
-import { useAuthContext } from '../../contexts/auth-context';
+import { useAuth } from '../../contexts/auth';
+// import { useAuthContext } from '../../contexts/auth-context';
 import Router from 'next/router';
 import Image from 'next/image';
 
 const Page = () => {
   const [tab, setTab] = useState('email');
   const [emailSent, setEmailSent] = useState(false);
-  const authContext = useAuthContext();
+  const authContext = useAuth();
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -66,7 +67,7 @@ const Page = () => {
     const user = {};
 
     // Update Auth Context state
-    authContext.signIn(user);
+    authContext.login(user);
 
     // Persist the skip for AuthProvider initialize call
     globalThis.sessionStorage.setItem('skip-auth', 'true');

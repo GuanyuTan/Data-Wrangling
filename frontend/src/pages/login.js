@@ -7,9 +7,12 @@ import { Box, Button, Container, Grid, Link, TextField, Typography } from '@mui/
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Facebook as FacebookIcon } from '../icons/facebook';
 import { Google as GoogleIcon } from '../icons/google';
+import { useContext } from 'react';
+import { useAuth } from '../contexts/auth';
 
 const Login = () => {
-  const router = useRouter()
+  const auth = useAuth()
+  // const router = useRouter()
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -25,29 +28,29 @@ const Login = () => {
         .max(255)
         .required('Password is required')
     }),
-    onSubmit: async (values) => {
-      const res_2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/token`,
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: new URLSearchParams({
-              "username": values.username,
-              "password": values.password
-            }).toString()
-          }
-        )
-        if (res_2.status == 200){
-          const json = res_2.json()
-          localStorage.setItem('token', json.access_token);
-          router.push("/dashboard");
-        }else if(res_2.status == 401){
-          alert("Wrong username or password")
-        }else{
-          alert(res_2.status)
-        }
-    }
+    // onSubmit: async (values) => {
+    //   const res_2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/token`,
+    //       {
+    //         method: 'POST',
+    //         headers: {
+    //           'Content-Type': 'application/x-www-form-urlencoded',
+    //         },
+    //         body: new URLSearchParams({
+    //           "username": values.username,
+    //           "password": values.password
+    //         }).toString()
+    //       }
+    //     )
+    //     if (res_2.status == 200){
+    //       const json = res_2.json()
+    //       localStorage.setItem('token', json.access_token);
+    //       router.push("/dashboard");
+    //     }else if(res_2.status == 401){
+    //       alert("Wrong username or password")
+    //     }else{
+    //       alert(res_2.status)
+    //     }
+    // }
   });
 
   return (
@@ -76,7 +79,7 @@ const Login = () => {
               Home
             </Button>
           </NextLink>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={auth.login}>
             <Box>
               <Typography
                 color="textPrimary"
@@ -91,12 +94,12 @@ const Login = () => {
               error={Boolean(formik.touched.username && formik.errors.username)}
               fullWidth
               helperText={formik.touched.username && formik.errors.username}
-              label="Username"
+              label="Email"
               margin="normal"
-              name="username"
+              name="email"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              type="username"
+              type="email"
               variant="outlined"
             />
             <TextField
@@ -114,7 +117,7 @@ const Login = () => {
             <Box sx={{ py: 2 }}>
               <Button
                 color="primary"
-                disabled={formik.isSubmitting}
+                // disabled={formik.isSubmitting}
                 fullWidth
                 size="large"
                 type="submit"

@@ -3,11 +3,14 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { AppBar, Avatar, Box, Button, IconButton, List, Toolbar } from '@mui/material';
+import { useAuth } from '../contexts/auth';
 import MenuIcon from '@mui/icons-material/Menu';
 import { UserCircle as UserCircleIcon } from '../icons/user-circle';
 import { AccountPopover } from './account-popover';
 import Image from 'next/image';
 import { NavItem } from './navbar/navbar-item';
+import ProfileAvatar from './account/account-avatar';
+
 
 const menuItems = [
   {
@@ -52,6 +55,7 @@ export const DashboardNavbar = (props) => {
   const { onSidebarOpen, ...other } = props;
   const settingsRef = useRef(null);
   const [openAccountPopover, setOpenAccountPopover] = useState(false);
+  const { isAuthenticated } = useAuth();
 
   return (
     <>
@@ -105,32 +109,47 @@ export const DashboardNavbar = (props) => {
 
             </List>
           </Box>
-          <Box
-            sx={{
-              display: 'inline-flex',
-              flexGrow: 1,
-              justifyContent: 'flex-end'
-            }}
-          >
-            <Box sx={{ marginX: '5px' }}>
-              <Link href={`/login`}>
-              <Button variant='text'>
-                SIGN IN
-              </Button>
-            </Link>
-          </Box>
-          <Box sx={{ marginX: '5px' }}>
-            <Link href={`/register`}
-              style={{ textDecoration: 'none' }} color={'inherit'}>
-              <Button variant='contained'>
-                SIGN UP
-              </Button>
-            </Link>
-          </Box>
-        </Box>
+          {
+            !isAuthenticated ?
+              <Box
+                sx={{
+                  display: 'inline-flex',
+                  flexGrow: 1,
+                  justifyContent: 'flex-end'
+                }}
+              >
+                <Box sx={{ marginX: '5px' }}>
+                  <Link href={`/login`}>
+                    <Button variant='text'>
+                      SIGN IN
+                    </Button>
+                  </Link>
+                </Box>
+                <Box sx={{ marginX: '5px' }}>
+                  <Link href={`/signup`}
+                    style={{ textDecoration: 'none' }} color={'inherit'}>
+                    <Button variant='contained'>
+                      SIGN UP
+                    </Button>
+                  </Link>
+                </Box>
+              </Box>
+              :
+              <Box
+                sx={{
+                  display: 'inline-flex',
+                  flexGrow: 1,
+                  justifyContent: 'flex-end'
+                }}
+              >
+                <Box sx={{ marginX: '5px' }}>
+                  <ProfileAvatar/>
+                </Box>
+              </Box>
+          }
 
-      </Toolbar>
-    </DashboardNavbarRoot >
+        </Toolbar>
+      </DashboardNavbarRoot >
       <AccountPopover
         anchorEl={settingsRef.current}
         open={openAccountPopover}

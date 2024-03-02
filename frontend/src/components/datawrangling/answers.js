@@ -33,13 +33,13 @@ export const Answer = (props) => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Box height="300px" overflow="scroll">
-                            {document.map((doc, index) => (
+                            {document?document.map((doc, index) => (
                                 <Box marginBottom="15px" key={doc.id}>
                                     <Typography sx={{ overflowWrap: "anywhere" }} variant='body1'>
                                         {doc["content"]}
                                     </Typography>
                                 </Box>
-                            ))}
+                            )):<></>}
                         </Box>
                     </AccordionDetails>
                 </Accordion>
@@ -53,7 +53,7 @@ export const Answer = (props) => {
                     </AccordionSummary>
 
                     <AccordionDetails>
-                        {answers.map((ans, index) => (
+                        {answers?answers.map((ans, index) => (
                             <Box
                                 marginY='50px'
                                 key={`answer_${index}`}
@@ -72,7 +72,7 @@ export const Answer = (props) => {
 
                                 </DataGrid>
                             </Box>
-                        ))}
+                        )):<></>}
                     </AccordionDetails>
                 </Accordion>
                 <Box display="flex" justifyContent="flex-end" marginTop="10px">
@@ -87,7 +87,7 @@ export const Answer = (props) => {
                         <Button download="answers.json" href={'data:' + JSON.stringify({
                             // TODO fix the issue where document only returns part of meta and no content
                             // "document": [...document],
-                            "answers": [...answers]
+                            // "answers": [...answers]
                         })}>
                             <Typography>
                                 Save

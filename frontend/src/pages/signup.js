@@ -16,39 +16,26 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Facebook as FacebookIcon } from '../icons/facebook';
-import { Google as GoogleIcon } from '../icons/google';
+import GoogleIcon from '@mui/icons-material/Google';
+import { useAuth } from '../contexts/auth';
 // import { login, signup } from '../requests/userApi';
 
-const Register = () => {
+const SignUp = () => {
+  const auth = useAuth();
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
-      username: "",
       email: "",
-      firstName: "",
-      lastName: "",
       password: "",
       policy: false
     },
     validationSchema: Yup.object({
-      username: Yup
-        .string()
-        .max(255)
-        .required('Username is required'),
       email: Yup
         .string()
         .email('Must be a valid email')
         .max(255)
         .required(
           'Email is required'),
-      firstName: Yup
-        .string()
-        .max(255)
-        .required('First name is required'),
-      lastName: Yup
-        .string()
-        .max(255)
-        .required('Last name is required'),
       password: Yup
         .string()
         .max(255)
@@ -60,10 +47,7 @@ const Register = () => {
           'This field must be checked'
         )
     }),
-    onSubmit: async (values) => {
-    }
   });
-
   return (
     <>
       <Head>
@@ -92,7 +76,7 @@ const Register = () => {
               Home
             </Button>
           </NextLink>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={auth.signup}>
             <Box sx={{ my: 1 }}>
               <Typography
                 color="textPrimary"
@@ -108,46 +92,6 @@ const Register = () => {
                 Use your email to create a new account
               </Typography>
             </Box>
-            <TextField
-              error={Boolean(formik.touched.username && formik.errors.username)}
-              fullWidth
-              helperText={formik.touched.username && formik.errors.username}
-              label="Username"
-              margin="normal"
-              name="username"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.username}
-              variant="outlined"
-              required
-            />
-
-            <TextField
-              error={Boolean(formik.touched.firstName && formik.errors.firstName)}
-              fullWidth
-              helperText={formik.touched.firstName && formik.errors.firstName}
-              label="First Name"
-              margin="normal"
-              name="firstName"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.firstName}
-              variant="outlined"
-              required
-            />
-            <TextField
-              error={Boolean(formik.touched.lastName && formik.errors.lastName)}
-              fullWidth
-              helperText={formik.touched.lastName && formik.errors.lastName}
-              label="Last Name"
-              margin="normal"
-              name="lastName"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              value={formik.values.lastName}
-              variant="outlined"
-              required
-            />
             <TextField
               error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
@@ -216,7 +160,7 @@ const Register = () => {
             <Box sx={{ py: 1 }}>
               <Button
                 color="primary"
-                disabled={formik.isSubmitting}
+                disabled={formik.values.email==="" || formik.values.password==="" ||!formik.values.policy||auth.loading}
                 fullWidth
                 size="large"
                 type="submit"
@@ -248,7 +192,7 @@ const Register = () => {
                   <Button
                     color="info"
                     fullWidth
-                    startIcon={<FacebookIcon />}
+                    startIcon={<FacebookIcon fontSize="inherit"/>}
                     onClick={() => formik.handleSubmit()}
                     size="large"
                     variant="contained"
@@ -266,8 +210,8 @@ const Register = () => {
                     fullWidth
                     onClick={() => formik.handleSubmit()}
                     size="large"
-                    startIcon={<GoogleIcon />}
                     variant="contained"
+                    startIcon={<GoogleIcon fontSize='large'/>}
                   >
                     Login with Google
                   </Button>
@@ -299,4 +243,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default SignUp;

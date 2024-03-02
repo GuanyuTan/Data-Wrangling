@@ -1,9 +1,10 @@
 import Head from "next/head";
 import PropTypes from "prop-types";
 import { DashboardLayout } from "../components/dashboard-layout";
-import { Box, Button, Divider, Fade, Grid, Paper, Typography, useTheme } from "@mui/material";
+import { Box, Button, Card, Divider, Paper, Fade, Grid, Typography, IconButton, CardContent } from "@mui/material";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Steps } from "../components/homepage/steps";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -37,20 +38,22 @@ TabPanel.propTypes = {
 
 const useInInViewport = (ref) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(([entry]) =>
-        setIsIntersecting(entry.isIntersecting),
-      ),
-    [],
-  );
+  if (typeof window !== "undefined") {
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(([entry]) =>
+          setIsIntersecting(entry.isIntersecting),
+        ),
+      [],
+    );
+    useEffect(() => {
+      observer.observe(ref.current);
+      return () => {
+        observer.disconnect();
+      }
+    }, [ref, observer]);
+  }
 
-  useEffect(() => {
-    observer.observe(ref.current);
-    return () => {
-      observer.disconnect();
-    }
-  }, [ref, observer]);
   return isIntersecting
 }
 
@@ -93,17 +96,18 @@ const Page = () => {
             container
             sx={{
               display: "flex",
+              m: "20px",
               width: "1000px",
-              padding: "px"
             }}
           >
-            <Fade in={inView1} appear={true} timeout={{ enter: 2000 }}>
+            <Fade in={inView1} appear={true} timeout={{ enter: 1500 }}>
               <Grid
                 item
                 lg={6}
+                sm={12}
                 display={"flex"}
                 flexDirection="column"
-                justifyContent={"space-between"}
+                justifyContent="center"
               >
                 <Box>
                   <Box sx={{ marginBottom: "5px" }}>
@@ -133,10 +137,11 @@ const Page = () => {
                 </Box>
               </Grid>
             </Fade>
-            <Fade in={inView1} appear={true} timeout={{ enter: 2000 }}>
+            <Fade in={inView1} appear={true} timeout={{ enter: 1500 }}>
               <Grid
                 item
                 lg={6}
+                sm={12}
                 display={"flex"}
                 flexGrow={1}
                 alignSelf={"center"}
@@ -151,7 +156,7 @@ const Page = () => {
           </Grid>
         </Box>
 
-        <Fade in={inView2} appear={true} timeout={{ enter: 2000 }}>
+        <Fade in={inView2} appear={true} timeout={{ enter: 1500 }}>
           <Box
             ref={divRef2}
             sx={{
@@ -160,7 +165,6 @@ const Page = () => {
               paddingX: "20px",
               width: "1000px",
               paddingY: "40px",
-
               justifyContent: "",
             }}
           >
@@ -168,9 +172,10 @@ const Page = () => {
               container
               sx={{
                 display: "flex",
-                p: "0px",
+                width: "1000px",
+                m: "20px",
                 paddingBottom: "5px",
-                justifyContent: "",
+                justifyContent: "center",
               }}
             >
               <Grid
@@ -219,7 +224,7 @@ const Page = () => {
             paddingY: "40px",
           }}
         >
-          <Fade in={inView3} appear={true} timeout={{ enter: 2000 }}>
+          <Fade in={inView3} appear={true} timeout={{ enter: 1500 }}>
             <Grid
               container
               spacing={2}
@@ -228,7 +233,6 @@ const Page = () => {
                 m: "20px",
                 p: "0px",
                 width: "1000px",
-                justifyContent: "",
               }}
             >
               <Grid
@@ -257,36 +261,18 @@ const Page = () => {
               <Grid
                 item
                 lg={6}
+                md={12}
+                sm={12}
                 sx={{
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  alignItems: "center"
                 }}
               >
-                <Box sx={{ marginBottom: "7px" }}>
-                  <Typography variant="h2">Step 1: Register</Typography>
-                  <Typography variant="body" fontSize={18}>
-                    Register with us!
-                  </Typography>
-                  <br />
-                  <Typography variant="body" fontSize={18}>
-                    Let our experts help you in your digital transformation
-                    planning journey.
-                  </Typography>
-                </Box>
-                <Box sx={{ marginBottom: "7px" }}>
-                  <Typography variant="h2">Step 2: Use Our Tools</Typography>
-                  <Typography variant="body" fontSize={18}>
-                    Follow the step-by-step guides in our 12+1 process framework
-                    to roll out your digital transformation plan.
-                  </Typography>
-                </Box>
-                <Box sx={{ marginBottom: "7px" }}>
-                  <Typography variant="h2">Step 3: Engage With Us</Typography>
-                  <Typography variant="body" fontSize={18}>
-                    Our experts will assist you in a hand-holding approach.
-                  </Typography>
-                </Box>
+                <Steps>
+
+                </Steps>
               </Grid>
             </Grid>
           </Fade>
