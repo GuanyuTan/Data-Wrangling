@@ -38,21 +38,21 @@ TabPanel.propTypes = {
 
 const useInInViewport = (ref) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
-  if (typeof window !== "undefined") {
-    const observer = useMemo(
-      () =>
-        new IntersectionObserver(([entry]) =>
-          setIsIntersecting(entry.isIntersecting),
-        ),
-      [],
-    );
-    useEffect(() => {
+  const observer = useMemo(
+    () =>
+      new IntersectionObserver(([entry]) =>
+        setIsIntersecting(entry.isIntersecting),
+      ),
+    [],
+  );
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       observer.observe(ref.current);
       return () => {
         observer.disconnect();
       }
-    }, [ref, observer]);
-  }
+    }
+  }, [ref, observer]);
 
   return isIntersecting
 }

@@ -26,6 +26,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import SwipeableViews from 'react-swipeable-views';
 import Router from 'next/router';
+import axios from 'axios';
 
 
 
@@ -151,29 +152,19 @@ const Page = () => {
             setLoading(true)
             setDisableResult(false)
             if (tabValue == 0) {
-                const body_ = JSON.stringify(
+                await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/wrangling/web_scrape`,
                     {
-                        "queries": [...queryArray],
-                        "url": url
+
+                        'queries': [...queryArray],
+                        'url': url
+
                     }
-                )
-                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wrangling/web_scrape`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Origin': `${process.env.NEXT_PUBLIC_API_URL}/wrangling/web_scrape`
-                        },
-                        body: body_
-                    }
-                ).then((result) => (
-                    result.json())
-                ).then((data) => {
-                    setResult(data);
-                    setDoc(data.documents);
+                ).then((result) => {
+                    setResult(result.data);
+                    setDoc(result.data.documents);
                     setLoading(false);
                     setTabValue(2);
-                }).catch(error=>{
+                }).catch(error => {
                     console.log(error)
                 })
             } else if (tabValue == 1) {
@@ -185,11 +176,13 @@ const Page = () => {
                     body_.append("queries", item)
                 })
                 body_.append("files", pdf);
-                await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/pdf_scrape`, {
-                    // mode: 'no-cors',
-                    method: "POST",
-                    body: body_
-                }).then((result) => (result.json()))
+
+                await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/wrangling/pdf_scrape`,
+                    {
+                        'queries': [...queryArray],
+                        'files': pdf
+                    }
+                ).then((result) => (result.data))
                     .then((data) => {
                         setResult(data);
                         setDoc(data.documents);

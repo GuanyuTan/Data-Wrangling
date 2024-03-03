@@ -1,8 +1,6 @@
-import Link from 'next/link';
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { AuthGuard } from './auth-guard';
 import { DashboardNavbar } from './dashboard-navbar';
 import { DashboardSidebar } from './dashboard-sidebar';
 import { Footer } from './footer';
@@ -17,7 +15,6 @@ export const DashboardLayout = (props) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    // <AuthGuard>
     <>
       <DashboardLayoutRoot>
         <Box
@@ -43,6 +40,5 @@ export const DashboardLayout = (props) => {
         open={isSidebarOpen}
       />
     </>
-    // </AuthGuard>
   );
 };
