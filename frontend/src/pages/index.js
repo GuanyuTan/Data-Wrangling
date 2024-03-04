@@ -5,6 +5,7 @@ import { Box, Button, Card, Divider, Paper, Fade, Grid, Typography, IconButton, 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Steps } from "../components/homepage/steps";
+import { useInView } from "react-intersection-observer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -36,39 +37,25 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-const useInInViewport = (ref) => {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(([entry]) =>
-        setIsIntersecting(entry.isIntersecting),
-      ),
-    [],
-  );
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      observer.observe(ref.current);
-      return () => {
-        observer.disconnect();
-      }
-    }
-  }, [ref, observer]);
-
-  return isIntersecting
-}
-
 const Page = () => {
-  const divRef1 = useRef(false);
-  const divRef2 = useRef(false);
-  const divRef3 = useRef(false);
 
-  const inView1 = useInInViewport(divRef1);
-  const inView2 = useInInViewport(divRef2);
-  const inView3 = useInInViewport(divRef3);
-
+  const { ref:divRef1, inView:inView1} = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  const { ref:divRef2, inView:inView2} = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  const { ref:divRef3, inView:inView3} = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
 
   return (
     <>
+
+
       <Head>
         <title>Data Wrangling</title>
       </Head>

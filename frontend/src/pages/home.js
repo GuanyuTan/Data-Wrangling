@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { StyledButton } from '../components/datawrangling/button-enlarge';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import TurnSlightRightIcon from '@mui/icons-material/TurnSlightRight';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
@@ -25,8 +24,6 @@ import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
-import { Product } from '../icons/box';
 
 
 const items = [
