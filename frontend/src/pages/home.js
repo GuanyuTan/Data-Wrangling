@@ -204,19 +204,19 @@ ButtonWithText.defaultProps = {
 
 const Comp = (props) => {
     const { items, buttonSize, icon, margin, ...others } = props;
-    const radius = 85
-    const width = 2 * (radius + 40 + 160)
-    const height = 2 * (radius + 40 + 80)
-    const number = items.length
+    let radius = 85
+    let width = 2 * (radius + 40 + 160)
+    let height = 2 * (radius + 40 + 80)
+    let number = items.length
     // positions will be in {x,y} format
-    const positions = []
-    const angle = 2 * Math.PI / number
-    const ini_angle = 0
-    const centre = {
+    let positions = []
+    let angle = 2 * Math.PI / number
+    let ini_angle = 0
+    let centre = {
         x: width / 2,
         y: height / 2
     }
-    const readjustment_vector = {
+    let readjustment_vector = {
         x: -buttonSize / 2,
         y: -buttonSize / 2
     }

@@ -40,15 +40,12 @@ TabPanel.propTypes = {
 const Page = () => {
 
   const { ref:divRef1, inView:inView1} = useInView({
-    /* Optional options */
     threshold: 0,
   });
   const { ref:divRef2, inView:inView2} = useInView({
-    /* Optional options */
     threshold: 0,
   });
   const { ref:divRef3, inView:inView3} = useInView({
-    /* Optional options */
     threshold: 0,
   });
 
