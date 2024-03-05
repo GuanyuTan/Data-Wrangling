@@ -5,47 +5,36 @@ import uuid
 import json
 import os, sys
 import asyncio
-from database.database import SessionLocal, engine
+from db.session import get_db
 from fastapi.security import OAuth2PasswordBearer
 # from utils import web_parse_pipeline
-# from models import search_info
+# from models import SearchInfo
 
-from .users import get_current_user
+from .users.users import get_current_user
 from .utils import write_files, pdf_scrape_, web_scrape_, write_file, write_files_, convert_squad, train_
-from database import crud, models, schemas
-from jose import JWTError, jwt
+from db import models, schemas, session
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
-from .schemas import Search_info, Web_search_info
+from .schemas import SearchInfo, WebSearchInfo
 
-models.Base.metadata.create_all(bind=engine)
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/token")
+
+models.Base.metadata.create_all(bind=session.engine)
 load_dotenv()
-ALGORITHM = os.getenv('ALGORITHM')
-SECRET_KEY = os.getenv('SECRET_KEY')
-PWD_HASHING = os.getenv('PWD_HASHING')
+# PWD_HASHING = os.getenv('PWD_HASHING')
 DATA_DIR = os.getenv('DATA_DIR')
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-load_dotenv()
 FILE_DIR = os.getenv("FILE_DIR")
+# pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 router = APIRouter(
-    prefix="/api",
-    tags=["api"],
+    prefix="/wrangling",
+    tags=["wrangling"],
     # dependencies=,
     responses={404: {"description": "Not found"}},
 )
 
 
 @router.post("/web_scrape")
-async def web_scrape(info: Web_search_info):
+async def web_scrape(info: WebSearchInfo):
+    print("web scraping")
     return web_scrape_(url=info.url, queries=info.queries)
     
     
@@ -98,7 +87,6 @@ async def train(query_ans:List[schemas.QueryAnswer], document:schemas.Document):
     with open(os.path.join(DATA_DIR,file_name), "x") as file:
         file.write(json.dumps(data))
     train_(data_dir=DATA_DIR, file_name=file_name)
-   
     return{"response": "All is good"}
 
 

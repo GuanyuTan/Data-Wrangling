@@ -17,6 +17,7 @@ azure-core==1.26.1
 backcall==0.2.0
 backoff==1.11.1
 beautifulsoup4==4.11.1
+bcrypt==4.0.1
 beir==1.0.1
 black==22.6.0
 bleach==5.0.1

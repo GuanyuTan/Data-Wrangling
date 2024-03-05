@@ -14,10 +14,10 @@ from haystack.pipelines import Pipeline
 from haystack.nodes.connector import Crawler
 from haystack.nodes.preprocessor import PreProcessor
 from sqlalchemy.orm import Session
-from database import crud, models, schemas
+from db import crud, models, schemas
 
 import pandas as pd
-
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 load_dotenv()
 FILE_DIR = os.getenv("FILE_DIR")

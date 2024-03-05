@@ -1,18 +1,20 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from .database import Base
+from .session import Base
 
 # These are declarative extensions
 class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, unique=True, index=True)
+    username = Column(String, unique=False, index=True)
     email = Column(String, unique=True, index=True)
-    full_name = Column(String, unique=False, index=True)
+    first_name = Column(String)
+    last_name = Column(String)
     hashed_password = Column(String)
-    disabled = Column(Boolean, default=False)
+    is_active = Column(Boolean, default=False)
+    is_superuser = Column(Boolean, default=False)
 
     file = relationship("File", back_populates="owner")
 

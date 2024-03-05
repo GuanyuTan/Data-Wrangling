@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: backend
+    build: .
+    working_dir: /code/app
+    environment:
+      DEBUG: 1
+    volumes:
+      - ./app:/code/app
+    ports:
+      - 80:80
+    restart: on-failure

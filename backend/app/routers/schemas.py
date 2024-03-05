@@ -4,11 +4,11 @@ from pydantic import BaseModel
 from fastapi import UploadFile, File, Form
 
 
-class Search_info(BaseModel):
+class SearchInfo(BaseModel):
     queries: List[str]
     top_k: Union[int, None] = None
 
-class Web_search_info(Search_info):
+class WebSearchInfo(SearchInfo):
     # Input schema for user input
     # accepts url for website, query/keywords for searching
     url: str
