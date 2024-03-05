@@ -70,7 +70,6 @@ const SignUp = () => {
             passHref
           >
             <Button
-              component="a"
               startIcon={<ArrowBackIcon fontSize="small" />}
             >
               Home
@@ -142,13 +141,13 @@ const SignUp = () => {
                   href="#"
                   passHref
                 >
-                  <Link
+                  {/* <Link
                     color="primary"
                     underline="always"
                     variant="subtitle2"
-                  >
+                  > */}
                     Terms and Conditions
-                  </Link>
+                  {/* </Link> */}
                 </NextLink>
               </Typography>
             </Box>
@@ -228,12 +227,12 @@ const SignUp = () => {
                 href="/login"
                 passHref
               >
-                <Link
+                {/* <Link
                   variant="subtitle2"
                   underline="hover"
-                >
+                > */}
                   Sign In
-                </Link>
+                {/* </Link> */}
               </NextLink>
             </Typography>
           </form>

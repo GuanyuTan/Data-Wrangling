@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { Answer } from '../components/datawrangling/answers'
+import { Answer } from '../components/data-wrangling/answers'
 import { DashboardLayout } from '../components/dashboard-layout';
 import {
     Box,
@@ -15,7 +15,6 @@ import {
     InputAdornment,
     IconButton,
     Button,
-    Divider,
     CircularProgress,
     useTheme
 } from '@mui/material';
@@ -24,7 +23,7 @@ import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
-import SwipeableViews from 'react-swipeable-views';
+import SwipeableViews from 'react-swipeable-views-react-18-fix';
 import Router from 'next/router';
 import axios from 'axios';
 

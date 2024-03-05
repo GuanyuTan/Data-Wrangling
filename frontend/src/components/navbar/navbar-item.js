@@ -2,16 +2,18 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { ChildCare, ExpandLess, ExpandMore } from '@mui/icons-material';
-import { Box, Button, Collapse, ListItem, ListItemButton, ListItemText, MenuItem } from '@mui/material';
+import { Box, Button, Typography, ListItem, MenuItem } from '@mui/material';
+import MuiLink from '@mui/material/Link';
 import { MenuDropDown } from './menu-dropdown';
 import HoverMenu from 'material-ui-popup-state/HoverMenu'
+import HoverPopover from 'material-ui-popup-state/HoverPopover'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import {
     usePopupState,
     bindFocus,
     bindHover,
     bindMenu,
+    bindPopover,
 } from 'material-ui-popup-state/hooks'
 
 export const NavItem = (props) => {
@@ -32,27 +34,38 @@ export const NavItem = (props) => {
                     endIcon={<ArrowDropDownIcon fontSize='small' ></ArrowDropDownIcon>}
                     disableRipple
                     sx={{
-                        width: '100%',
+                        width: "200px",
                         // justifyContent: 'flex-start',
                         textAlign: 'center',
                     }}
                 >
                     {title}
                 </Button>
-                <HoverMenu
-                    {...bindMenu(popupState)}
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                    transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                <HoverPopover
+                    {...bindPopover(popupState)}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                    }}
+
                 >
                     {items.map(item => (
-                        <Link key={item.href} href={`${item.href}`}>
-                            <MenuItem onClick={popupState.close} key={`${item.title}_1`}>
-                                {item.title}
-                            </MenuItem>
-                        </Link>
+                        <Box width={"200px"} justifyContent="center" alignItems="center" key={item.title}>
+                            <Link key={item.href} href={`${item.href}`} style={{ textDecoration: 'none' }}>
+                                <MenuItem onClick={popupState.close} key={`${item.title}_1`} width="200px">
+                                    <Typography color={'primary'} fontWeight={400}>
+                                        {item.title}
+                                    </Typography>
+                                </MenuItem>
+                            </Link>
+                        </Box>
                     ))}
 
-                </HoverMenu>
+                </HoverPopover>
             </ListItem>
         )
     }
@@ -66,10 +79,9 @@ export const NavItem = (props) => {
                 style={{ textDecoration: 'none' }} color={'inherit'}
             >
                 <Button
-                    component="a"
                     disableRipple
                     sx={{
-                        width: '100%',
+                        width: '200px',
                         // justifyContent: 'flex-start',
                         textAlign: 'center',
                     }}

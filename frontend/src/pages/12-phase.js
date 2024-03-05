@@ -1,13 +1,10 @@
 // import styled from "@emotion/styled";
-import { Divider, Link, Paper, Stepper, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tabs, Typography } from "@mui/material";
-import { DataTable } from "../components/task-table";
-import { Box, maxWidth, minWidth } from "@mui/system";
+import { Tab, Tabs } from "@mui/material";
+import { Box} from "@mui/system";
 import Head from "next/head";
 import { DashboardLayout } from "../components/dashboard-layout"
 import { PropTypes } from "prop-types";
 import { useState } from "react";
-import HorizontalNonLinearStepper from "../components/custom-stepper";
-import { StyledButton } from "../components/datawrangling/button-enlarge";
 import { PhaseContent } from "../components/12-phase-content";
 const phase = [
     {

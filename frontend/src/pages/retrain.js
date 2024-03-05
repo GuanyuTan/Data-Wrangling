@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
-import NextLink from 'next/link';
-import { Answer } from '../components/datawrangling/answers'
+import { Answer } from '../components/data-wrangling/answers'
 import { DashboardLayout } from '../components/dashboard-layout';
 import {
     Dialog,
@@ -22,10 +21,10 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { useEffect, useRef, useState } from 'react';
-import { QueryComponent } from '../components/datawrangling/query_component';
+import { QueryComponent } from '../components/data-wrangling/query-component';
 import Highlighter from 'react-highlight-words';
 import { Router, useRouter } from 'next/router';
-import { SearchBar } from '../components/datawrangling/search-bar';
+import { SearchBar } from '../components/data-wrangling/search-bar';
 import CloseIcon from '@mui/icons-material/Close';
 import SelectionHighlighter from 'react-highlight-selection'
 
@@ -54,7 +53,7 @@ const Page = () => {
     const [openId, setOpenId] = useState(0);
 
 
-    const {
+    let {
         isReady,
         query: {
             document_,
@@ -68,6 +67,7 @@ const Page = () => {
             return;
         }
         if (doc.length == 0) {
+
             if (typeof queryArray === "string") {
                 const copy = queryArray
                 queryArray = []

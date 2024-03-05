@@ -2,11 +2,8 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { AppBar, Avatar, Box, Button, IconButton, List, Toolbar } from '@mui/material';
+import { AppBar, Box, Button, List, Toolbar } from '@mui/material';
 import { useAuth } from '../contexts/auth';
-import MenuIcon from '@mui/icons-material/Menu';
-import { UserCircle as UserCircleIcon } from '../icons/user-circle';
-import { AccountPopover } from './account-popover';
 import Image from 'next/image';
 import { NavItem } from './navbar/navbar-item';
 import ProfileAvatar from './account/account-avatar';
@@ -53,8 +50,6 @@ const DashboardNavbarRoot = styled(AppBar)(({ theme }) => ({
 
 export const DashboardNavbar = (props) => {
   const { onSidebarOpen, ...other } = props;
-  const settingsRef = useRef(null);
-  const [openAccountPopover, setOpenAccountPopover] = useState(false);
   const { isAuthenticated } = useAuth();
 
   return (
@@ -79,9 +74,7 @@ export const DashboardNavbar = (props) => {
               href="/"
               passHref
             >
-              <a>
                 <Image src='/adiba.png' width={85} height={85 / 2} alt='logo' />
-              </a>
             </Link>
           </Box>
           <Box
@@ -150,11 +143,7 @@ export const DashboardNavbar = (props) => {
 
         </Toolbar>
       </DashboardNavbarRoot >
-      <AccountPopover
-        anchorEl={settingsRef.current}
-        open={openAccountPopover}
-        onClose={() => setOpenAccountPopover(false)}
-      />
+      
     </>
   );
 };

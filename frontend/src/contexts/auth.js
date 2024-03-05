@@ -14,7 +14,7 @@ export const AuthProvider = ({ children }) => {
         async function loadUser() {
             // get token from cookies
 
-            const token = localStorage.getItem('token');
+            let token = localStorage.getItem('token');
             // if there is a token
             if (token){
                 if (token!=='undefined') {

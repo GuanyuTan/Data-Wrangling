@@ -1,7 +1,7 @@
 import { Card, Box, Typography, IconButton, CardContent } from "@mui/material"
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from "react-swipeable-views";
+import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { useState } from "react";
 
 export const Steps = () => {

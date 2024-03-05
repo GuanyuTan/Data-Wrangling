@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { Box, Button, Divider, Drawer, imageListClasses, ListItemText, Typography, useMediaQuery } from '@mui/material';
+import { Box, Drawer, useMediaQuery } from '@mui/material';
 import { NavItem } from './nav-item';
 import { MulItem } from './nav_item_mul';
 import Image from 'next/image';
@@ -90,9 +90,7 @@ export const DashboardSidebar = (props) => {
             href="/"
             passHref
           >
-            <a>
               <Image src='/adiba.png' width={200} height={200/2} alt='logo' />
-            </a>
           </Link>
         </Box>
         <Box sx={{ flexGrow: 1 }}>

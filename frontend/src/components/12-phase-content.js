@@ -6,7 +6,7 @@ import StepButton from '@mui/material/StepButton';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { DataTable } from './task-table';
-import { StyledButton } from './datawrangling/button-enlarge';
+import { StyledButton } from './data-wrangling/button-enlarge';
 import { PropTypes } from 'prop-types';
 
 const steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4']

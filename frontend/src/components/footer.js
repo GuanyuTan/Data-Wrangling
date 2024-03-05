@@ -1,8 +1,6 @@
 import { Box, List, ListItem, Paper, Typography, styled } from "@mui/material"
-import { Link as LinkMUI } from "@mui/material"
-import { height, width } from "@mui/system"
 import Image from "next/image"
-import Link from "next/link"
+import NextLink from "next/link"
 
 const FooterListItem = styled(ListItem)(({ theme }) => ({
     display: 'flex',
@@ -64,13 +62,11 @@ const Links = (props) => {
     const { item, ...others } = props;
     return (
         <Box {...others}>
-            <Link href={item.href} >
-                <LinkMUI style={{ textDecoration: 'none' }} color={'neutral.500'}>
-                    <Typography fontWeight={600}>
+            <NextLink href={item.href} style={{ textDecoration: 'none' }} >
+                    <Typography color={'neutral.500'} fontWeight={600}>
                         {item.title}
                     </Typography>
-                </LinkMUI>
-            </Link>
+            </NextLink>
         </Box>
     )
 }
@@ -101,14 +97,12 @@ export const Footer = () => {
                             flexDirection: 'column',
                             alignItems: 'flex-start',
                         }}>
-                        <Link
+                        <NextLink
                             href="/"
                             passHref
                         >
-                            <a>
                                 <Image src='/adiba.png' width={140} height={140 / 2} alt='logo' />
-                            </a>
-                        </Link>
+                        </NextLink>
                         <Typography>
                             2022&copy; ADIBA
                         </Typography>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { DashboardLayout } from "../components/dashboard-layout";
-import { Box, width } from "@mui/system";
+import { Box } from "@mui/system";
 import { Avatar, Button, Grid, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import Image from "next/image";
@@ -49,7 +49,7 @@ const Page = () => {
                 <Box
                 sx={{width:'100wh'}}
                 >
-                    <Image src='/customer-service.png' width={'450px'} height={'450px'}>
+                    <Image src='/customer-service.png' width={450} height={450} alt="Contact Illus">
 
                     </Image>
                 </Box>

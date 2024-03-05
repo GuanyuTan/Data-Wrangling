@@ -73,7 +73,7 @@ const Login = () => {
             passHref
           >
             <Button
-              component="a"
+              // component="a"
               startIcon={<ArrowBackIcon fontSize="small" />}
             >
               Home
@@ -181,21 +181,21 @@ const Login = () => {
               color="textSecondary"
               variant="body2"
             >
-              Don&apos;t have an account?
+              Don't have an account?
               {' '}
               <NextLink
-                href="/register"
+                href="/signup"
               >
-                <Link
+                {/* <Link
                   to="/register"
                   variant="subtitle2"
                   underline="hover"
                   sx={{
                     cursor: 'pointer'
                   }}
-                >
+                > */}
                   Sign Up
-                </Link>
+                {/* </Link> */}
               </NextLink>
             </Typography>
           </form>

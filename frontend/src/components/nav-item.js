@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import { useState } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { ChildCare, ExpandLess, ExpandMore } from '@mui/icons-material';
-import { Box, Button, Collapse, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import { Box, Button,  ListItem } from '@mui/material';
 
 export const NavItem = (props) => {
   const { href, title, ...others } = props;
@@ -26,7 +24,7 @@ export const NavItem = (props) => {
         passHref
       >
         <Button
-          component="a"
+          // component="a"
           disableRipple
           sx={{
             backgroundColor: active && 'rgb(80, 199, 242, 0.25)',

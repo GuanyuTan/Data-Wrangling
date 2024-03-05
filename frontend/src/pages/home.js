@@ -8,7 +8,7 @@ import {
     Typography,
     Link,
 } from '@mui/material';
-import { StyledButton } from '../components/datawrangling/button-enlarge';
+import { StyledButton } from '../components/data-wrangling/button-enlarge';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import AssessmentOutlinedIcon from '@mui/icons-material/AssessmentOutlined';
 import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';

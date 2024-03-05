@@ -47,7 +47,7 @@ const Page = () => (
             passHref
           >
             <Button
-              component="a"
+              // component="a"
               startIcon={(<ArrowBackIcon fontSize="small" />)}
               sx={{ mt: 3 }}
               variant="contained"

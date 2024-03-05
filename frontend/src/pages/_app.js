@@ -2,7 +2,8 @@ import { Fragment } from 'react';
 import Head from 'next/head';
 import { CacheProvider } from '@emotion/react';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+// import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 // import { AuthConsumer, AuthProvider } from '../contexts/auth-context';
@@ -31,7 +32,7 @@ const App = (props) => {
           content="initial-scale=1, width=device-width"
         />
       </Head>
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <AuthProvider>

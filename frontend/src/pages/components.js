@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import NextLink from 'next/link';
 import { DashboardLayout } from '../components/dashboard-layout';
 import {
     Box,

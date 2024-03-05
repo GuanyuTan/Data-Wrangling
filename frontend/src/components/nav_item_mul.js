@@ -3,7 +3,6 @@ import { PropTypes } from 'prop-types';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Box, Button, Collapse, ListItem, ListItemText } from '@mui/material';
 import { NavItem } from './nav-item';
-import { useRouter } from 'next/router';
 
 export const MulItem = (props) => {
     const { title, list, ...others } = props;
@@ -23,7 +22,7 @@ export const MulItem = (props) => {
             >
                 <Button
                     onClick={handleClick}
-                    component="a"
+                    // component="a"
                     disableRipple
                     sx={{
                         backgroundColor: open && 'rgb(80, 199, 242, 0.25)',

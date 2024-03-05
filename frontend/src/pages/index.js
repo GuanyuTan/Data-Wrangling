@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { DashboardLayout } from "../components/dashboard-layout";
 import { Box, Button, Card, Divider, Paper, Fade, Grid, Typography, IconButton, CardContent } from "@mui/material";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
 import { Steps } from "../components/homepage/steps";
 import { useInView } from "react-intersection-observer";
 
@@ -132,8 +131,9 @@ const Page = () => {
               >
                 <Image
                   src={"/illus-2.png"}
-                  width="500px"
-                  height={`${500 * 0.7}px`}
+                  width={500}
+                  height={500 * 0.7}
+                  alt="Image 1"
                 ></Image>
               </Grid>
             </Fade>
@@ -189,7 +189,7 @@ const Page = () => {
               </Grid>
               <Grid item lg={7} height={"100%"}>
                 <Box display="flex" justifyContent="center" padding="auto">
-                  <Image src={"/illus-3.png"} width={500} height={400}>
+                  <Image src={"/illus-3.png"} width={500} height={400} alt="Image 2">
                     {/* <a href="https://storyset.com/business">Business illustrations by Storyset</a> */}
                   </Image>
                 </Box>
